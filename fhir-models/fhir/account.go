@@ -24,7 +24,7 @@ import (
 
 // Account is documented here http://hl7.org/fhir/StructureDefinition/Account
 type Account struct {
-	Id                *string            `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string            `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta              `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string            `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string            `bson:"language,omitempty" json:"language,omitempty"`
@@ -44,14 +44,14 @@ type Account struct {
 	PartOf            *Reference         `bson:"partOf,omitempty" json:"partOf,omitempty"`
 }
 type AccountCoverage struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Coverage          Reference   `bson:"coverage" json:"coverage"`
 	Priority          *int        `bson:"priority,omitempty" json:"priority,omitempty"`
 }
 type AccountGuarantor struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Party             Reference   `bson:"party" json:"party"`

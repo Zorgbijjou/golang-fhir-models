@@ -24,7 +24,7 @@ import (
 
 // Procedure is documented here http://hl7.org/fhir/StructureDefinition/Procedure
 type Procedure struct {
-	Id                    *string                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                    *string                `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                  *Meta                  `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules         *string                `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language              *string                `bson:"language,omitempty" json:"language,omitempty"`
@@ -65,7 +65,7 @@ type Procedure struct {
 	UsedCode              []CodeableConcept      `bson:"usedCode,omitempty" json:"usedCode,omitempty"`
 }
 type ProcedurePerformer struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Function          *CodeableConcept `bson:"function,omitempty" json:"function,omitempty"`
@@ -73,7 +73,7 @@ type ProcedurePerformer struct {
 	OnBehalfOf        *Reference       `bson:"onBehalfOf,omitempty" json:"onBehalfOf,omitempty"`
 }
 type ProcedureFocalDevice struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Action            *CodeableConcept `bson:"action,omitempty" json:"action,omitempty"`

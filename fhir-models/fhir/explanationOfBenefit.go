@@ -24,7 +24,7 @@ import (
 
 // ExplanationOfBenefit is documented here http://hl7.org/fhir/StructureDefinition/ExplanationOfBenefit
 type ExplanationOfBenefit struct {
-	Id                    *string                                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                    *string                                `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                  *Meta                                  `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules         *string                                `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language              *string                                `bson:"language,omitempty" json:"language,omitempty"`
@@ -76,7 +76,7 @@ type ExplanationOfBenefit struct {
 	BenefitBalance        []ExplanationOfBenefitBenefitBalance   `bson:"benefitBalance,omitempty" json:"benefitBalance,omitempty"`
 }
 type ExplanationOfBenefitRelated struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Claim             *Reference       `bson:"claim,omitempty" json:"claim,omitempty"`
@@ -84,14 +84,14 @@ type ExplanationOfBenefitRelated struct {
 	Reference         *Identifier      `bson:"reference,omitempty" json:"reference,omitempty"`
 }
 type ExplanationOfBenefitPayee struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
 	Party             *Reference       `bson:"party,omitempty" json:"party,omitempty"`
 }
 type ExplanationOfBenefitCareTeam struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence          int              `bson:"sequence" json:"sequence"`
@@ -101,7 +101,7 @@ type ExplanationOfBenefitCareTeam struct {
 	Qualification     *CodeableConcept `bson:"qualification,omitempty" json:"qualification,omitempty"`
 }
 type ExplanationOfBenefitSupportingInfo struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence          int              `bson:"sequence" json:"sequence"`
@@ -117,7 +117,7 @@ type ExplanationOfBenefitSupportingInfo struct {
 	Reason            *Coding          `bson:"reason,omitempty" json:"reason,omitempty"`
 }
 type ExplanationOfBenefitDiagnosis struct {
-	Id                       *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                       *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence                 int               `bson:"sequence" json:"sequence"`
@@ -128,7 +128,7 @@ type ExplanationOfBenefitDiagnosis struct {
 	PackageCode              *CodeableConcept  `bson:"packageCode,omitempty" json:"packageCode,omitempty"`
 }
 type ExplanationOfBenefitProcedure struct {
-	Id                       *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                       *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence                 int               `bson:"sequence" json:"sequence"`
@@ -139,7 +139,7 @@ type ExplanationOfBenefitProcedure struct {
 	Udi                      []Reference       `bson:"udi,omitempty" json:"udi,omitempty"`
 }
 type ExplanationOfBenefitInsurance struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Focal             bool        `bson:"focal" json:"focal"`
@@ -147,7 +147,7 @@ type ExplanationOfBenefitInsurance struct {
 	PreAuthRef        []string    `bson:"preAuthRef,omitempty" json:"preAuthRef,omitempty"`
 }
 type ExplanationOfBenefitAccident struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Date              *string          `bson:"date,omitempty" json:"date,omitempty"`
@@ -156,7 +156,7 @@ type ExplanationOfBenefitAccident struct {
 	LocationReference *Reference       `bson:"locationReference,omitempty" json:"locationReference,omitempty"`
 }
 type ExplanationOfBenefitItem struct {
-	Id                      *string                                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                      *string                                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension               []Extension                            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension       []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence                int                                    `bson:"sequence" json:"sequence"`
@@ -187,7 +187,7 @@ type ExplanationOfBenefitItem struct {
 	Detail                  []ExplanationOfBenefitItemDetail       `bson:"detail,omitempty" json:"detail,omitempty"`
 }
 type ExplanationOfBenefitItemAdjudication struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Category          CodeableConcept  `bson:"category" json:"category"`
@@ -196,7 +196,7 @@ type ExplanationOfBenefitItemAdjudication struct {
 	Value             *float64         `bson:"value,omitempty" json:"value,omitempty"`
 }
 type ExplanationOfBenefitItemDetail struct {
-	Id                *string                                   `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                   `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                               `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence          int                                       `bson:"sequence" json:"sequence"`
@@ -215,7 +215,7 @@ type ExplanationOfBenefitItemDetail struct {
 	SubDetail         []ExplanationOfBenefitItemDetailSubDetail `bson:"subDetail,omitempty" json:"subDetail,omitempty"`
 }
 type ExplanationOfBenefitItemDetailSubDetail struct {
-	Id                *string                                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence          int                                    `bson:"sequence" json:"sequence"`
@@ -233,7 +233,7 @@ type ExplanationOfBenefitItemDetailSubDetail struct {
 	Adjudication      []ExplanationOfBenefitItemAdjudication `bson:"adjudication,omitempty" json:"adjudication,omitempty"`
 }
 type ExplanationOfBenefitAddItem struct {
-	Id                      *string                                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                      *string                                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension               []Extension                            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension       []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	ItemSequence            []int                                  `bson:"itemSequence,omitempty" json:"itemSequence,omitempty"`
@@ -259,7 +259,7 @@ type ExplanationOfBenefitAddItem struct {
 	Detail                  []ExplanationOfBenefitAddItemDetail    `bson:"detail,omitempty" json:"detail,omitempty"`
 }
 type ExplanationOfBenefitAddItemDetail struct {
-	Id                *string                                      `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	ProductOrService  CodeableConcept                              `bson:"productOrService" json:"productOrService"`
@@ -273,7 +273,7 @@ type ExplanationOfBenefitAddItemDetail struct {
 	SubDetail         []ExplanationOfBenefitAddItemDetailSubDetail `bson:"subDetail,omitempty" json:"subDetail,omitempty"`
 }
 type ExplanationOfBenefitAddItemDetailSubDetail struct {
-	Id                *string                                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	ProductOrService  CodeableConcept                        `bson:"productOrService" json:"productOrService"`
@@ -286,14 +286,14 @@ type ExplanationOfBenefitAddItemDetailSubDetail struct {
 	Adjudication      []ExplanationOfBenefitItemAdjudication `bson:"adjudication,omitempty" json:"adjudication,omitempty"`
 }
 type ExplanationOfBenefitTotal struct {
-	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Category          CodeableConcept `bson:"category" json:"category"`
 	Amount            Money           `bson:"amount" json:"amount"`
 }
 type ExplanationOfBenefitPayment struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
@@ -304,7 +304,7 @@ type ExplanationOfBenefitPayment struct {
 	Identifier        *Identifier      `bson:"identifier,omitempty" json:"identifier,omitempty"`
 }
 type ExplanationOfBenefitProcessNote struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Number            *int             `bson:"number,omitempty" json:"number,omitempty"`
@@ -313,7 +313,7 @@ type ExplanationOfBenefitProcessNote struct {
 	Language          *CodeableConcept `bson:"language,omitempty" json:"language,omitempty"`
 }
 type ExplanationOfBenefitBenefitBalance struct {
-	Id                *string                                       `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                       `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                   `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Category          CodeableConcept                               `bson:"category" json:"category"`
@@ -326,7 +326,7 @@ type ExplanationOfBenefitBenefitBalance struct {
 	Financial         []ExplanationOfBenefitBenefitBalanceFinancial `bson:"financial,omitempty" json:"financial,omitempty"`
 }
 type ExplanationOfBenefitBenefitBalanceFinancial struct {
-	Id                 *string         `bson:"id,omitempty" json:"id,omitempty"`
+	ID                 *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension          []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type               CodeableConcept `bson:"type" json:"type"`

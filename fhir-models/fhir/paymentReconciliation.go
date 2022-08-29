@@ -24,7 +24,7 @@ import (
 
 // PaymentReconciliation is documented here http://hl7.org/fhir/StructureDefinition/PaymentReconciliation
 type PaymentReconciliation struct {
-	Id                *string                            `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                            `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                              `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                            `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                            `bson:"language,omitempty" json:"language,omitempty"`
@@ -48,7 +48,7 @@ type PaymentReconciliation struct {
 	ProcessNote       []PaymentReconciliationProcessNote `bson:"processNote,omitempty" json:"processNote,omitempty"`
 }
 type PaymentReconciliationDetail struct {
-	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        *Identifier     `bson:"identifier,omitempty" json:"identifier,omitempty"`
@@ -63,7 +63,7 @@ type PaymentReconciliationDetail struct {
 	Amount            *Money          `bson:"amount,omitempty" json:"amount,omitempty"`
 }
 type PaymentReconciliationProcessNote struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *NoteType   `bson:"type,omitempty" json:"type,omitempty"`

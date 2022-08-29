@@ -19,7 +19,7 @@ package fhir
 
 // Distance is documented here http://hl7.org/fhir/StructureDefinition/Distance
 type Distance struct {
-	Id         *string             `bson:"id,omitempty" json:"id,omitempty"`
+	ID         *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension  []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	Value      *float64            `bson:"value,omitempty" json:"value,omitempty"`
 	Comparator *QuantityComparator `bson:"comparator,omitempty" json:"comparator,omitempty"`

@@ -24,7 +24,7 @@ import (
 
 // StructureMap is documented here http://hl7.org/fhir/StructureDefinition/StructureMap
 type StructureMap struct {
-	Id                *string                 `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                 `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                   `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                 `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                 `bson:"language,omitempty" json:"language,omitempty"`
@@ -51,7 +51,7 @@ type StructureMap struct {
 	Group             []StructureMapGroup     `bson:"group" json:"group"`
 }
 type StructureMapStructure struct {
-	Id                *string               `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string               `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Url               string                `bson:"url" json:"url"`
@@ -60,7 +60,7 @@ type StructureMapStructure struct {
 	Documentation     *string               `bson:"documentation,omitempty" json:"documentation,omitempty"`
 }
 type StructureMapGroup struct {
-	Id                *string                   `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                   `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              string                    `bson:"name" json:"name"`
@@ -71,7 +71,7 @@ type StructureMapGroup struct {
 	Rule              []StructureMapGroupRule   `bson:"rule" json:"rule"`
 }
 type StructureMapGroupInput struct {
-	Id                *string               `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string               `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              string                `bson:"name" json:"name"`
@@ -80,7 +80,7 @@ type StructureMapGroupInput struct {
 	Documentation     *string               `bson:"documentation,omitempty" json:"documentation,omitempty"`
 }
 type StructureMapGroupRule struct {
-	Id                *string                          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              string                           `bson:"name" json:"name"`
@@ -91,7 +91,7 @@ type StructureMapGroupRule struct {
 	Documentation     *string                          `bson:"documentation,omitempty" json:"documentation,omitempty"`
 }
 type StructureMapGroupRuleSource struct {
-	Id                              *string                     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                              *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                       []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension               []Extension                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Context                         string                      `bson:"context" json:"context"`
@@ -105,7 +105,7 @@ type StructureMapGroupRuleSource struct {
 	DefaultValueDate                *string                     `bson:"defaultValueDate,omitempty" json:"defaultValueDate,omitempty"`
 	DefaultValueDateTime            *string                     `bson:"defaultValueDateTime,omitempty" json:"defaultValueDateTime,omitempty"`
 	DefaultValueDecimal             *float64                    `bson:"defaultValueDecimal,omitempty" json:"defaultValueDecimal,omitempty"`
-	DefaultValueId                  *string                     `bson:"defaultValueId,omitempty" json:"defaultValueId,omitempty"`
+	DefaultValueID                  *string                     `bson:"defaultValueID,omitempty" json:"defaultValueID,omitempty"`
 	DefaultValueInstant             *string                     `bson:"defaultValueInstant,omitempty" json:"defaultValueInstant,omitempty"`
 	DefaultValueInteger             *int                        `bson:"defaultValueInteger,omitempty" json:"defaultValueInteger,omitempty"`
 	DefaultValueMarkdown            *string                     `bson:"defaultValueMarkdown,omitempty" json:"defaultValueMarkdown,omitempty"`
@@ -156,7 +156,7 @@ type StructureMapGroupRuleSource struct {
 	LogMessage                      *string                     `bson:"logMessage,omitempty" json:"logMessage,omitempty"`
 }
 type StructureMapGroupRuleTarget struct {
-	Id                *string                                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Context           *string                                `bson:"context,omitempty" json:"context,omitempty"`
@@ -169,17 +169,17 @@ type StructureMapGroupRuleTarget struct {
 	Parameter         []StructureMapGroupRuleTargetParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
 }
 type StructureMapGroupRuleTargetParameter struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	ValueId           string      `bson:"valueId" json:"valueId"`
+	ValueID           string      `bson:"valueID" json:"valueID"`
 	ValueString       string      `bson:"valueString" json:"valueString"`
 	ValueBoolean      bool        `bson:"valueBoolean" json:"valueBoolean"`
 	ValueInteger      int         `bson:"valueInteger" json:"valueInteger"`
 	ValueDecimal      float64     `bson:"valueDecimal" json:"valueDecimal"`
 }
 type StructureMapGroupRuleDependent struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              string      `bson:"name" json:"name"`

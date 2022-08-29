@@ -24,7 +24,7 @@ import (
 
 // MessageHeader is documented here http://hl7.org/fhir/StructureDefinition/MessageHeader
 type MessageHeader struct {
-	Id                *string                    `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                    `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                      `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                    `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                    `bson:"language,omitempty" json:"language,omitempty"`
@@ -45,7 +45,7 @@ type MessageHeader struct {
 	Definition        *string                    `bson:"definition,omitempty" json:"definition,omitempty"`
 }
 type MessageHeaderDestination struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              *string     `bson:"name,omitempty" json:"name,omitempty"`
@@ -54,7 +54,7 @@ type MessageHeaderDestination struct {
 	Receiver          *Reference  `bson:"receiver,omitempty" json:"receiver,omitempty"`
 }
 type MessageHeaderSource struct {
-	Id                *string       `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string       `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension   `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              *string       `bson:"name,omitempty" json:"name,omitempty"`
@@ -64,7 +64,7 @@ type MessageHeaderSource struct {
 	Endpoint          string        `bson:"endpoint" json:"endpoint"`
 }
 type MessageHeaderResponse struct {
-	Id                *string      `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        string       `bson:"identifier" json:"identifier"`

@@ -24,7 +24,7 @@ import (
 
 // SupplyRequest is documented here http://hl7.org/fhir/StructureDefinition/SupplyRequest
 type SupplyRequest struct {
-	Id                  *string                  `bson:"id,omitempty" json:"id,omitempty"`
+	ID                  *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                *Meta                    `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules       *string                  `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language            *string                  `bson:"language,omitempty" json:"language,omitempty"`
@@ -51,7 +51,7 @@ type SupplyRequest struct {
 	DeliverTo           *Reference               `bson:"deliverTo,omitempty" json:"deliverTo,omitempty"`
 }
 type SupplyRequestParameter struct {
-	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                   *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code                 *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`

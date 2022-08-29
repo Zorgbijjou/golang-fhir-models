@@ -24,7 +24,7 @@ import (
 
 // TerminologyCapabilities is documented here http://hl7.org/fhir/StructureDefinition/TerminologyCapabilities
 type TerminologyCapabilities struct {
-	Id                *string                                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                                  `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                                `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                                `bson:"language,omitempty" json:"language,omitempty"`
@@ -57,21 +57,21 @@ type TerminologyCapabilities struct {
 	Closure           *TerminologyCapabilitiesClosure        `bson:"closure,omitempty" json:"closure,omitempty"`
 }
 type TerminologyCapabilitiesSoftware struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              string      `bson:"name" json:"name"`
 	Version           *string     `bson:"version,omitempty" json:"version,omitempty"`
 }
 type TerminologyCapabilitiesImplementation struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description       string      `bson:"description" json:"description"`
 	Url               *string     `bson:"url,omitempty" json:"url,omitempty"`
 }
 type TerminologyCapabilitiesCodeSystem struct {
-	Id                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Uri               *string                                    `bson:"uri,omitempty" json:"uri,omitempty"`
@@ -79,7 +79,7 @@ type TerminologyCapabilitiesCodeSystem struct {
 	Subsumption       *bool                                      `bson:"subsumption,omitempty" json:"subsumption,omitempty"`
 }
 type TerminologyCapabilitiesCodeSystemVersion struct {
-	Id                *string                                          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              *string                                          `bson:"code,omitempty" json:"code,omitempty"`
@@ -90,14 +90,14 @@ type TerminologyCapabilitiesCodeSystemVersion struct {
 	Property          []string                                         `bson:"property,omitempty" json:"property,omitempty"`
 }
 type TerminologyCapabilitiesCodeSystemVersionFilter struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              string      `bson:"code" json:"code"`
 	Op                []string    `bson:"op" json:"op"`
 }
 type TerminologyCapabilitiesExpansion struct {
-	Id                *string                                     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Hierarchical      *bool                                       `bson:"hierarchical,omitempty" json:"hierarchical,omitempty"`
@@ -107,26 +107,26 @@ type TerminologyCapabilitiesExpansion struct {
 	TextFilter        *string                                     `bson:"textFilter,omitempty" json:"textFilter,omitempty"`
 }
 type TerminologyCapabilitiesExpansionParameter struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              string      `bson:"name" json:"name"`
 	Documentation     *string     `bson:"documentation,omitempty" json:"documentation,omitempty"`
 }
 type TerminologyCapabilitiesValidateCode struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Translations      bool        `bson:"translations" json:"translations"`
 }
 type TerminologyCapabilitiesTranslation struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	NeedsMap          bool        `bson:"needsMap" json:"needsMap"`
 }
 type TerminologyCapabilitiesClosure struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Translation       *bool       `bson:"translation,omitempty" json:"translation,omitempty"`

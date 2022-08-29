@@ -24,7 +24,7 @@ import (
 
 // SpecimenDefinition is documented here http://hl7.org/fhir/StructureDefinition/SpecimenDefinition
 type SpecimenDefinition struct {
-	Id                 *string                        `bson:"id,omitempty" json:"id,omitempty"`
+	ID                 *string                        `bson:"id,omitempty" json:"id,omitempty"`
 	Meta               *Meta                          `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules      *string                        `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language           *string                        `bson:"language,omitempty" json:"language,omitempty"`
@@ -39,7 +39,7 @@ type SpecimenDefinition struct {
 	TypeTested         []SpecimenDefinitionTypeTested `bson:"typeTested,omitempty" json:"typeTested,omitempty"`
 }
 type SpecimenDefinitionTypeTested struct {
-	Id                 *string                                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                 *string                                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension          []Extension                            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	IsDerived          *bool                                  `bson:"isDerived,omitempty" json:"isDerived,omitempty"`
@@ -52,7 +52,7 @@ type SpecimenDefinitionTypeTested struct {
 	Handling           []SpecimenDefinitionTypeTestedHandling `bson:"handling,omitempty" json:"handling,omitempty"`
 }
 type SpecimenDefinitionTypeTestedContainer struct {
-	Id                    *string                                         `bson:"id,omitempty" json:"id,omitempty"`
+	ID                    *string                                         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension             []Extension                                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension     []Extension                                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Material              *CodeableConcept                                `bson:"material,omitempty" json:"material,omitempty"`
@@ -66,14 +66,14 @@ type SpecimenDefinitionTypeTestedContainer struct {
 	Preparation           *string                                         `bson:"preparation,omitempty" json:"preparation,omitempty"`
 }
 type SpecimenDefinitionTypeTestedContainerAdditive struct {
-	Id                      *string         `bson:"id,omitempty" json:"id,omitempty"`
+	ID                      *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension               []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension       []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	AdditiveCodeableConcept CodeableConcept `bson:"additiveCodeableConcept" json:"additiveCodeableConcept"`
 	AdditiveReference       Reference       `bson:"additiveReference" json:"additiveReference"`
 }
 type SpecimenDefinitionTypeTestedHandling struct {
-	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                   *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	TemperatureQualifier *CodeableConcept `bson:"temperatureQualifier,omitempty" json:"temperatureQualifier,omitempty"`

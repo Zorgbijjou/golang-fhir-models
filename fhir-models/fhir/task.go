@@ -24,7 +24,7 @@ import (
 
 // Task is documented here http://hl7.org/fhir/StructureDefinition/Task
 type Task struct {
-	Id                    *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                    *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                  *Meta             `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules         *string           `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language              *string           `bson:"language,omitempty" json:"language,omitempty"`
@@ -64,7 +64,7 @@ type Task struct {
 	Output                []TaskOutput      `bson:"output,omitempty" json:"output,omitempty"`
 }
 type TaskRestriction struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Repetitions       *int        `bson:"repetitions,omitempty" json:"repetitions,omitempty"`
@@ -72,7 +72,7 @@ type TaskRestriction struct {
 	Recipient         []Reference `bson:"recipient,omitempty" json:"recipient,omitempty"`
 }
 type TaskInput struct {
-	Id                       *string             `bson:"id,omitempty" json:"id,omitempty"`
+	ID                       *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type                     CodeableConcept     `bson:"type" json:"type"`
@@ -83,7 +83,7 @@ type TaskInput struct {
 	ValueDate                string              `bson:"valueDate" json:"valueDate"`
 	ValueDateTime            string              `bson:"valueDateTime" json:"valueDateTime"`
 	ValueDecimal             float64             `bson:"valueDecimal" json:"valueDecimal"`
-	ValueId                  string              `bson:"valueId" json:"valueId"`
+	ValueID                  string              `bson:"valueID" json:"valueID"`
 	ValueInstant             string              `bson:"valueInstant" json:"valueInstant"`
 	ValueInteger             int                 `bson:"valueInteger" json:"valueInteger"`
 	ValueMarkdown            string              `bson:"valueMarkdown" json:"valueMarkdown"`
@@ -128,7 +128,7 @@ type TaskInput struct {
 	ValueMeta                Meta                `bson:"valueMeta" json:"valueMeta"`
 }
 type TaskOutput struct {
-	Id                       *string             `bson:"id,omitempty" json:"id,omitempty"`
+	ID                       *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type                     CodeableConcept     `bson:"type" json:"type"`
@@ -139,7 +139,7 @@ type TaskOutput struct {
 	ValueDate                string              `bson:"valueDate" json:"valueDate"`
 	ValueDateTime            string              `bson:"valueDateTime" json:"valueDateTime"`
 	ValueDecimal             float64             `bson:"valueDecimal" json:"valueDecimal"`
-	ValueId                  string              `bson:"valueId" json:"valueId"`
+	ValueID                  string              `bson:"valueID" json:"valueID"`
 	ValueInstant             string              `bson:"valueInstant" json:"valueInstant"`
 	ValueInteger             int                 `bson:"valueInteger" json:"valueInteger"`
 	ValueMarkdown            string              `bson:"valueMarkdown" json:"valueMarkdown"`

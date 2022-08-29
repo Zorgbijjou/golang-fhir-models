@@ -24,7 +24,7 @@ import (
 
 // CarePlan is documented here http://hl7.org/fhir/StructureDefinition/CarePlan
 type CarePlan struct {
-	Id                    *string            `bson:"id,omitempty" json:"id,omitempty"`
+	ID                    *string            `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                  *Meta              `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules         *string            `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language              *string            `bson:"language,omitempty" json:"language,omitempty"`
@@ -56,7 +56,7 @@ type CarePlan struct {
 	Note                  []Annotation       `bson:"note,omitempty" json:"note,omitempty"`
 }
 type CarePlanActivity struct {
-	Id                     *string                 `bson:"id,omitempty" json:"id,omitempty"`
+	ID                     *string                 `bson:"id,omitempty" json:"id,omitempty"`
 	Extension              []Extension             `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension      []Extension             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	OutcomeCodeableConcept []CodeableConcept       `bson:"outcomeCodeableConcept,omitempty" json:"outcomeCodeableConcept,omitempty"`
@@ -66,7 +66,7 @@ type CarePlanActivity struct {
 	Detail                 *CarePlanActivityDetail `bson:"detail,omitempty" json:"detail,omitempty"`
 }
 type CarePlanActivityDetail struct {
-	Id                     *string                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                     *string                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension              []Extension            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension      []Extension            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Kind                   *CarePlanActivityKind  `bson:"kind,omitempty" json:"kind,omitempty"`

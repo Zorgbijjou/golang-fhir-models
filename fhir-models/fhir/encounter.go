@@ -24,7 +24,7 @@ import (
 
 // Encounter is documented here http://hl7.org/fhir/StructureDefinition/Encounter
 type Encounter struct {
-	Id                *string                   `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                   `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                     `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                   `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                   `bson:"language,omitempty" json:"language,omitempty"`
@@ -56,21 +56,21 @@ type Encounter struct {
 	PartOf            *Reference                `bson:"partOf,omitempty" json:"partOf,omitempty"`
 }
 type EncounterStatusHistory struct {
-	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Status            EncounterStatus `bson:"status" json:"status"`
 	Period            Period          `bson:"period" json:"period"`
 }
 type EncounterClassHistory struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Class             Coding      `bson:"class" json:"class"`
 	Period            Period      `bson:"period" json:"period"`
 }
 type EncounterParticipant struct {
-	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              []CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
@@ -78,7 +78,7 @@ type EncounterParticipant struct {
 	Individual        *Reference        `bson:"individual,omitempty" json:"individual,omitempty"`
 }
 type EncounterDiagnosis struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Condition         Reference        `bson:"condition" json:"condition"`
@@ -86,7 +86,7 @@ type EncounterDiagnosis struct {
 	Rank              *int             `bson:"rank,omitempty" json:"rank,omitempty"`
 }
 type EncounterHospitalization struct {
-	Id                     *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                     *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension              []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension      []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	PreAdmissionIdentifier *Identifier       `bson:"preAdmissionIdentifier,omitempty" json:"preAdmissionIdentifier,omitempty"`
@@ -100,7 +100,7 @@ type EncounterHospitalization struct {
 	DischargeDisposition   *CodeableConcept  `bson:"dischargeDisposition,omitempty" json:"dischargeDisposition,omitempty"`
 }
 type EncounterLocation struct {
-	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Location          Reference                `bson:"location" json:"location"`

@@ -19,7 +19,7 @@ package fhir
 
 // Signature is documented here http://hl7.org/fhir/StructureDefinition/Signature
 type Signature struct {
-	Id           *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID           *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension    []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	Type         []Coding    `bson:"type" json:"type"`
 	When         string      `bson:"when" json:"when"`

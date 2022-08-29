@@ -24,7 +24,7 @@ import (
 
 // ImagingStudy is documented here http://hl7.org/fhir/StructureDefinition/ImagingStudy
 type ImagingStudy struct {
-	Id                 *string              `bson:"id,omitempty" json:"id,omitempty"`
+	ID                 *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Meta               *Meta                `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules      *string              `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language           *string              `bson:"language,omitempty" json:"language,omitempty"`
@@ -53,7 +53,7 @@ type ImagingStudy struct {
 	Series             []ImagingStudySeries `bson:"series,omitempty" json:"series,omitempty"`
 }
 type ImagingStudySeries struct {
-	Id                *string                       `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                       `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                   `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Uid               string                        `bson:"uid" json:"uid"`
@@ -70,14 +70,14 @@ type ImagingStudySeries struct {
 	Instance          []ImagingStudySeriesInstance  `bson:"instance,omitempty" json:"instance,omitempty"`
 }
 type ImagingStudySeriesPerformer struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Function          *CodeableConcept `bson:"function,omitempty" json:"function,omitempty"`
 	Actor             Reference        `bson:"actor" json:"actor"`
 }
 type ImagingStudySeriesInstance struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Uid               string      `bson:"uid" json:"uid"`

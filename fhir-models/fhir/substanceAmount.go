@@ -19,7 +19,7 @@ package fhir
 
 // SubstanceAmount is documented here http://hl7.org/fhir/StructureDefinition/SubstanceAmount
 type SubstanceAmount struct {
-	Id                *string                        `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                        `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	AmountQuantity    *Quantity                      `bson:"amountQuantity,omitempty" json:"amountQuantity,omitempty"`
@@ -30,7 +30,7 @@ type SubstanceAmount struct {
 	ReferenceRange    *SubstanceAmountReferenceRange `bson:"referenceRange,omitempty" json:"referenceRange,omitempty"`
 }
 type SubstanceAmountReferenceRange struct {
-	Id        *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID        *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	LowLimit  *Quantity   `bson:"lowLimit,omitempty" json:"lowLimit,omitempty"`
 	HighLimit *Quantity   `bson:"highLimit,omitempty" json:"highLimit,omitempty"`

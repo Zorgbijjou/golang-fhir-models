@@ -24,7 +24,7 @@ import (
 
 // ValueSet is documented here http://hl7.org/fhir/StructureDefinition/ValueSet
 type ValueSet struct {
-	Id                *string            `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string            `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta              `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string            `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string            `bson:"language,omitempty" json:"language,omitempty"`
@@ -51,7 +51,7 @@ type ValueSet struct {
 	Expansion         *ValueSetExpansion `bson:"expansion,omitempty" json:"expansion,omitempty"`
 }
 type ValueSetCompose struct {
-	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	LockedDate        *string                  `bson:"lockedDate,omitempty" json:"lockedDate,omitempty"`
@@ -60,7 +60,7 @@ type ValueSetCompose struct {
 	Exclude           []ValueSetComposeInclude `bson:"exclude,omitempty" json:"exclude,omitempty"`
 }
 type ValueSetComposeInclude struct {
-	Id                *string                         `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	System            *string                         `bson:"system,omitempty" json:"system,omitempty"`
@@ -70,7 +70,7 @@ type ValueSetComposeInclude struct {
 	ValueSet          []string                        `bson:"valueSet,omitempty" json:"valueSet,omitempty"`
 }
 type ValueSetComposeIncludeConcept struct {
-	Id                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              string                                     `bson:"code" json:"code"`
@@ -78,7 +78,7 @@ type ValueSetComposeIncludeConcept struct {
 	Designation       []ValueSetComposeIncludeConceptDesignation `bson:"designation,omitempty" json:"designation,omitempty"`
 }
 type ValueSetComposeIncludeConceptDesignation struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Language          *string     `bson:"language,omitempty" json:"language,omitempty"`
@@ -86,7 +86,7 @@ type ValueSetComposeIncludeConceptDesignation struct {
 	Value             string      `bson:"value" json:"value"`
 }
 type ValueSetComposeIncludeFilter struct {
-	Id                *string        `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string        `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Property          string         `bson:"property" json:"property"`
@@ -94,7 +94,7 @@ type ValueSetComposeIncludeFilter struct {
 	Value             string         `bson:"value" json:"value"`
 }
 type ValueSetExpansion struct {
-	Id                *string                      `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        *string                      `bson:"identifier,omitempty" json:"identifier,omitempty"`
@@ -105,7 +105,7 @@ type ValueSetExpansion struct {
 	Contains          []ValueSetExpansionContains  `bson:"contains,omitempty" json:"contains,omitempty"`
 }
 type ValueSetExpansionParameter struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              string      `bson:"name" json:"name"`
@@ -118,7 +118,7 @@ type ValueSetExpansionParameter struct {
 	ValueDateTime     *string     `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
 }
 type ValueSetExpansionContains struct {
-	Id                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	System            *string                                    `bson:"system,omitempty" json:"system,omitempty"`

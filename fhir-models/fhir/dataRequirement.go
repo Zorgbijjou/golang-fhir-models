@@ -19,7 +19,7 @@ package fhir
 
 // DataRequirement is documented here http://hl7.org/fhir/StructureDefinition/DataRequirement
 type DataRequirement struct {
-	Id                     *string                     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                     *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension              []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	Type                   string                      `bson:"type" json:"type"`
 	Profile                []string                    `bson:"profile,omitempty" json:"profile,omitempty"`
@@ -32,7 +32,7 @@ type DataRequirement struct {
 	Sort                   []DataRequirementSort       `bson:"sort,omitempty" json:"sort,omitempty"`
 }
 type DataRequirementCodeFilter struct {
-	Id          *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID          *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension   []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	Path        *string     `bson:"path,omitempty" json:"path,omitempty"`
 	SearchParam *string     `bson:"searchParam,omitempty" json:"searchParam,omitempty"`
@@ -40,7 +40,7 @@ type DataRequirementCodeFilter struct {
 	Code        []Coding    `bson:"code,omitempty" json:"code,omitempty"`
 }
 type DataRequirementDateFilter struct {
-	Id            *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID            *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension     []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	Path          *string     `bson:"path,omitempty" json:"path,omitempty"`
 	SearchParam   *string     `bson:"searchParam,omitempty" json:"searchParam,omitempty"`
@@ -49,7 +49,7 @@ type DataRequirementDateFilter struct {
 	ValueDuration *Duration   `bson:"valueDuration,omitempty" json:"valueDuration,omitempty"`
 }
 type DataRequirementSort struct {
-	Id        *string       `bson:"id,omitempty" json:"id,omitempty"`
+	ID        *string       `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension   `bson:"extension,omitempty" json:"extension,omitempty"`
 	Path      string        `bson:"path" json:"path"`
 	Direction SortDirection `bson:"direction" json:"direction"`

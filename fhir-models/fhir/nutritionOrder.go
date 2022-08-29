@@ -24,7 +24,7 @@ import (
 
 // NutritionOrder is documented here http://hl7.org/fhir/StructureDefinition/NutritionOrder
 type NutritionOrder struct {
-	Id                     *string                       `bson:"id,omitempty" json:"id,omitempty"`
+	ID                     *string                       `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                   *Meta                         `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules          *string                       `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language               *string                       `bson:"language,omitempty" json:"language,omitempty"`
@@ -50,7 +50,7 @@ type NutritionOrder struct {
 	Note                   []Annotation                  `bson:"note,omitempty" json:"note,omitempty"`
 }
 type NutritionOrderOralDiet struct {
-	Id                   *string                          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                   *string                          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension                      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension                      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type                 []CodeableConcept                `bson:"type,omitempty" json:"type,omitempty"`
@@ -61,21 +61,21 @@ type NutritionOrderOralDiet struct {
 	Instruction          *string                          `bson:"instruction,omitempty" json:"instruction,omitempty"`
 }
 type NutritionOrderOralDietNutrient struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Modifier          *CodeableConcept `bson:"modifier,omitempty" json:"modifier,omitempty"`
 	Amount            *Quantity        `bson:"amount,omitempty" json:"amount,omitempty"`
 }
 type NutritionOrderOralDietTexture struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Modifier          *CodeableConcept `bson:"modifier,omitempty" json:"modifier,omitempty"`
 	FoodType          *CodeableConcept `bson:"foodType,omitempty" json:"foodType,omitempty"`
 }
 type NutritionOrderSupplement struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
@@ -85,7 +85,7 @@ type NutritionOrderSupplement struct {
 	Instruction       *string          `bson:"instruction,omitempty" json:"instruction,omitempty"`
 }
 type NutritionOrderEnteralFormula struct {
-	Id                        *string                                      `bson:"id,omitempty" json:"id,omitempty"`
+	ID                        *string                                      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                 []Extension                                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension                                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	BaseFormulaType           *CodeableConcept                             `bson:"baseFormulaType,omitempty" json:"baseFormulaType,omitempty"`
@@ -99,7 +99,7 @@ type NutritionOrderEnteralFormula struct {
 	AdministrationInstruction *string                                      `bson:"administrationInstruction,omitempty" json:"administrationInstruction,omitempty"`
 }
 type NutritionOrderEnteralFormulaAdministration struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Schedule          *Timing     `bson:"schedule,omitempty" json:"schedule,omitempty"`

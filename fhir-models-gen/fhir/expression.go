@@ -19,7 +19,7 @@ package fhir
 
 // Expression is documented here http://hl7.org/fhir/StructureDefinition/Expression
 type Expression struct {
-	Id          *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID          *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension   []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	Description *string     `bson:"description,omitempty" json:"description,omitempty"`
 	Name        *string     `bson:"name,omitempty" json:"name,omitempty"`

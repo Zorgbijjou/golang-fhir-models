@@ -24,7 +24,7 @@ import (
 
 // Medication is documented here http://hl7.org/fhir/StructureDefinition/Medication
 type Medication struct {
-	Id                *string                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                  `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                `bson:"language,omitempty" json:"language,omitempty"`
@@ -41,7 +41,7 @@ type Medication struct {
 	Batch             *MedicationBatch       `bson:"batch,omitempty" json:"batch,omitempty"`
 }
 type MedicationIngredient struct {
-	Id                  *string         `bson:"id,omitempty" json:"id,omitempty"`
+	ID                  *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension           []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	ItemCodeableConcept CodeableConcept `bson:"itemCodeableConcept" json:"itemCodeableConcept"`
@@ -50,7 +50,7 @@ type MedicationIngredient struct {
 	Strength            *Ratio          `bson:"strength,omitempty" json:"strength,omitempty"`
 }
 type MedicationBatch struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	LotNumber         *string     `bson:"lotNumber,omitempty" json:"lotNumber,omitempty"`

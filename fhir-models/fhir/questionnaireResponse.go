@@ -24,7 +24,7 @@ import (
 
 // QuestionnaireResponse is documented here http://hl7.org/fhir/StructureDefinition/QuestionnaireResponse
 type QuestionnaireResponse struct {
-	Id                *string                     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                       `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                     `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                     `bson:"language,omitempty" json:"language,omitempty"`
@@ -44,7 +44,7 @@ type QuestionnaireResponse struct {
 	Item              []QuestionnaireResponseItem `bson:"item,omitempty" json:"item,omitempty"`
 }
 type QuestionnaireResponseItem struct {
-	Id                *string                           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	LinkId            string                            `bson:"linkId" json:"linkId"`
@@ -54,7 +54,7 @@ type QuestionnaireResponseItem struct {
 	Item              []QuestionnaireResponseItem       `bson:"item,omitempty" json:"item,omitempty"`
 }
 type QuestionnaireResponseItemAnswer struct {
-	Id                *string                     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	ValueBoolean      *bool                       `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`

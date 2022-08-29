@@ -24,7 +24,7 @@ import (
 
 // AdverseEvent is documented here http://hl7.org/fhir/StructureDefinition/AdverseEvent
 type AdverseEvent struct {
-	Id                    *string                     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                    *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                  *Meta                       `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules         *string                     `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language              *string                     `bson:"language,omitempty" json:"language,omitempty"`
@@ -53,14 +53,14 @@ type AdverseEvent struct {
 	Study                 []Reference                 `bson:"study,omitempty" json:"study,omitempty"`
 }
 type AdverseEventSuspectEntity struct {
-	Id                *string                              `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Instance          Reference                            `bson:"instance" json:"instance"`
 	Causality         []AdverseEventSuspectEntityCausality `bson:"causality,omitempty" json:"causality,omitempty"`
 }
 type AdverseEventSuspectEntityCausality struct {
-	Id                 *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                 *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension          []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Assessment         *CodeableConcept `bson:"assessment,omitempty" json:"assessment,omitempty"`

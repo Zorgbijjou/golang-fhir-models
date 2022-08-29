@@ -19,7 +19,7 @@ package fhir
 
 // Address is documented here http://hl7.org/fhir/StructureDefinition/Address
 type Address struct {
-	Id         *string      `bson:"id,omitempty" json:"id,omitempty"`
+	ID         *string      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension  []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
 	Use        *AddressUse  `bson:"use,omitempty" json:"use,omitempty"`
 	Type       *AddressType `bson:"type,omitempty" json:"type,omitempty"`

@@ -19,7 +19,7 @@ package fhir
 
 // Reference is documented here http://hl7.org/fhir/StructureDefinition/Reference
 type Reference struct {
-	Id         *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID         *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension  []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	Reference  *string     `bson:"reference,omitempty" json:"reference,omitempty"`
 	Type       *string     `bson:"type,omitempty" json:"type,omitempty"`

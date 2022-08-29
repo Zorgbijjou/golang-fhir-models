@@ -24,7 +24,7 @@ import (
 
 // Immunization is documented here http://hl7.org/fhir/StructureDefinition/Immunization
 type Immunization struct {
-	Id                 *string                       `bson:"id,omitempty" json:"id,omitempty"`
+	ID                 *string                       `bson:"id,omitempty" json:"id,omitempty"`
 	Meta               *Meta                         `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules      *string                       `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language           *string                       `bson:"language,omitempty" json:"language,omitempty"`
@@ -62,14 +62,14 @@ type Immunization struct {
 	ProtocolApplied    []ImmunizationProtocolApplied `bson:"protocolApplied,omitempty" json:"protocolApplied,omitempty"`
 }
 type ImmunizationPerformer struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Function          *CodeableConcept `bson:"function,omitempty" json:"function,omitempty"`
 	Actor             Reference        `bson:"actor" json:"actor"`
 }
 type ImmunizationEducation struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	DocumentType      *string     `bson:"documentType,omitempty" json:"documentType,omitempty"`
@@ -78,7 +78,7 @@ type ImmunizationEducation struct {
 	PresentationDate  *string     `bson:"presentationDate,omitempty" json:"presentationDate,omitempty"`
 }
 type ImmunizationReaction struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Date              *string     `bson:"date,omitempty" json:"date,omitempty"`
@@ -86,7 +86,7 @@ type ImmunizationReaction struct {
 	Reported          *bool       `bson:"reported,omitempty" json:"reported,omitempty"`
 }
 type ImmunizationProtocolApplied struct {
-	Id                     *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                     *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension              []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension      []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Series                 *string           `bson:"series,omitempty" json:"series,omitempty"`

@@ -24,7 +24,7 @@ import (
 
 // Provenance is documented here http://hl7.org/fhir/StructureDefinition/Provenance
 type Provenance struct {
-	Id                *string            `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string            `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta              `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string            `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string            `bson:"language,omitempty" json:"language,omitempty"`
@@ -44,7 +44,7 @@ type Provenance struct {
 	Signature         []Signature        `bson:"signature,omitempty" json:"signature,omitempty"`
 }
 type ProvenanceAgent struct {
-	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`
@@ -53,7 +53,7 @@ type ProvenanceAgent struct {
 	OnBehalfOf        *Reference        `bson:"onBehalfOf,omitempty" json:"onBehalfOf,omitempty"`
 }
 type ProvenanceEntity struct {
-	Id                *string              `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Role              ProvenanceEntityRole `bson:"role" json:"role"`

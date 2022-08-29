@@ -24,14 +24,14 @@ import (
 
 // Parameters is documented here http://hl7.org/fhir/StructureDefinition/Parameters
 type Parameters struct {
-	Id            *string               `bson:"id,omitempty" json:"id,omitempty"`
+	ID            *string               `bson:"id,omitempty" json:"id,omitempty"`
 	Meta          *Meta                 `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules *string               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language      *string               `bson:"language,omitempty" json:"language,omitempty"`
 	Parameter     []ParametersParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
 }
 type ParametersParameter struct {
-	Id                       *string               `bson:"id,omitempty" json:"id,omitempty"`
+	ID                       *string               `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name                     string                `bson:"name" json:"name"`
@@ -42,7 +42,7 @@ type ParametersParameter struct {
 	ValueDate                *string               `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
 	ValueDateTime            *string               `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
 	ValueDecimal             *float64              `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
-	ValueId                  *string               `bson:"valueId,omitempty" json:"valueId,omitempty"`
+	ValueID                  *string               `bson:"valueID,omitempty" json:"valueID,omitempty"`
 	ValueInstant             *string               `bson:"valueInstant,omitempty" json:"valueInstant,omitempty"`
 	ValueInteger             *int                  `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
 	ValueMarkdown            *string               `bson:"valueMarkdown,omitempty" json:"valueMarkdown,omitempty"`

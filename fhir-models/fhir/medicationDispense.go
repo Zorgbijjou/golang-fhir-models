@@ -24,7 +24,7 @@ import (
 
 // MedicationDispense is documented here http://hl7.org/fhir/StructureDefinition/MedicationDispense
 type MedicationDispense struct {
-	Id                          *string                         `bson:"id,omitempty" json:"id,omitempty"`
+	ID                          *string                         `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                        *Meta                           `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules               *string                         `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language                    *string                         `bson:"language,omitempty" json:"language,omitempty"`
@@ -59,14 +59,14 @@ type MedicationDispense struct {
 	EventHistory                []Reference                     `bson:"eventHistory,omitempty" json:"eventHistory,omitempty"`
 }
 type MedicationDispensePerformer struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Function          *CodeableConcept `bson:"function,omitempty" json:"function,omitempty"`
 	Actor             Reference        `bson:"actor" json:"actor"`
 }
 type MedicationDispenseSubstitution struct {
-	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	WasSubstituted    bool              `bson:"wasSubstituted" json:"wasSubstituted"`

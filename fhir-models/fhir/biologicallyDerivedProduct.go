@@ -24,7 +24,7 @@ import (
 
 // BiologicallyDerivedProduct is documented here http://hl7.org/fhir/StructureDefinition/BiologicallyDerivedProduct
 type BiologicallyDerivedProduct struct {
-	Id                *string                                 `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                 `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                                   `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                                 `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                                 `bson:"language,omitempty" json:"language,omitempty"`
@@ -44,7 +44,7 @@ type BiologicallyDerivedProduct struct {
 	Storage           []BiologicallyDerivedProductStorage     `bson:"storage,omitempty" json:"storage,omitempty"`
 }
 type BiologicallyDerivedProductCollection struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Collector         *Reference  `bson:"collector,omitempty" json:"collector,omitempty"`
@@ -53,7 +53,7 @@ type BiologicallyDerivedProductCollection struct {
 	CollectedPeriod   *Period     `bson:"collectedPeriod,omitempty" json:"collectedPeriod,omitempty"`
 }
 type BiologicallyDerivedProductProcessing struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description       *string          `bson:"description,omitempty" json:"description,omitempty"`
@@ -63,7 +63,7 @@ type BiologicallyDerivedProductProcessing struct {
 	TimePeriod        *Period          `bson:"timePeriod,omitempty" json:"timePeriod,omitempty"`
 }
 type BiologicallyDerivedProductManipulation struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description       *string     `bson:"description,omitempty" json:"description,omitempty"`
@@ -71,7 +71,7 @@ type BiologicallyDerivedProductManipulation struct {
 	TimePeriod        *Period     `bson:"timePeriod,omitempty" json:"timePeriod,omitempty"`
 }
 type BiologicallyDerivedProductStorage struct {
-	Id                *string                                 `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                 `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                             `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description       *string                                 `bson:"description,omitempty" json:"description,omitempty"`

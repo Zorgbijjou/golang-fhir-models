@@ -19,7 +19,7 @@ package fhir
 
 // ProdCharacteristic is documented here http://hl7.org/fhir/StructureDefinition/ProdCharacteristic
 type ProdCharacteristic struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Height            *Quantity        `bson:"height,omitempty" json:"height,omitempty"`

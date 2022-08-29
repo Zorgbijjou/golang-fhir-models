@@ -24,7 +24,7 @@ import (
 
 // Composition is documented here http://hl7.org/fhir/StructureDefinition/Composition
 type Composition struct {
-	Id                *string                `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                  `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                `bson:"language,omitempty" json:"language,omitempty"`
@@ -48,7 +48,7 @@ type Composition struct {
 	Section           []CompositionSection   `bson:"section,omitempty" json:"section,omitempty"`
 }
 type CompositionAttester struct {
-	Id                *string                    `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                    `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Mode              CompositionAttestationMode `bson:"mode" json:"mode"`
@@ -56,7 +56,7 @@ type CompositionAttester struct {
 	Party             *Reference                 `bson:"party,omitempty" json:"party,omitempty"`
 }
 type CompositionRelatesTo struct {
-	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              DocumentRelationshipType `bson:"code" json:"code"`
@@ -64,7 +64,7 @@ type CompositionRelatesTo struct {
 	TargetReference   Reference                `bson:"targetReference" json:"targetReference"`
 }
 type CompositionEvent struct {
-	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              []CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
@@ -72,7 +72,7 @@ type CompositionEvent struct {
 	Detail            []Reference       `bson:"detail,omitempty" json:"detail,omitempty"`
 }
 type CompositionSection struct {
-	Id                *string              `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Title             *string              `bson:"title,omitempty" json:"title,omitempty"`

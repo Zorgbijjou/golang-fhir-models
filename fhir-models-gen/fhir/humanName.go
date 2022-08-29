@@ -19,7 +19,7 @@ package fhir
 
 // HumanName is documented here http://hl7.org/fhir/StructureDefinition/HumanName
 type HumanName struct {
-	Id        *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID        *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	Use       *NameUse    `bson:"use,omitempty" json:"use,omitempty"`
 	Text      *string     `bson:"text,omitempty" json:"text,omitempty"`

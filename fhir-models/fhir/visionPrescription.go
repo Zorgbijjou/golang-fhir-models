@@ -24,7 +24,7 @@ import (
 
 // VisionPrescription is documented here http://hl7.org/fhir/StructureDefinition/VisionPrescription
 type VisionPrescription struct {
-	Id                *string                               `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                               `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                                 `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                               `bson:"language,omitempty" json:"language,omitempty"`
@@ -41,7 +41,7 @@ type VisionPrescription struct {
 	LensSpecification []VisionPrescriptionLensSpecification `bson:"lensSpecification" json:"lensSpecification"`
 }
 type VisionPrescriptionLensSpecification struct {
-	Id                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Product           CodeableConcept                            `bson:"product" json:"product"`
@@ -60,7 +60,7 @@ type VisionPrescriptionLensSpecification struct {
 	Note              []Annotation                               `bson:"note,omitempty" json:"note,omitempty"`
 }
 type VisionPrescriptionLensSpecificationPrism struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Amount            float64     `bson:"amount" json:"amount"`

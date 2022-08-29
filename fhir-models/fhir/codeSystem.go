@@ -24,7 +24,7 @@ import (
 
 // CodeSystem is documented here http://hl7.org/fhir/StructureDefinition/CodeSystem
 type CodeSystem struct {
-	Id                *string                     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                       `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                     `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                     `bson:"language,omitempty" json:"language,omitempty"`
@@ -59,7 +59,7 @@ type CodeSystem struct {
 	Concept           []CodeSystemConcept         `bson:"concept,omitempty" json:"concept,omitempty"`
 }
 type CodeSystemFilter struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              string           `bson:"code" json:"code"`
@@ -68,7 +68,7 @@ type CodeSystemFilter struct {
 	Value             string           `bson:"value" json:"value"`
 }
 type CodeSystemProperty struct {
-	Id                *string      `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              string       `bson:"code" json:"code"`
@@ -77,7 +77,7 @@ type CodeSystemProperty struct {
 	Type              PropertyType `bson:"type" json:"type"`
 }
 type CodeSystemConcept struct {
-	Id                *string                        `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                        `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              string                         `bson:"code" json:"code"`
@@ -88,7 +88,7 @@ type CodeSystemConcept struct {
 	Concept           []CodeSystemConcept            `bson:"concept,omitempty" json:"concept,omitempty"`
 }
 type CodeSystemConceptDesignation struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Language          *string     `bson:"language,omitempty" json:"language,omitempty"`
@@ -96,7 +96,7 @@ type CodeSystemConceptDesignation struct {
 	Value             string      `bson:"value" json:"value"`
 }
 type CodeSystemConceptProperty struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              string      `bson:"code" json:"code"`

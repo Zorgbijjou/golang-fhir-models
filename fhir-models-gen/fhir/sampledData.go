@@ -19,7 +19,7 @@ package fhir
 
 // SampledData is documented here http://hl7.org/fhir/StructureDefinition/SampledData
 type SampledData struct {
-	Id         *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID         *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension  []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	Origin     Quantity    `bson:"origin" json:"origin"`
 	Period     float64     `bson:"period" json:"period"`

@@ -24,7 +24,7 @@ import (
 
 // VerificationResult is documented here http://hl7.org/fhir/StructureDefinition/VerificationResult
 type VerificationResult struct {
-	Id                *string                           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                           `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                             `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                           `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                           `bson:"language,omitempty" json:"language,omitempty"`
@@ -47,7 +47,7 @@ type VerificationResult struct {
 	Validator         []VerificationResultValidator     `bson:"validator,omitempty" json:"validator,omitempty"`
 }
 type VerificationResultPrimarySource struct {
-	Id                  *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                  *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension           []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Who                 *Reference        `bson:"who,omitempty" json:"who,omitempty"`
@@ -59,7 +59,7 @@ type VerificationResultPrimarySource struct {
 	PushTypeAvailable   []CodeableConcept `bson:"pushTypeAvailable,omitempty" json:"pushTypeAvailable,omitempty"`
 }
 type VerificationResultAttestation struct {
-	Id                        *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                        *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                 []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Who                       *Reference       `bson:"who,omitempty" json:"who,omitempty"`
@@ -72,7 +72,7 @@ type VerificationResultAttestation struct {
 	SourceSignature           *Signature       `bson:"sourceSignature,omitempty" json:"sourceSignature,omitempty"`
 }
 type VerificationResultValidator struct {
-	Id                   *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                   *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Organization         Reference   `bson:"organization" json:"organization"`

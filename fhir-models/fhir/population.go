@@ -19,7 +19,7 @@ package fhir
 
 // Population is documented here http://hl7.org/fhir/StructureDefinition/Population
 type Population struct {
-	Id                     *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                     *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension              []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension      []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	AgeRange               *Range           `bson:"ageRange,omitempty" json:"ageRange,omitempty"`

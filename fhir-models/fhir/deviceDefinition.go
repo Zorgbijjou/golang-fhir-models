@@ -24,7 +24,7 @@ import (
 
 // DeviceDefinition is documented here http://hl7.org/fhir/StructureDefinition/DeviceDefinition
 type DeviceDefinition struct {
-	Id                      *string                               `bson:"id,omitempty" json:"id,omitempty"`
+	ID                      *string                               `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                    *Meta                                 `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules           *string                               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language                *string                               `bson:"language,omitempty" json:"language,omitempty"`
@@ -56,7 +56,7 @@ type DeviceDefinition struct {
 	Material                []DeviceDefinitionMaterial            `bson:"material,omitempty" json:"material,omitempty"`
 }
 type DeviceDefinitionUdiDeviceIdentifier struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	DeviceIdentifier  string      `bson:"deviceIdentifier" json:"deviceIdentifier"`
@@ -64,28 +64,28 @@ type DeviceDefinitionUdiDeviceIdentifier struct {
 	Jurisdiction      string      `bson:"jurisdiction" json:"jurisdiction"`
 }
 type DeviceDefinitionDeviceName struct {
-	Id                *string        `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string        `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              string         `bson:"name" json:"name"`
 	Type              DeviceNameType `bson:"type" json:"type"`
 }
 type DeviceDefinitionSpecialization struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	SystemType        string      `bson:"systemType" json:"systemType"`
 	Version           *string     `bson:"version,omitempty" json:"version,omitempty"`
 }
 type DeviceDefinitionCapability struct {
-	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              CodeableConcept   `bson:"type" json:"type"`
 	Description       []CodeableConcept `bson:"description,omitempty" json:"description,omitempty"`
 }
 type DeviceDefinitionProperty struct {
-	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              CodeableConcept   `bson:"type" json:"type"`
@@ -93,7 +93,7 @@ type DeviceDefinitionProperty struct {
 	ValueCode         []CodeableConcept `bson:"valueCode,omitempty" json:"valueCode,omitempty"`
 }
 type DeviceDefinitionMaterial struct {
-	Id                  *string         `bson:"id,omitempty" json:"id,omitempty"`
+	ID                  *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension           []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Substance           CodeableConcept `bson:"substance" json:"substance"`

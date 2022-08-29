@@ -19,7 +19,7 @@ package fhir
 
 // Timing is documented here http://hl7.org/fhir/StructureDefinition/Timing
 type Timing struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Event             []string         `bson:"event,omitempty" json:"event,omitempty"`
@@ -27,7 +27,7 @@ type Timing struct {
 	Code              *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
 }
 type TimingRepeat struct {
-	Id             *string      `bson:"id,omitempty" json:"id,omitempty"`
+	ID             *string      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension      []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
 	BoundsDuration *Duration    `bson:"boundsDuration,omitempty" json:"boundsDuration,omitempty"`
 	BoundsRange    *Range       `bson:"boundsRange,omitempty" json:"boundsRange,omitempty"`

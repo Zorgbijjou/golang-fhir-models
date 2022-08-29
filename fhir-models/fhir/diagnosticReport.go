@@ -24,7 +24,7 @@ import (
 
 // DiagnosticReport is documented here http://hl7.org/fhir/StructureDefinition/DiagnosticReport
 type DiagnosticReport struct {
-	Id                 *string                 `bson:"id,omitempty" json:"id,omitempty"`
+	ID                 *string                 `bson:"id,omitempty" json:"id,omitempty"`
 	Meta               *Meta                   `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules      *string                 `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language           *string                 `bson:"language,omitempty" json:"language,omitempty"`
@@ -52,7 +52,7 @@ type DiagnosticReport struct {
 	PresentedForm      []Attachment            `bson:"presentedForm,omitempty" json:"presentedForm,omitempty"`
 }
 type DiagnosticReportMedia struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Comment           *string     `bson:"comment,omitempty" json:"comment,omitempty"`

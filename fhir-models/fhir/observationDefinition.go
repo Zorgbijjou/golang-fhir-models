@@ -24,7 +24,7 @@ import (
 
 // ObservationDefinition is documented here http://hl7.org/fhir/StructureDefinition/ObservationDefinition
 type ObservationDefinition struct {
-	Id                     *string                                   `bson:"id,omitempty" json:"id,omitempty"`
+	ID                     *string                                   `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                   *Meta                                     `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules          *string                                   `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language               *string                                   `bson:"language,omitempty" json:"language,omitempty"`
@@ -46,7 +46,7 @@ type ObservationDefinition struct {
 	CriticalCodedValueSet  *Reference                                `bson:"criticalCodedValueSet,omitempty" json:"criticalCodedValueSet,omitempty"`
 }
 type ObservationDefinitionQuantitativeDetails struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	CustomaryUnit     *CodeableConcept `bson:"customaryUnit,omitempty" json:"customaryUnit,omitempty"`
@@ -55,7 +55,7 @@ type ObservationDefinitionQuantitativeDetails struct {
 	DecimalPrecision  *int             `bson:"decimalPrecision,omitempty" json:"decimalPrecision,omitempty"`
 }
 type ObservationDefinitionQualifiedInterval struct {
-	Id                *string                   `bson:"id,omitempty" json:"id,omitempty"`
+	ID                *string                   `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Category          *ObservationRangeCategory `bson:"category,omitempty" json:"category,omitempty"`
