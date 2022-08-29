@@ -1,5 +1,7 @@
 # Golang FHIR Models
 
+**This is a fork of https://github.com/samply/golang-fhir-models with support for polymorphic types and several fixes.**
+
 This repository contains a FHIR® R4 models for Go. The models consist of Go structs for each resource and data type. The structs are suitable for JSON encoding/decoding. 
 
 ## Features
@@ -11,16 +13,11 @@ This repository contains a FHIR® R4 models for Go. The models consist of Go str
 
 ## Usage
 
-In your project, import `github.com/michaelsauter/golang-fhir-models/fhir-models/fhir` and you are done.
-
-## TODOs
-
-* [Support Polymorphic Data Elements](https://github.com/samply/golang-fhir-models/issues/1)
-* [Support ValueSets Referring to Multiple CodeSystems](https://github.com/samply/golang-fhir-models/issues/2)
+In your project, import `github.com/bix-digital/golang-fhir-models/fhir-models/fhir` and you are done.
 
 ## Develop
 
-This repository contains two Go modules, the generated models itself and the generator. Both modules use `go generate` to generate the FHIR models. For `go generate` to work, you have to install the generator first. To do that, run `go install` in the `fhir-models-gen` directory. After that, you can regenerate the FHIR Models under `fhir-models` and the subset of FHIR models under `fhir-models-gen`.
+This repository contains two Go modules, the generated models itself and the generator. Both modules use `go generate` to generate the FHIR models and are executed via `./gen-resources.sh` under `fhir-models-gen` and `fhir-models`.
 
 ## License
 

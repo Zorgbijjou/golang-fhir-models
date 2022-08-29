@@ -1,4 +1,4 @@
-module github.com/michaelsauter/golang-fhir-models/fhir-models-gen
+module github.com/bix-digital/golang-fhir-models/fhir-models-gen
 
 go 1.13
 

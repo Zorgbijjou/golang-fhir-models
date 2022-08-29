@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"strings"
 
+	"github.com/bix-digital/golang-fhir-models/fhir-models-gen/fhir"
 	"github.com/dave/jennifer/jen"
-	"github.com/michaelsauter/golang-fhir-models/fhir-models-gen/fhir"
 )
 
 func generateValueSet(resources ResourceMap, valueSet fhir.ValueSet) (*jen.File, error) {
