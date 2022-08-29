@@ -15,6 +15,7 @@
 package fhir
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"strings"
@@ -33,7 +34,11 @@ const (
 )
 
 func (code ParticipantRequired) MarshalJSON() ([]byte, error) {
-	return json.Marshal(code.Code())
+	buffer := bytes.Buffer{}
+	enc := json.NewEncoder(&buffer)
+	enc.SetEscapeHTML(false)
+	err := enc.Encode(code.Code())
+	return buffer.Bytes(), err
 }
 func (code *ParticipantRequired) UnmarshalJSON(json []byte) error {
 	s := strings.Trim(string(json), "\"")
