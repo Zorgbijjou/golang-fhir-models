@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/bix-digital/golang-fhir-models/fhir-models-gen/fhir"
+	"github.com/Zorgbijjou/golang-fhir-models/fhir-models-gen/fhir"
 	"github.com/dave/jennifer/jen"
 )
 

@@ -1,3 +1,3 @@
-module github.com/bix-digital/golang-fhir-models/fhir-models
+module github.com/zorgbijjou/golang-fhir-models/fhir-models
 
-go 1.18
+go 1.23

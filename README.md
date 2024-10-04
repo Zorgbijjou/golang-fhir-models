@@ -1,6 +1,6 @@
 # Golang FHIR Models
 
-**This is a fork of https://github.com/samply/golang-fhir-models with support for polymorphic types and several fixes.**
+**This is a fork of https://github.com/bix-digital/golang-fhir-models with support for polymorphic types and several fixes.**
 
 This repository contains a FHIR® R4 models for Go. The models consist of Go structs for each resource and data type. The structs are suitable for JSON encoding/decoding. 
 
@@ -13,7 +13,7 @@ This repository contains a FHIR® R4 models for Go. The models consist of Go str
 
 ## Usage
 
-In your project, import `github.com/bix-digital/golang-fhir-models/fhir-models/fhir` and you are done.
+In your project, import `github.com/Zorgbijjou/golang-fhir-models/fhir-models/fhir` and you are done.
 
 ## Develop
 
