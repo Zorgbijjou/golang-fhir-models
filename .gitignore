@@ -33,3 +33,5 @@ go.work
 
 # draw.io backup files
 *.bkp
+
+*.json

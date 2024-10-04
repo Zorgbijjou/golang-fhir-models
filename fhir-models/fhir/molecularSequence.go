@@ -24,7 +24,7 @@ import (
 
 // MolecularSequence is documented here http://hl7.org/fhir/StructureDefinition/MolecularSequence
 type MolecularSequence struct {
-	ID                *string                             `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                             `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                               `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                             `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                             `bson:"language,omitempty" json:"language,omitempty"`
@@ -49,7 +49,7 @@ type MolecularSequence struct {
 	StructureVariant  []MolecularSequenceStructureVariant `bson:"structureVariant,omitempty" json:"structureVariant,omitempty"`
 }
 type MolecularSequenceReferenceSeq struct {
-	ID                  *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                  *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension           []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Chromosome          *CodeableConcept `bson:"chromosome,omitempty" json:"chromosome,omitempty"`
@@ -63,7 +63,7 @@ type MolecularSequenceReferenceSeq struct {
 	WindowEnd           *int             `bson:"windowEnd,omitempty" json:"windowEnd,omitempty"`
 }
 type MolecularSequenceVariant struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Start             *int        `bson:"start,omitempty" json:"start,omitempty"`
@@ -74,7 +74,7 @@ type MolecularSequenceVariant struct {
 	VariantPointer    *Reference  `bson:"variantPointer,omitempty" json:"variantPointer,omitempty"`
 }
 type MolecularSequenceQuality struct {
-	ID                *string                      `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              string                       `bson:"type" json:"type"`
@@ -94,7 +94,7 @@ type MolecularSequenceQuality struct {
 	Roc               *MolecularSequenceQualityRoc `bson:"roc,omitempty" json:"roc,omitempty"`
 }
 type MolecularSequenceQualityRoc struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Score             []int       `bson:"score,omitempty" json:"score,omitempty"`
@@ -106,7 +106,7 @@ type MolecularSequenceQualityRoc struct {
 	FMeasure          []float64   `bson:"fMeasure,omitempty" json:"fMeasure,omitempty"`
 }
 type MolecularSequenceRepository struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              string      `bson:"type" json:"type"`
@@ -117,7 +117,7 @@ type MolecularSequenceRepository struct {
 	ReadsetId         *string     `bson:"readsetId,omitempty" json:"readsetId,omitempty"`
 }
 type MolecularSequenceStructureVariant struct {
-	ID                *string                                 `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                                 `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                             `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	VariantType       *CodeableConcept                        `bson:"variantType,omitempty" json:"variantType,omitempty"`
@@ -127,14 +127,14 @@ type MolecularSequenceStructureVariant struct {
 	Inner             *MolecularSequenceStructureVariantInner `bson:"inner,omitempty" json:"inner,omitempty"`
 }
 type MolecularSequenceStructureVariantOuter struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Start             *int        `bson:"start,omitempty" json:"start,omitempty"`
 	End               *int        `bson:"end,omitempty" json:"end,omitempty"`
 }
 type MolecularSequenceStructureVariantInner struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Start             *int        `bson:"start,omitempty" json:"start,omitempty"`

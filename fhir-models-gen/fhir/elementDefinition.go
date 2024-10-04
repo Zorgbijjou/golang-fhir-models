@@ -19,7 +19,7 @@ package fhir
 
 // ElementDefinition is documented here http://hl7.org/fhir/StructureDefinition/ElementDefinition
 type ElementDefinition struct {
-	ID                              *string                       `bson:"id,omitempty" json:"id,omitempty"`
+	Id                              *string                       `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                       []Extension                   `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension               []Extension                   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Path                            string                        `bson:"path" json:"path"`
@@ -46,7 +46,7 @@ type ElementDefinition struct {
 	DefaultValueDate                *string                       `bson:"defaultValueDate,omitempty" json:"defaultValueDate,omitempty"`
 	DefaultValueDateTime            *string                       `bson:"defaultValueDateTime,omitempty" json:"defaultValueDateTime,omitempty"`
 	DefaultValueDecimal             *float64                      `bson:"defaultValueDecimal,omitempty" json:"defaultValueDecimal,omitempty"`
-	DefaultValueID                  *string                       `bson:"defaultValueID,omitempty" json:"defaultValueID,omitempty"`
+	DefaultValueId                  *string                       `bson:"defaultValueId,omitempty" json:"defaultValueId,omitempty"`
 	DefaultValueInstant             *string                       `bson:"defaultValueInstant,omitempty" json:"defaultValueInstant,omitempty"`
 	DefaultValueInteger             *int                          `bson:"defaultValueInteger,omitempty" json:"defaultValueInteger,omitempty"`
 	DefaultValueMarkdown            *string                       `bson:"defaultValueMarkdown,omitempty" json:"defaultValueMarkdown,omitempty"`
@@ -98,7 +98,7 @@ type ElementDefinition struct {
 	FixedDate                       *string                       `bson:"fixedDate,omitempty" json:"fixedDate,omitempty"`
 	FixedDateTime                   *string                       `bson:"fixedDateTime,omitempty" json:"fixedDateTime,omitempty"`
 	FixedDecimal                    *float64                      `bson:"fixedDecimal,omitempty" json:"fixedDecimal,omitempty"`
-	FixedID                         *string                       `bson:"fixedID,omitempty" json:"fixedID,omitempty"`
+	FixedId                         *string                       `bson:"fixedId,omitempty" json:"fixedId,omitempty"`
 	FixedInstant                    *string                       `bson:"fixedInstant,omitempty" json:"fixedInstant,omitempty"`
 	FixedInteger                    *int                          `bson:"fixedInteger,omitempty" json:"fixedInteger,omitempty"`
 	FixedMarkdown                   *string                       `bson:"fixedMarkdown,omitempty" json:"fixedMarkdown,omitempty"`
@@ -148,7 +148,7 @@ type ElementDefinition struct {
 	PatternDate                     *string                       `bson:"patternDate,omitempty" json:"patternDate,omitempty"`
 	PatternDateTime                 *string                       `bson:"patternDateTime,omitempty" json:"patternDateTime,omitempty"`
 	PatternDecimal                  *float64                      `bson:"patternDecimal,omitempty" json:"patternDecimal,omitempty"`
-	PatternID                       *string                       `bson:"patternID,omitempty" json:"patternID,omitempty"`
+	PatternId                       *string                       `bson:"patternId,omitempty" json:"patternId,omitempty"`
 	PatternInstant                  *string                       `bson:"patternInstant,omitempty" json:"patternInstant,omitempty"`
 	PatternInteger                  *int                          `bson:"patternInteger,omitempty" json:"patternInteger,omitempty"`
 	PatternMarkdown                 *string                       `bson:"patternMarkdown,omitempty" json:"patternMarkdown,omitempty"`
@@ -221,7 +221,7 @@ type ElementDefinition struct {
 	Mapping                         []ElementDefinitionMapping    `bson:"mapping,omitempty" json:"mapping,omitempty"`
 }
 type ElementDefinitionSlicing struct {
-	ID            *string                                 `bson:"id,omitempty" json:"id,omitempty"`
+	Id            *string                                 `bson:"id,omitempty" json:"id,omitempty"`
 	Extension     []Extension                             `bson:"extension,omitempty" json:"extension,omitempty"`
 	Discriminator []ElementDefinitionSlicingDiscriminator `bson:"discriminator,omitempty" json:"discriminator,omitempty"`
 	Description   *string                                 `bson:"description,omitempty" json:"description,omitempty"`
@@ -229,20 +229,20 @@ type ElementDefinitionSlicing struct {
 	Rules         SlicingRules                            `bson:"rules" json:"rules"`
 }
 type ElementDefinitionSlicingDiscriminator struct {
-	ID        *string           `bson:"id,omitempty" json:"id,omitempty"`
+	Id        *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	Type      DiscriminatorType `bson:"type" json:"type"`
 	Path      string            `bson:"path" json:"path"`
 }
 type ElementDefinitionBase struct {
-	ID        *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id        *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	Path      string      `bson:"path" json:"path"`
 	Min       int         `bson:"min" json:"min"`
 	Max       string      `bson:"max" json:"max"`
 }
 type ElementDefinitionType struct {
-	ID            *string                `bson:"id,omitempty" json:"id,omitempty"`
+	Id            *string                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension     []Extension            `bson:"extension,omitempty" json:"extension,omitempty"`
 	Code          string                 `bson:"code" json:"code"`
 	Profile       []string               `bson:"profile,omitempty" json:"profile,omitempty"`
@@ -251,7 +251,7 @@ type ElementDefinitionType struct {
 	Versioning    *ReferenceVersionRules `bson:"versioning,omitempty" json:"versioning,omitempty"`
 }
 type ElementDefinitionExample struct {
-	ID                       *string              `bson:"id,omitempty" json:"id,omitempty"`
+	Id                       *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	Label                    string               `bson:"label" json:"label"`
 	ValueBase64Binary        *string              `bson:"valueBase64Binary,omitempty" json:"valueBase64Binary,omitempty"`
@@ -261,7 +261,7 @@ type ElementDefinitionExample struct {
 	ValueDate                *string              `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
 	ValueDateTime            *string              `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
 	ValueDecimal             *float64             `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
-	ValueID                  *string              `bson:"valueID,omitempty" json:"valueID,omitempty"`
+	ValueId                  *string              `bson:"valueId,omitempty" json:"valueId,omitempty"`
 	ValueInstant             *string              `bson:"valueInstant,omitempty" json:"valueInstant,omitempty"`
 	ValueInteger             *int                 `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
 	ValueMarkdown            *string              `bson:"valueMarkdown,omitempty" json:"valueMarkdown,omitempty"`
@@ -306,7 +306,7 @@ type ElementDefinitionExample struct {
 	ValueMeta                *Meta                `bson:"valueMeta,omitempty" json:"valueMeta,omitempty"`
 }
 type ElementDefinitionConstraint struct {
-	ID           *string            `bson:"id,omitempty" json:"id,omitempty"`
+	Id           *string            `bson:"id,omitempty" json:"id,omitempty"`
 	Extension    []Extension        `bson:"extension,omitempty" json:"extension,omitempty"`
 	Key          string             `bson:"key" json:"key"`
 	Requirements *string            `bson:"requirements,omitempty" json:"requirements,omitempty"`
@@ -317,14 +317,14 @@ type ElementDefinitionConstraint struct {
 	Source       *string            `bson:"source,omitempty" json:"source,omitempty"`
 }
 type ElementDefinitionBinding struct {
-	ID          *string         `bson:"id,omitempty" json:"id,omitempty"`
+	Id          *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension   []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	Strength    BindingStrength `bson:"strength" json:"strength"`
 	Description *string         `bson:"description,omitempty" json:"description,omitempty"`
 	ValueSet    *string         `bson:"valueSet,omitempty" json:"valueSet,omitempty"`
 }
 type ElementDefinitionMapping struct {
-	ID        *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id        *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	Identity  string      `bson:"identity" json:"identity"`
 	Language  *string     `bson:"language,omitempty" json:"language,omitempty"`

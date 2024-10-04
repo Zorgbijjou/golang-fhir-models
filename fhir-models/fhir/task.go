@@ -24,7 +24,7 @@ import (
 
 // Task is documented here http://hl7.org/fhir/StructureDefinition/Task
 type Task struct {
-	ID                    *string           `bson:"id,omitempty" json:"id,omitempty"`
+	Id                    *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                  *Meta             `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules         *string           `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language              *string           `bson:"language,omitempty" json:"language,omitempty"`
@@ -64,7 +64,7 @@ type Task struct {
 	Output                []TaskOutput      `bson:"output,omitempty" json:"output,omitempty"`
 }
 type TaskRestriction struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Repetitions       *int        `bson:"repetitions,omitempty" json:"repetitions,omitempty"`
@@ -72,7 +72,7 @@ type TaskRestriction struct {
 	Recipient         []Reference `bson:"recipient,omitempty" json:"recipient,omitempty"`
 }
 type TaskInput struct {
-	ID                       *string              `bson:"id,omitempty" json:"id,omitempty"`
+	Id                       *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type                     CodeableConcept      `bson:"type" json:"type"`
@@ -83,7 +83,7 @@ type TaskInput struct {
 	ValueDate                *string              `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
 	ValueDateTime            *string              `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
 	ValueDecimal             *float64             `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
-	ValueID                  *string              `bson:"valueID,omitempty" json:"valueID,omitempty"`
+	ValueId                  *string              `bson:"valueId,omitempty" json:"valueId,omitempty"`
 	ValueInstant             *string              `bson:"valueInstant,omitempty" json:"valueInstant,omitempty"`
 	ValueInteger             *int                 `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
 	ValueMarkdown            *string              `bson:"valueMarkdown,omitempty" json:"valueMarkdown,omitempty"`
@@ -128,7 +128,7 @@ type TaskInput struct {
 	ValueMeta                *Meta                `bson:"valueMeta,omitempty" json:"valueMeta,omitempty"`
 }
 type TaskOutput struct {
-	ID                       *string              `bson:"id,omitempty" json:"id,omitempty"`
+	Id                       *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type                     CodeableConcept      `bson:"type" json:"type"`
@@ -139,7 +139,7 @@ type TaskOutput struct {
 	ValueDate                *string              `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
 	ValueDateTime            *string              `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
 	ValueDecimal             *float64             `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
-	ValueID                  *string              `bson:"valueID,omitempty" json:"valueID,omitempty"`
+	ValueId                  *string              `bson:"valueId,omitempty" json:"valueId,omitempty"`
 	ValueInstant             *string              `bson:"valueInstant,omitempty" json:"valueInstant,omitempty"`
 	ValueInteger             *int                 `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
 	ValueMarkdown            *string              `bson:"valueMarkdown,omitempty" json:"valueMarkdown,omitempty"`

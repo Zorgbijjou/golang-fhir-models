@@ -24,7 +24,7 @@ import (
 
 // AllergyIntolerance is documented here http://hl7.org/fhir/StructureDefinition/AllergyIntolerance
 type AllergyIntolerance struct {
-	ID                 *string                        `bson:"id,omitempty" json:"id,omitempty"`
+	Id                 *string                        `bson:"id,omitempty" json:"id,omitempty"`
 	Meta               *Meta                          `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules      *string                        `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language           *string                        `bson:"language,omitempty" json:"language,omitempty"`
@@ -53,7 +53,7 @@ type AllergyIntolerance struct {
 	Reaction           []AllergyIntoleranceReaction   `bson:"reaction,omitempty" json:"reaction,omitempty"`
 }
 type AllergyIntoleranceReaction struct {
-	ID                *string                     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Substance         *CodeableConcept            `bson:"substance,omitempty" json:"substance,omitempty"`

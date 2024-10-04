@@ -24,7 +24,7 @@ import (
 
 // Goal is documented here http://hl7.org/fhir/StructureDefinition/Goal
 type Goal struct {
-	ID                   *string             `bson:"id,omitempty" json:"id,omitempty"`
+	Id                   *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                 *Meta               `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules        *string             `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language             *string             `bson:"language,omitempty" json:"language,omitempty"`
@@ -50,7 +50,7 @@ type Goal struct {
 	OutcomeReference     []Reference         `bson:"outcomeReference,omitempty" json:"outcomeReference,omitempty"`
 }
 type GoalTarget struct {
-	ID                    *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                    *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension             []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension     []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Measure               *CodeableConcept `bson:"measure,omitempty" json:"measure,omitempty"`

@@ -24,7 +24,7 @@ import (
 
 // MedicinalProductPharmaceutical is documented here http://hl7.org/fhir/StructureDefinition/MedicinalProductPharmaceutical
 type MedicinalProductPharmaceutical struct {
-	ID                    *string                                               `bson:"id,omitempty" json:"id,omitempty"`
+	Id                    *string                                               `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                  *Meta                                                 `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules         *string                                               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language              *string                                               `bson:"language,omitempty" json:"language,omitempty"`
@@ -40,14 +40,14 @@ type MedicinalProductPharmaceutical struct {
 	RouteOfAdministration []MedicinalProductPharmaceuticalRouteOfAdministration `bson:"routeOfAdministration" json:"routeOfAdministration"`
 }
 type MedicinalProductPharmaceuticalCharacteristics struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              CodeableConcept  `bson:"code" json:"code"`
 	Status            *CodeableConcept `bson:"status,omitempty" json:"status,omitempty"`
 }
 type MedicinalProductPharmaceuticalRouteOfAdministration struct {
-	ID                        *string                                                            `bson:"id,omitempty" json:"id,omitempty"`
+	Id                        *string                                                            `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                 []Extension                                                        `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension                                                        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code                      CodeableConcept                                                    `bson:"code" json:"code"`
@@ -59,14 +59,14 @@ type MedicinalProductPharmaceuticalRouteOfAdministration struct {
 	TargetSpecies             []MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies `bson:"targetSpecies,omitempty" json:"targetSpecies,omitempty"`
 }
 type MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies struct {
-	ID                *string                                                                            `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                                                                            `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                                                        `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                                                        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              CodeableConcept                                                                    `bson:"code" json:"code"`
 	WithdrawalPeriod  []MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod `bson:"withdrawalPeriod,omitempty" json:"withdrawalPeriod,omitempty"`
 }
 type MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod struct {
-	ID                    *string         `bson:"id,omitempty" json:"id,omitempty"`
+	Id                    *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension             []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension     []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Tissue                CodeableConcept `bson:"tissue" json:"tissue"`

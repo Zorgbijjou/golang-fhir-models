@@ -24,7 +24,7 @@ import (
 
 // MedicationRequest is documented here http://hl7.org/fhir/StructureDefinition/MedicationRequest
 type MedicationRequest struct {
-	ID                        *string                           `bson:"id,omitempty" json:"id,omitempty"`
+	Id                        *string                           `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                      *Meta                             `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules             *string                           `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language                  *string                           `bson:"language,omitempty" json:"language,omitempty"`
@@ -67,7 +67,7 @@ type MedicationRequest struct {
 	EventHistory              []Reference                       `bson:"eventHistory,omitempty" json:"eventHistory,omitempty"`
 }
 type MedicationRequestDispenseRequest struct {
-	ID                     *string                                      `bson:"id,omitempty" json:"id,omitempty"`
+	Id                     *string                                      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension              []Extension                                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension      []Extension                                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	InitialFill            *MedicationRequestDispenseRequestInitialFill `bson:"initialFill,omitempty" json:"initialFill,omitempty"`
@@ -79,14 +79,14 @@ type MedicationRequestDispenseRequest struct {
 	Performer              *Reference                                   `bson:"performer,omitempty" json:"performer,omitempty"`
 }
 type MedicationRequestDispenseRequestInitialFill struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Quantity          *Quantity   `bson:"quantity,omitempty" json:"quantity,omitempty"`
 	Duration          *Duration   `bson:"duration,omitempty" json:"duration,omitempty"`
 }
 type MedicationRequestSubstitution struct {
-	ID                     *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                     *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension              []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension      []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	AllowedBoolean         *bool            `bson:"allowedBoolean,omitempty" json:"allowedBoolean,omitempty"`

@@ -24,7 +24,7 @@ import (
 
 // MedicinalProductPackaged is documented here http://hl7.org/fhir/StructureDefinition/MedicinalProductPackaged
 type MedicinalProductPackaged struct {
-	ID                     *string                                   `bson:"id,omitempty" json:"id,omitempty"`
+	Id                     *string                                   `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                   *Meta                                     `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules          *string                                   `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language               *string                                   `bson:"language,omitempty" json:"language,omitempty"`
@@ -42,14 +42,14 @@ type MedicinalProductPackaged struct {
 	PackageItem            []MedicinalProductPackagedPackageItem     `bson:"packageItem" json:"packageItem"`
 }
 type MedicinalProductPackagedBatchIdentifier struct {
-	ID                 *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                 *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension          []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	OuterPackaging     Identifier  `bson:"outerPackaging" json:"outerPackaging"`
 	ImmediatePackaging *Identifier `bson:"immediatePackaging,omitempty" json:"immediatePackaging,omitempty"`
 }
 type MedicinalProductPackagedPackageItem struct {
-	ID                      *string                               `bson:"id,omitempty" json:"id,omitempty"`
+	Id                      *string                               `bson:"id,omitempty" json:"id,omitempty"`
 	Extension               []Extension                           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension       []Extension                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier              []Identifier                          `bson:"identifier,omitempty" json:"identifier,omitempty"`

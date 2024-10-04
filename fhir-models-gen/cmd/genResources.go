@@ -494,7 +494,7 @@ func requiredValueSetBinding(elementDefinition fhir.ElementDefinition) *string {
 
 func title(input string) string {
 	if EqualFold(input, "id") {
-		return "ID"
+		return "Id"
 	}
 	return Title(input)
 }

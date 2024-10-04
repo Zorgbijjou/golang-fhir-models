@@ -24,7 +24,7 @@ import (
 
 // PractitionerRole is documented here http://hl7.org/fhir/StructureDefinition/PractitionerRole
 type PractitionerRole struct {
-	ID                     *string                         `bson:"id,omitempty" json:"id,omitempty"`
+	Id                     *string                         `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                   *Meta                           `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules          *string                         `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language               *string                         `bson:"language,omitempty" json:"language,omitempty"`
@@ -47,7 +47,7 @@ type PractitionerRole struct {
 	Endpoint               []Reference                     `bson:"endpoint,omitempty" json:"endpoint,omitempty"`
 }
 type PractitionerRoleAvailableTime struct {
-	ID                 *string      `bson:"id,omitempty" json:"id,omitempty"`
+	Id                 *string      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension          []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	DaysOfWeek         []DaysOfWeek `bson:"daysOfWeek,omitempty" json:"daysOfWeek,omitempty"`
@@ -56,7 +56,7 @@ type PractitionerRoleAvailableTime struct {
 	AvailableEndTime   *string      `bson:"availableEndTime,omitempty" json:"availableEndTime,omitempty"`
 }
 type PractitionerRoleNotAvailable struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description       string      `bson:"description" json:"description"`

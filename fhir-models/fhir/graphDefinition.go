@@ -24,7 +24,7 @@ import (
 
 // GraphDefinition is documented here http://hl7.org/fhir/StructureDefinition/GraphDefinition
 type GraphDefinition struct {
-	ID                *string               `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string               `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                 `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string               `bson:"language,omitempty" json:"language,omitempty"`
@@ -48,7 +48,7 @@ type GraphDefinition struct {
 	Link              []GraphDefinitionLink `bson:"link,omitempty" json:"link,omitempty"`
 }
 type GraphDefinitionLink struct {
-	ID                *string                     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                 `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                 `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Path              *string                     `bson:"path,omitempty" json:"path,omitempty"`
@@ -59,7 +59,7 @@ type GraphDefinitionLink struct {
 	Target            []GraphDefinitionLinkTarget `bson:"target,omitempty" json:"target,omitempty"`
 }
 type GraphDefinitionLinkTarget struct {
-	ID                *string                                `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              ResourceType                           `bson:"type" json:"type"`
@@ -69,7 +69,7 @@ type GraphDefinitionLinkTarget struct {
 	Link              []GraphDefinitionLink                  `bson:"link,omitempty" json:"link,omitempty"`
 }
 type GraphDefinitionLinkTargetCompartment struct {
-	ID                *string              `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Use               GraphCompartmentUse  `bson:"use" json:"use"`

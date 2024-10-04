@@ -24,7 +24,7 @@ import (
 
 // SubstanceReferenceInformation is documented here http://hl7.org/fhir/StructureDefinition/SubstanceReferenceInformation
 type SubstanceReferenceInformation struct {
-	ID                *string                                       `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                                       `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                                         `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                                       `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                                       `bson:"language,omitempty" json:"language,omitempty"`
@@ -38,7 +38,7 @@ type SubstanceReferenceInformation struct {
 	Target            []SubstanceReferenceInformationTarget         `bson:"target,omitempty" json:"target,omitempty"`
 }
 type SubstanceReferenceInformationGene struct {
-	ID                 *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                 *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension          []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension  []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	GeneSequenceOrigin *CodeableConcept `bson:"geneSequenceOrigin,omitempty" json:"geneSequenceOrigin,omitempty"`
@@ -46,7 +46,7 @@ type SubstanceReferenceInformationGene struct {
 	Source             []Reference      `bson:"source,omitempty" json:"source,omitempty"`
 }
 type SubstanceReferenceInformationGeneElement struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
@@ -54,7 +54,7 @@ type SubstanceReferenceInformationGeneElement struct {
 	Source            []Reference      `bson:"source,omitempty" json:"source,omitempty"`
 }
 type SubstanceReferenceInformationClassification struct {
-	ID                *string           `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Domain            *CodeableConcept  `bson:"domain,omitempty" json:"domain,omitempty"`
@@ -63,7 +63,7 @@ type SubstanceReferenceInformationClassification struct {
 	Source            []Reference       `bson:"source,omitempty" json:"source,omitempty"`
 }
 type SubstanceReferenceInformationTarget struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Target            *Identifier      `bson:"target,omitempty" json:"target,omitempty"`

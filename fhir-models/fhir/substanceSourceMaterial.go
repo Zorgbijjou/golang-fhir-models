@@ -24,7 +24,7 @@ import (
 
 // SubstanceSourceMaterial is documented here http://hl7.org/fhir/StructureDefinition/SubstanceSourceMaterial
 type SubstanceSourceMaterial struct {
-	ID                   *string                                      `bson:"id,omitempty" json:"id,omitempty"`
+	Id                   *string                                      `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                 *Meta                                        `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules        *string                                      `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language             *string                                      `bson:"language,omitempty" json:"language,omitempty"`
@@ -46,14 +46,14 @@ type SubstanceSourceMaterial struct {
 	PartDescription      []SubstanceSourceMaterialPartDescription     `bson:"partDescription,omitempty" json:"partDescription,omitempty"`
 }
 type SubstanceSourceMaterialFractionDescription struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Fraction          *string          `bson:"fraction,omitempty" json:"fraction,omitempty"`
 	MaterialType      *CodeableConcept `bson:"materialType,omitempty" json:"materialType,omitempty"`
 }
 type SubstanceSourceMaterialOrganism struct {
-	ID                       *string                                         `bson:"id,omitempty" json:"id,omitempty"`
+	Id                       *string                                         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension                                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension        []Extension                                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Family                   *CodeableConcept                                `bson:"family,omitempty" json:"family,omitempty"`
@@ -66,14 +66,14 @@ type SubstanceSourceMaterialOrganism struct {
 	OrganismGeneral          *SubstanceSourceMaterialOrganismOrganismGeneral `bson:"organismGeneral,omitempty" json:"organismGeneral,omitempty"`
 }
 type SubstanceSourceMaterialOrganismAuthor struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	AuthorType        *CodeableConcept `bson:"authorType,omitempty" json:"authorType,omitempty"`
 	AuthorDescription *string          `bson:"authorDescription,omitempty" json:"authorDescription,omitempty"`
 }
 type SubstanceSourceMaterialOrganismHybrid struct {
-	ID                   *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	MaternalOrganismId   *string          `bson:"maternalOrganismId,omitempty" json:"maternalOrganismId,omitempty"`
@@ -83,7 +83,7 @@ type SubstanceSourceMaterialOrganismHybrid struct {
 	HybridType           *CodeableConcept `bson:"hybridType,omitempty" json:"hybridType,omitempty"`
 }
 type SubstanceSourceMaterialOrganismOrganismGeneral struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Kingdom           *CodeableConcept `bson:"kingdom,omitempty" json:"kingdom,omitempty"`
@@ -92,7 +92,7 @@ type SubstanceSourceMaterialOrganismOrganismGeneral struct {
 	Order             *CodeableConcept `bson:"order,omitempty" json:"order,omitempty"`
 }
 type SubstanceSourceMaterialPartDescription struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Part              *CodeableConcept `bson:"part,omitempty" json:"part,omitempty"`

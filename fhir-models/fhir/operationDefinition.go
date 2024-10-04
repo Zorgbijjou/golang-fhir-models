@@ -24,7 +24,7 @@ import (
 
 // OperationDefinition is documented here http://hl7.org/fhir/StructureDefinition/OperationDefinition
 type OperationDefinition struct {
-	ID                *string                        `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                        `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                          `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                        `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                        `bson:"language,omitempty" json:"language,omitempty"`
@@ -59,7 +59,7 @@ type OperationDefinition struct {
 	Overload          []OperationDefinitionOverload  `bson:"overload,omitempty" json:"overload,omitempty"`
 }
 type OperationDefinitionParameter struct {
-	ID                *string                                      `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                                      `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                  `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              string                                       `bson:"name" json:"name"`
@@ -75,21 +75,21 @@ type OperationDefinitionParameter struct {
 	Part              []OperationDefinitionParameter               `bson:"part,omitempty" json:"part,omitempty"`
 }
 type OperationDefinitionParameterBinding struct {
-	ID                *string         `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Strength          BindingStrength `bson:"strength" json:"strength"`
 	ValueSet          string          `bson:"valueSet" json:"valueSet"`
 }
 type OperationDefinitionParameterReferencedFrom struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Source            string      `bson:"source" json:"source"`
 	SourceId          *string     `bson:"sourceId,omitempty" json:"sourceId,omitempty"`
 }
 type OperationDefinitionOverload struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	ParameterName     []string    `bson:"parameterName,omitempty" json:"parameterName,omitempty"`

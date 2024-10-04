@@ -19,7 +19,7 @@ package fhir
 
 // Extension is documented here http://hl7.org/fhir/StructureDefinition/Extension
 type Extension struct {
-	ID                       *string              `bson:"id,omitempty" json:"id,omitempty"`
+	Id                       *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	Url                      string               `bson:"url" json:"url"`
 	ValueBase64Binary        *string              `bson:"valueBase64Binary,omitempty" json:"valueBase64Binary,omitempty"`
@@ -29,7 +29,7 @@ type Extension struct {
 	ValueDate                *string              `bson:"valueDate,omitempty" json:"valueDate,omitempty"`
 	ValueDateTime            *string              `bson:"valueDateTime,omitempty" json:"valueDateTime,omitempty"`
 	ValueDecimal             *float64             `bson:"valueDecimal,omitempty" json:"valueDecimal,omitempty"`
-	ValueID                  *string              `bson:"valueID,omitempty" json:"valueID,omitempty"`
+	ValueId                  *string              `bson:"valueId,omitempty" json:"valueId,omitempty"`
 	ValueInstant             *string              `bson:"valueInstant,omitempty" json:"valueInstant,omitempty"`
 	ValueInteger             *int                 `bson:"valueInteger,omitempty" json:"valueInteger,omitempty"`
 	ValueMarkdown            *string              `bson:"valueMarkdown,omitempty" json:"valueMarkdown,omitempty"`

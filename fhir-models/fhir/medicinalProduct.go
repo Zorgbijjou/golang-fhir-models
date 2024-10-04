@@ -24,7 +24,7 @@ import (
 
 // MedicinalProduct is documented here http://hl7.org/fhir/StructureDefinition/MedicinalProduct
 type MedicinalProduct struct {
-	ID                             *string                                          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                             *string                                          `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                           *Meta                                            `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules                  *string                                          `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language                       *string                                          `bson:"language,omitempty" json:"language,omitempty"`
@@ -53,7 +53,7 @@ type MedicinalProduct struct {
 	SpecialDesignation             []MedicinalProductSpecialDesignation             `bson:"specialDesignation,omitempty" json:"specialDesignation,omitempty"`
 }
 type MedicinalProductName struct {
-	ID                *string                               `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                               `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	ProductName       string                                `bson:"productName" json:"productName"`
@@ -61,14 +61,14 @@ type MedicinalProductName struct {
 	CountryLanguage   []MedicinalProductNameCountryLanguage `bson:"countryLanguage,omitempty" json:"countryLanguage,omitempty"`
 }
 type MedicinalProductNameNamePart struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Part              string      `bson:"part" json:"part"`
 	Type              Coding      `bson:"type" json:"type"`
 }
 type MedicinalProductNameCountryLanguage struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Country           CodeableConcept  `bson:"country" json:"country"`
@@ -76,7 +76,7 @@ type MedicinalProductNameCountryLanguage struct {
 	Language          CodeableConcept  `bson:"language" json:"language"`
 }
 type MedicinalProductManufacturingBusinessOperation struct {
-	ID                           *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                           *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                    []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension            []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	OperationType                *CodeableConcept `bson:"operationType,omitempty" json:"operationType,omitempty"`
@@ -87,7 +87,7 @@ type MedicinalProductManufacturingBusinessOperation struct {
 	Regulator                    *Reference       `bson:"regulator,omitempty" json:"regulator,omitempty"`
 }
 type MedicinalProductSpecialDesignation struct {
-	ID                        *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                        *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension                 []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier                []Identifier     `bson:"identifier,omitempty" json:"identifier,omitempty"`

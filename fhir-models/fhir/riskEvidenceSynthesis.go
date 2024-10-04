@@ -24,7 +24,7 @@ import (
 
 // RiskEvidenceSynthesis is documented here http://hl7.org/fhir/StructureDefinition/RiskEvidenceSynthesis
 type RiskEvidenceSynthesis struct {
-	ID                *string                            `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                            `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                              `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                            `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                            `bson:"language,omitempty" json:"language,omitempty"`
@@ -64,7 +64,7 @@ type RiskEvidenceSynthesis struct {
 	Certainty         []RiskEvidenceSynthesisCertainty   `bson:"certainty,omitempty" json:"certainty,omitempty"`
 }
 type RiskEvidenceSynthesisSampleSize struct {
-	ID                   *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                   *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension            []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension    []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description          *string     `bson:"description,omitempty" json:"description,omitempty"`
@@ -72,7 +72,7 @@ type RiskEvidenceSynthesisSampleSize struct {
 	NumberOfParticipants *int        `bson:"numberOfParticipants,omitempty" json:"numberOfParticipants,omitempty"`
 }
 type RiskEvidenceSynthesisRiskEstimate struct {
-	ID                *string                                              `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                                              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Description       *string                                              `bson:"description,omitempty" json:"description,omitempty"`
@@ -84,7 +84,7 @@ type RiskEvidenceSynthesisRiskEstimate struct {
 	PrecisionEstimate []RiskEvidenceSynthesisRiskEstimatePrecisionEstimate `bson:"precisionEstimate,omitempty" json:"precisionEstimate,omitempty"`
 }
 type RiskEvidenceSynthesisRiskEstimatePrecisionEstimate struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
@@ -93,7 +93,7 @@ type RiskEvidenceSynthesisRiskEstimatePrecisionEstimate struct {
 	To                *float64         `bson:"to,omitempty" json:"to,omitempty"`
 }
 type RiskEvidenceSynthesisCertainty struct {
-	ID                    *string                                               `bson:"id,omitempty" json:"id,omitempty"`
+	Id                    *string                                               `bson:"id,omitempty" json:"id,omitempty"`
 	Extension             []Extension                                           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension     []Extension                                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Rating                []CodeableConcept                                     `bson:"rating,omitempty" json:"rating,omitempty"`
@@ -101,7 +101,7 @@ type RiskEvidenceSynthesisCertainty struct {
 	CertaintySubcomponent []RiskEvidenceSynthesisCertaintyCertaintySubcomponent `bson:"certaintySubcomponent,omitempty" json:"certaintySubcomponent,omitempty"`
 }
 type RiskEvidenceSynthesisCertaintyCertaintySubcomponent struct {
-	ID                *string           `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`

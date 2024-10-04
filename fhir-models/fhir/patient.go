@@ -24,7 +24,7 @@ import (
 
 // Patient is documented here http://hl7.org/fhir/StructureDefinition/Patient
 type Patient struct {
-	ID                   *string                `bson:"id,omitempty" json:"id,omitempty"`
+	Id                   *string                `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                 *Meta                  `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules        *string                `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language             *string                `bson:"language,omitempty" json:"language,omitempty"`
@@ -51,7 +51,7 @@ type Patient struct {
 	Link                 []PatientLink          `bson:"link,omitempty" json:"link,omitempty"`
 }
 type PatientContact struct {
-	ID                *string               `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string               `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Relationship      []CodeableConcept     `bson:"relationship,omitempty" json:"relationship,omitempty"`
@@ -63,14 +63,14 @@ type PatientContact struct {
 	Period            *Period               `bson:"period,omitempty" json:"period,omitempty"`
 }
 type PatientCommunication struct {
-	ID                *string         `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Language          CodeableConcept `bson:"language" json:"language"`
 	Preferred         *bool           `bson:"preferred,omitempty" json:"preferred,omitempty"`
 }
 type PatientLink struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Other             Reference   `bson:"other" json:"other"`

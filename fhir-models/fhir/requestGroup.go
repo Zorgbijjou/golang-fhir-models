@@ -24,7 +24,7 @@ import (
 
 // RequestGroup is documented here http://hl7.org/fhir/StructureDefinition/RequestGroup
 type RequestGroup struct {
-	ID                    *string              `bson:"id,omitempty" json:"id,omitempty"`
+	Id                    *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                  *Meta                `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules         *string              `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language              *string              `bson:"language,omitempty" json:"language,omitempty"`
@@ -51,7 +51,7 @@ type RequestGroup struct {
 	Action                []RequestGroupAction `bson:"action,omitempty" json:"action,omitempty"`
 }
 type RequestGroupAction struct {
-	ID                  *string                           `bson:"id,omitempty" json:"id,omitempty"`
+	Id                  *string                           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension           []Extension                       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension                       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Prefix              *string                           `bson:"prefix,omitempty" json:"prefix,omitempty"`
@@ -80,14 +80,14 @@ type RequestGroupAction struct {
 	Action              []RequestGroupAction              `bson:"action,omitempty" json:"action,omitempty"`
 }
 type RequestGroupActionCondition struct {
-	ID                *string             `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Kind              ActionConditionKind `bson:"kind" json:"kind"`
 	Expression        *Expression         `bson:"expression,omitempty" json:"expression,omitempty"`
 }
 type RequestGroupActionRelatedAction struct {
-	ID                *string                `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension            `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	ActionId          string                 `bson:"actionId" json:"actionId"`

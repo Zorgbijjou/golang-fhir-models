@@ -24,7 +24,7 @@ import (
 
 // StructureDefinition is documented here http://hl7.org/fhir/StructureDefinition/StructureDefinition
 type StructureDefinition struct {
-	ID                *string                          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                          `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                            `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                          `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                          `bson:"language,omitempty" json:"language,omitempty"`
@@ -60,7 +60,7 @@ type StructureDefinition struct {
 	Differential      *StructureDefinitionDifferential `bson:"differential,omitempty" json:"differential,omitempty"`
 }
 type StructureDefinitionMapping struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identity          string      `bson:"identity" json:"identity"`
@@ -69,20 +69,20 @@ type StructureDefinitionMapping struct {
 	Comment           *string     `bson:"comment,omitempty" json:"comment,omitempty"`
 }
 type StructureDefinitionContext struct {
-	ID                *string              `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension          `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              ExtensionContextType `bson:"type" json:"type"`
 	Expression        string               `bson:"expression" json:"expression"`
 }
 type StructureDefinitionSnapshot struct {
-	ID                *string             `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Element           []ElementDefinition `bson:"element" json:"element"`
 }
 type StructureDefinitionDifferential struct {
-	ID                *string             `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string             `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Element           []ElementDefinition `bson:"element" json:"element"`

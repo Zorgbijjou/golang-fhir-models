@@ -24,7 +24,7 @@ import (
 
 // Device is documented here http://hl7.org/fhir/StructureDefinition/Device
 type Device struct {
-	ID                 *string                `bson:"id,omitempty" json:"id,omitempty"`
+	Id                 *string                `bson:"id,omitempty" json:"id,omitempty"`
 	Meta               *Meta                  `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules      *string                `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language           *string                `bson:"language,omitempty" json:"language,omitempty"`
@@ -59,7 +59,7 @@ type Device struct {
 	Parent             *Reference             `bson:"parent,omitempty" json:"parent,omitempty"`
 }
 type DeviceUdiCarrier struct {
-	ID                *string       `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string       `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension   `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	DeviceIdentifier  *string       `bson:"deviceIdentifier,omitempty" json:"deviceIdentifier,omitempty"`
@@ -70,21 +70,21 @@ type DeviceUdiCarrier struct {
 	EntryType         *UDIEntryType `bson:"entryType,omitempty" json:"entryType,omitempty"`
 }
 type DeviceDeviceName struct {
-	ID                *string        `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string        `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Name              string         `bson:"name" json:"name"`
 	Type              DeviceNameType `bson:"type" json:"type"`
 }
 type DeviceSpecialization struct {
-	ID                *string         `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	SystemType        CodeableConcept `bson:"systemType" json:"systemType"`
 	Version           *string         `bson:"version,omitempty" json:"version,omitempty"`
 }
 type DeviceVersion struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
@@ -92,7 +92,7 @@ type DeviceVersion struct {
 	Value             string           `bson:"value" json:"value"`
 }
 type DeviceProperty struct {
-	ID                *string           `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Type              CodeableConcept   `bson:"type" json:"type"`

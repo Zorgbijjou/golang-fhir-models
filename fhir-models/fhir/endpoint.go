@@ -24,7 +24,7 @@ import (
 
 // Endpoint is documented here http://hl7.org/fhir/StructureDefinition/Endpoint
 type Endpoint struct {
-	ID                   *string           `bson:"id,omitempty" json:"id,omitempty"`
+	Id                   *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                 *Meta             `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules        *string           `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language             *string           `bson:"language,omitempty" json:"language,omitempty"`

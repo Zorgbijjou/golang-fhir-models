@@ -24,7 +24,7 @@ import (
 
 // MeasureReport is documented here http://hl7.org/fhir/StructureDefinition/MeasureReport
 type MeasureReport struct {
-	ID                  *string              `bson:"id,omitempty" json:"id,omitempty"`
+	Id                  *string              `bson:"id,omitempty" json:"id,omitempty"`
 	Meta                *Meta                `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules       *string              `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language            *string              `bson:"language,omitempty" json:"language,omitempty"`
@@ -44,7 +44,7 @@ type MeasureReport struct {
 	EvaluatedResource   []Reference          `bson:"evaluatedResource,omitempty" json:"evaluatedResource,omitempty"`
 }
 type MeasureReportGroup struct {
-	ID                *string                        `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                        `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                    `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              *CodeableConcept               `bson:"code,omitempty" json:"code,omitempty"`
@@ -53,7 +53,7 @@ type MeasureReportGroup struct {
 	Stratifier        []MeasureReportGroupStratifier `bson:"stratifier,omitempty" json:"stratifier,omitempty"`
 }
 type MeasureReportGroupPopulation struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
@@ -61,14 +61,14 @@ type MeasureReportGroupPopulation struct {
 	SubjectResults    *Reference       `bson:"subjectResults,omitempty" json:"subjectResults,omitempty"`
 }
 type MeasureReportGroupStratifier struct {
-	ID                *string                               `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                               `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              []CodeableConcept                     `bson:"code,omitempty" json:"code,omitempty"`
 	Stratum           []MeasureReportGroupStratifierStratum `bson:"stratum,omitempty" json:"stratum,omitempty"`
 }
 type MeasureReportGroupStratifierStratum struct {
-	ID                *string                                         `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                                         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension                                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension                                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Value             *CodeableConcept                                `bson:"value,omitempty" json:"value,omitempty"`
@@ -77,14 +77,14 @@ type MeasureReportGroupStratifierStratum struct {
 	MeasureScore      *Quantity                                       `bson:"measureScore,omitempty" json:"measureScore,omitempty"`
 }
 type MeasureReportGroupStratifierStratumComponent struct {
-	ID                *string         `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              CodeableConcept `bson:"code" json:"code"`
 	Value             CodeableConcept `bson:"value" json:"value"`
 }
 type MeasureReportGroupStratifierStratumPopulation struct {
-	ID                *string          `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`

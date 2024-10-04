@@ -24,7 +24,7 @@ import (
 
 // DocumentReference is documented here http://hl7.org/fhir/StructureDefinition/DocumentReference
 type DocumentReference struct {
-	ID                *string                      `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                      `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                        `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                      `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                      `bson:"language,omitempty" json:"language,omitempty"`
@@ -49,21 +49,21 @@ type DocumentReference struct {
 	Context           *DocumentReferenceContext    `bson:"context,omitempty" json:"context,omitempty"`
 }
 type DocumentReferenceRelatesTo struct {
-	ID                *string                  `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code              DocumentRelationshipType `bson:"code" json:"code"`
 	Target            Reference                `bson:"target" json:"target"`
 }
 type DocumentReferenceContent struct {
-	ID                *string     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Attachment        Attachment  `bson:"attachment" json:"attachment"`
 	Format            *Coding     `bson:"format,omitempty" json:"format,omitempty"`
 }
 type DocumentReferenceContext struct {
-	ID                *string           `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Encounter         []Reference       `bson:"encounter,omitempty" json:"encounter,omitempty"`

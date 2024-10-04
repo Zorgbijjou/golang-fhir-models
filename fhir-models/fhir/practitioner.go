@@ -24,7 +24,7 @@ import (
 
 // Practitioner is documented here http://hl7.org/fhir/StructureDefinition/Practitioner
 type Practitioner struct {
-	ID                *string                     `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string                     `bson:"id,omitempty" json:"id,omitempty"`
 	Meta              *Meta                       `bson:"meta,omitempty" json:"meta,omitempty"`
 	ImplicitRules     *string                     `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
 	Language          *string                     `bson:"language,omitempty" json:"language,omitempty"`
@@ -43,7 +43,7 @@ type Practitioner struct {
 	Communication     []CodeableConcept           `bson:"communication,omitempty" json:"communication,omitempty"`
 }
 type PractitionerQualification struct {
-	ID                *string         `bson:"id,omitempty" json:"id,omitempty"`
+	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
 	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier        []Identifier    `bson:"identifier,omitempty" json:"identifier,omitempty"`
