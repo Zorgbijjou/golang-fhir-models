@@ -12,15 +12,15 @@ func TestTaskInput_ValuePolymorphism(t *testing.T) {
 	//	 "valueInteger": 5
 	// }
 
-	inputValue := 5
-	taskInput := TaskInput{ValueInteger: &inputValue}
+	expected := 5
+	taskInput := TaskInput{ValueInteger: &expected}
 	data, _ := json.MarshalIndent(taskInput, "", "  ")
-	asMap := map[string]interface{}{}
-	_ = json.Unmarshal(data, &asMap)
-	if len(asMap) != 2 {
-		t.Errorf("expected 2 fields, got %d", len(asMap))
+	actual := map[string]interface{}{}
+	_ = json.Unmarshal(data, &actual)
+	if len(actual) != 2 {
+		t.Errorf("expected 2 fields, got %d", len(actual))
 	}
-	if asMap["valueInteger"] != inputValue {
-		t.Errorf("expected %d, got %v", inputValue, asMap["valueInteger"])
+	if int(actual["valueInteger"].(float64)) != expected {
+		t.Errorf("expected %d (%T), got %v (%T)", expected, expected, actual["valueInteger"], actual["valueInteger"])
 	}
 }

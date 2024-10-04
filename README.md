@@ -10,6 +10,7 @@ This repository contains a FHIR® R4 models for Go. The models consist of Go str
 * unmarshal functions are provided for every resource
 * enums are provided for every ValueSet used in a [required binding][2], has a computer friendly name and refers only to one CodeSystem
 * enums implement `Code()`, `Display()` and `Definition()` methods
+* syntactic sugar on the FHIR models through the `caramel` package (`sugar & fire -> caramel`), e.g. creating Bundles.
 
 ## Usage
 
