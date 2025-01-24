@@ -332,49 +332,47 @@ func appendFields(resources ResourceMap, requiredTypes map[string]bool, required
 			// direct childs
 			name := title(pathParts[level])
 
-			// support contained resources later
-			if name != "Contained" {
-				switch len(element.Type) {
-				case 0:
-					if element.ContentReference != nil && (*element.ContentReference)[:1] == "#" {
-						statement := fields.Id(name)
+			// Added support for `contained` here. If you run into issues, check this commit..
+			switch len(element.Type) {
+			case 0:
+				if element.ContentReference != nil && (*element.ContentReference)[:1] == "#" {
+					statement := fields.Id(name)
 
-						if *element.Max == "*" {
-							statement.Op("[]")
-						} else if *element.Min == 0 {
-							statement.Op("*")
-						}
-
-						typeIdentifier := ""
-						for _, pathPart := range Split((*element.ContentReference)[1:], ".") {
-							typeIdentifier = typeIdentifier + title(pathPart)
-						}
-						statement.Id(typeIdentifier).Tag(map[string]string{"json": pathParts[level] + ",omitempty", "bson": pathParts[level] + ",omitempty"})
+					if *element.Max == "*" {
+						statement.Op("[]")
+					} else if *element.Min == 0 {
+						statement.Op("*")
 					}
-				case 1:
+
+					typeIdentifier := ""
+					for _, pathPart := range Split((*element.ContentReference)[1:], ".") {
+						typeIdentifier = typeIdentifier + title(pathPart)
+					}
+					statement.Id(typeIdentifier).Tag(map[string]string{"json": pathParts[level] + ",omitempty", "bson": pathParts[level] + ",omitempty"})
+				}
+			case 1:
+				var err error
+				i, err = addFieldStatement(resources, requiredTypes, requiredValueSetBindings, file, fields,
+					pathParts[level], parentName, elementDefinitions, i, level, element.Type[0])
+
+				if err != nil {
+					return 0, err
+				}
+			default: //polymorphic type
+				name = Replace(pathParts[level], "[x]", "", -1)
+				for _, eleType := range element.Type {
+					name := name + title(eleType.Code)
+
 					var err error
 					i, err = addFieldStatement(resources, requiredTypes, requiredValueSetBindings, file, fields,
-						pathParts[level], parentName, elementDefinitions, i, level, element.Type[0])
+						name, parentName, elementDefinitions, i, level, eleType)
 
 					if err != nil {
 						return 0, err
 					}
-				default: //polymorphic type
-					name = Replace(pathParts[level], "[x]", "", -1)
-					for _, eleType := range element.Type {
-						name := name + title(eleType.Code)
+				}
 
-						var err error
-						i, err = addFieldStatement(resources, requiredTypes, requiredValueSetBindings, file, fields,
-							name, parentName, elementDefinitions, i, level, eleType)
-
-						if err != nil {
-							return 0, err
-						}
-					}
-
-				} // end of case statement
-			}
+			} // end of case statement
 		} else {
 			// index of the next parent sibling
 			return i, nil
