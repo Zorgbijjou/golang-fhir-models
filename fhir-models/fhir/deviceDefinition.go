@@ -126,3 +126,11 @@ func UnmarshalDeviceDefinition(b []byte) (DeviceDefinition, error) {
 	}
 	return deviceDefinition, nil
 }
+func (r DeviceDefinition) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r DeviceDefinition) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*DeviceDefinition)(nil)

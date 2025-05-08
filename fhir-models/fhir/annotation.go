@@ -26,3 +26,12 @@ type Annotation struct {
 	Time            *string     `bson:"time,omitempty" json:"time,omitempty"`
 	Text            string      `bson:"text" json:"text"`
 }
+
+func (r Annotation) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Annotation) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Annotation)(nil)

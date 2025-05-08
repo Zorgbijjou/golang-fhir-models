@@ -100,3 +100,11 @@ func UnmarshalMedicationDispense(b []byte) (MedicationDispense, error) {
 	}
 	return medicationDispense, nil
 }
+func (r MedicationDispense) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r MedicationDispense) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*MedicationDispense)(nil)

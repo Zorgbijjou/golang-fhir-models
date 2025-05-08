@@ -143,3 +143,11 @@ func UnmarshalMeasure(b []byte) (Measure, error) {
 	}
 	return measure, nil
 }
+func (r Measure) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Measure) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Measure)(nil)

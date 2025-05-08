@@ -32,3 +32,12 @@ type Address struct {
 	Country    *string      `bson:"country,omitempty" json:"country,omitempty"`
 	Period     *Period      `bson:"period,omitempty" json:"period,omitempty"`
 }
+
+func (r Address) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Address) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Address)(nil)

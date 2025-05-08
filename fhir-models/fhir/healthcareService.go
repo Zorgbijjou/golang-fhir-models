@@ -105,3 +105,11 @@ func UnmarshalHealthcareService(b []byte) (HealthcareService, error) {
 	}
 	return healthcareService, nil
 }
+func (r HealthcareService) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r HealthcareService) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*HealthcareService)(nil)

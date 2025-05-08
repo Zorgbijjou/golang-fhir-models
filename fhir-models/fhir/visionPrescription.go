@@ -92,3 +92,11 @@ func UnmarshalVisionPrescription(b []byte) (VisionPrescription, error) {
 	}
 	return visionPrescription, nil
 }
+func (r VisionPrescription) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r VisionPrescription) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*VisionPrescription)(nil)

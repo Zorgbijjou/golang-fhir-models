@@ -90,3 +90,11 @@ func UnmarshalLibrary(b []byte) (Library, error) {
 	}
 	return library, nil
 }
+func (r Library) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Library) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Library)(nil)

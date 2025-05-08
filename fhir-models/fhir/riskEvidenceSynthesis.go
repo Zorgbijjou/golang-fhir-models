@@ -134,3 +134,11 @@ func UnmarshalRiskEvidenceSynthesis(b []byte) (RiskEvidenceSynthesis, error) {
 	}
 	return riskEvidenceSynthesis, nil
 }
+func (r RiskEvidenceSynthesis) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r RiskEvidenceSynthesis) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*RiskEvidenceSynthesis)(nil)

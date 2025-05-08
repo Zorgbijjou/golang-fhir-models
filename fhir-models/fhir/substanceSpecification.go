@@ -191,3 +191,11 @@ func UnmarshalSubstanceSpecification(b []byte) (SubstanceSpecification, error) {
 	}
 	return substanceSpecification, nil
 }
+func (r SubstanceSpecification) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r SubstanceSpecification) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*SubstanceSpecification)(nil)

@@ -27,3 +27,12 @@ type Distance struct {
 	System     *string             `bson:"system,omitempty" json:"system,omitempty"`
 	Code       *string             `bson:"code,omitempty" json:"code,omitempty"`
 }
+
+func (r Distance) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Distance) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Distance)(nil)

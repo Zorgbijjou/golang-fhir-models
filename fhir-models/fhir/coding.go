@@ -27,3 +27,12 @@ type Coding struct {
 	Display      *string     `bson:"display,omitempty" json:"display,omitempty"`
 	UserSelected *bool       `bson:"userSelected,omitempty" json:"userSelected,omitempty"`
 }
+
+func (r Coding) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Coding) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Coding)(nil)

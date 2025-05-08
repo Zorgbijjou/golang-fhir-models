@@ -113,3 +113,11 @@ func UnmarshalStructureDefinition(b []byte) (StructureDefinition, error) {
 	}
 	return structureDefinition, nil
 }
+func (r StructureDefinition) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r StructureDefinition) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*StructureDefinition)(nil)

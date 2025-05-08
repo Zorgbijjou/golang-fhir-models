@@ -91,3 +91,11 @@ func UnmarshalSearchParameter(b []byte) (SearchParameter, error) {
 	}
 	return searchParameter, nil
 }
+func (r SearchParameter) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r SearchParameter) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*SearchParameter)(nil)

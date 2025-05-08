@@ -102,3 +102,11 @@ func UnmarshalMedicinalProductIngredient(b []byte) (MedicinalProductIngredient, 
 	}
 	return medicinalProductIngredient, nil
 }
+func (r MedicinalProductIngredient) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r MedicinalProductIngredient) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*MedicinalProductIngredient)(nil)

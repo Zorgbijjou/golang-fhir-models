@@ -66,3 +66,11 @@ func UnmarshalEnrollmentResponse(b []byte) (EnrollmentResponse, error) {
 	}
 	return enrollmentResponse, nil
 }
+func (r EnrollmentResponse) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r EnrollmentResponse) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*EnrollmentResponse)(nil)

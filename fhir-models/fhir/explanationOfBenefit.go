@@ -362,3 +362,11 @@ func UnmarshalExplanationOfBenefit(b []byte) (ExplanationOfBenefit, error) {
 	}
 	return explanationOfBenefit, nil
 }
+func (r ExplanationOfBenefit) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r ExplanationOfBenefit) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*ExplanationOfBenefit)(nil)

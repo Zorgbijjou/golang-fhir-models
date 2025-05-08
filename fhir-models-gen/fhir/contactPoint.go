@@ -27,3 +27,12 @@ type ContactPoint struct {
 	Rank      *int                `bson:"rank,omitempty" json:"rank,omitempty"`
 	Period    *Period             `bson:"period,omitempty" json:"period,omitempty"`
 }
+
+func (r ContactPoint) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r ContactPoint) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*ContactPoint)(nil)

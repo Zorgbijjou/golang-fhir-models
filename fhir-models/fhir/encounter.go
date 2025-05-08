@@ -134,3 +134,11 @@ func UnmarshalEncounter(b []byte) (Encounter, error) {
 	}
 	return encounter, nil
 }
+func (r Encounter) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Encounter) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Encounter)(nil)

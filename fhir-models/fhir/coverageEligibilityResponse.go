@@ -120,3 +120,11 @@ func UnmarshalCoverageEligibilityResponse(b []byte) (CoverageEligibilityResponse
 	}
 	return coverageEligibilityResponse, nil
 }
+func (r CoverageEligibilityResponse) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r CoverageEligibilityResponse) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*CoverageEligibilityResponse)(nil)

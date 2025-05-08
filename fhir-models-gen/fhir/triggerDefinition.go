@@ -30,3 +30,12 @@ type TriggerDefinition struct {
 	Data            []DataRequirement `bson:"data,omitempty" json:"data,omitempty"`
 	Condition       *Expression       `bson:"condition,omitempty" json:"condition,omitempty"`
 }
+
+func (r TriggerDefinition) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r TriggerDefinition) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*TriggerDefinition)(nil)

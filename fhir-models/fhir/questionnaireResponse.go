@@ -97,3 +97,11 @@ func UnmarshalQuestionnaireResponse(b []byte) (QuestionnaireResponse, error) {
 	}
 	return questionnaireResponse, nil
 }
+func (r QuestionnaireResponse) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r QuestionnaireResponse) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*QuestionnaireResponse)(nil)

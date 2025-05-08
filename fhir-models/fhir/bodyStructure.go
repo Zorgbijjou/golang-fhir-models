@@ -66,3 +66,11 @@ func UnmarshalBodyStructure(b []byte) (BodyStructure, error) {
 	}
 	return bodyStructure, nil
 }
+func (r BodyStructure) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r BodyStructure) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*BodyStructure)(nil)

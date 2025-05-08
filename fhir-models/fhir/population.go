@@ -28,3 +28,12 @@ type Population struct {
 	Race                   *CodeableConcept `bson:"race,omitempty" json:"race,omitempty"`
 	PhysiologicalCondition *CodeableConcept `bson:"physiologicalCondition,omitempty" json:"physiologicalCondition,omitempty"`
 }
+
+func (r Population) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Population) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Population)(nil)

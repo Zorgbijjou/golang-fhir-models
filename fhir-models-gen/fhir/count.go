@@ -27,3 +27,12 @@ type Count struct {
 	System     *string             `bson:"system,omitempty" json:"system,omitempty"`
 	Code       *string             `bson:"code,omitempty" json:"code,omitempty"`
 }
+
+func (r Count) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Count) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Count)(nil)

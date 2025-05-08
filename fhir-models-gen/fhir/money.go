@@ -24,3 +24,12 @@ type Money struct {
 	Value     *float64    `bson:"value,omitempty" json:"value,omitempty"`
 	Currency  *string     `bson:"currency,omitempty" json:"currency,omitempty"`
 }
+
+func (r Money) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Money) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Money)(nil)

@@ -95,3 +95,11 @@ func UnmarshalDeviceRequest(b []byte) (DeviceRequest, error) {
 	}
 	return deviceRequest, nil
 }
+func (r DeviceRequest) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r DeviceRequest) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*DeviceRequest)(nil)

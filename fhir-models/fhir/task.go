@@ -209,3 +209,11 @@ func UnmarshalTask(b []byte) (Task, error) {
 	}
 	return task, nil
 }
+func (r Task) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Task) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Task)(nil)

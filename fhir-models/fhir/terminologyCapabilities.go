@@ -157,3 +157,11 @@ func UnmarshalTerminologyCapabilities(b []byte) (TerminologyCapabilities, error)
 	}
 	return terminologyCapabilities, nil
 }
+func (r TerminologyCapabilities) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r TerminologyCapabilities) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*TerminologyCapabilities)(nil)

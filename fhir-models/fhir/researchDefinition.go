@@ -93,3 +93,11 @@ func UnmarshalResearchDefinition(b []byte) (ResearchDefinition, error) {
 	}
 	return researchDefinition, nil
 }
+func (r ResearchDefinition) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r ResearchDefinition) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*ResearchDefinition)(nil)

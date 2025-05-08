@@ -58,3 +58,11 @@ func UnmarshalDomainResource(b []byte) (DomainResource, error) {
 	}
 	return domainResource, nil
 }
+func (r DomainResource) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r DomainResource) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*DomainResource)(nil)

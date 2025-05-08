@@ -77,3 +77,11 @@ func UnmarshalDocumentManifest(b []byte) (DocumentManifest, error) {
 	}
 	return documentManifest, nil
 }
+func (r DocumentManifest) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r DocumentManifest) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*DocumentManifest)(nil)

@@ -75,3 +75,11 @@ func UnmarshalPerson(b []byte) (Person, error) {
 	}
 	return person, nil
 }
+func (r Person) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Person) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Person)(nil)

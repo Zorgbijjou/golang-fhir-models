@@ -30,3 +30,12 @@ type Attachment struct {
 	Title       *string     `bson:"title,omitempty" json:"title,omitempty"`
 	Creation    *string     `bson:"creation,omitempty" json:"creation,omitempty"`
 }
+
+func (r Attachment) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Attachment) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Attachment)(nil)
