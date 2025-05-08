@@ -65,3 +65,11 @@ func UnmarshalMedicinalProductManufactured(b []byte) (MedicinalProductManufactur
 	}
 	return medicinalProductManufactured, nil
 }
+func (r MedicinalProductManufactured) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r MedicinalProductManufactured) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*MedicinalProductManufactured)(nil)

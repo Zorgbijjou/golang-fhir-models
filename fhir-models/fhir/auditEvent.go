@@ -122,3 +122,11 @@ func UnmarshalAuditEvent(b []byte) (AuditEvent, error) {
 	}
 	return auditEvent, nil
 }
+func (r AuditEvent) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r AuditEvent) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*AuditEvent)(nil)

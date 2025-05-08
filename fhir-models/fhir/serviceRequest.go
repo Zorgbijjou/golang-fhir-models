@@ -96,3 +96,11 @@ func UnmarshalServiceRequest(b []byte) (ServiceRequest, error) {
 	}
 	return serviceRequest, nil
 }
+func (r ServiceRequest) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r ServiceRequest) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*ServiceRequest)(nil)

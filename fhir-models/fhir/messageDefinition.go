@@ -99,3 +99,11 @@ func UnmarshalMessageDefinition(b []byte) (MessageDefinition, error) {
 	}
 	return messageDefinition, nil
 }
+func (r MessageDefinition) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r MessageDefinition) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*MessageDefinition)(nil)

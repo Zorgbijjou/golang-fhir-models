@@ -84,3 +84,11 @@ func UnmarshalDiagnosticReport(b []byte) (DiagnosticReport, error) {
 	}
 	return diagnosticReport, nil
 }
+func (r DiagnosticReport) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r DiagnosticReport) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*DiagnosticReport)(nil)

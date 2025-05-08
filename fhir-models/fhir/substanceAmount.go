@@ -35,3 +35,12 @@ type SubstanceAmountReferenceRange struct {
 	LowLimit  *Quantity   `bson:"lowLimit,omitempty" json:"lowLimit,omitempty"`
 	HighLimit *Quantity   `bson:"highLimit,omitempty" json:"highLimit,omitempty"`
 }
+
+func (r SubstanceAmount) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r SubstanceAmount) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*SubstanceAmount)(nil)

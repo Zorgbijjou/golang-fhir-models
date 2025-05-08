@@ -24,3 +24,12 @@ type ContactDetail struct {
 	Name      *string        `bson:"name,omitempty" json:"name,omitempty"`
 	Telecom   []ContactPoint `bson:"telecom,omitempty" json:"telecom,omitempty"`
 }
+
+func (r ContactDetail) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r ContactDetail) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*ContactDetail)(nil)

@@ -47,3 +47,12 @@ type DosageDoseAndRate struct {
 	RateRange    *Range           `bson:"rateRange,omitempty" json:"rateRange,omitempty"`
 	RateQuantity *Quantity        `bson:"rateQuantity,omitempty" json:"rateQuantity,omitempty"`
 }
+
+func (r Dosage) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Dosage) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Dosage)(nil)

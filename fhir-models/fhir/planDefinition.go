@@ -181,3 +181,11 @@ func UnmarshalPlanDefinition(b []byte) (PlanDefinition, error) {
 	}
 	return planDefinition, nil
 }
+func (r PlanDefinition) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r PlanDefinition) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*PlanDefinition)(nil)

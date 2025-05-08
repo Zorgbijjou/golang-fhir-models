@@ -29,3 +29,12 @@ type RelatedArtifact struct {
 	Document  *Attachment         `bson:"document,omitempty" json:"document,omitempty"`
 	Resource  *string             `bson:"resource,omitempty" json:"resource,omitempty"`
 }
+
+func (r RelatedArtifact) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r RelatedArtifact) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*RelatedArtifact)(nil)

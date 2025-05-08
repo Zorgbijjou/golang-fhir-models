@@ -134,3 +134,11 @@ func UnmarshalTestReport(b []byte) (TestReport, error) {
 	}
 	return testReport, nil
 }
+func (r TestReport) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r TestReport) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*TestReport)(nil)

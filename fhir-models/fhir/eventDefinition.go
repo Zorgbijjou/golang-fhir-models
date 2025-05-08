@@ -87,3 +87,11 @@ func UnmarshalEventDefinition(b []byte) (EventDefinition, error) {
 	}
 	return eventDefinition, nil
 }
+func (r EventDefinition) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r EventDefinition) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*EventDefinition)(nil)

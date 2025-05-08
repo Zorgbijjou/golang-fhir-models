@@ -63,3 +63,11 @@ func UnmarshalMedicinalProductUndesirableEffect(b []byte) (MedicinalProductUndes
 	}
 	return medicinalProductUndesirableEffect, nil
 }
+func (r MedicinalProductUndesirableEffect) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r MedicinalProductUndesirableEffect) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*MedicinalProductUndesirableEffect)(nil)

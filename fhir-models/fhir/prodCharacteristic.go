@@ -34,3 +34,12 @@ type ProdCharacteristic struct {
 	Image             []Attachment     `bson:"image,omitempty" json:"image,omitempty"`
 	Scoring           *CodeableConcept `bson:"scoring,omitempty" json:"scoring,omitempty"`
 }
+
+func (r ProdCharacteristic) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r ProdCharacteristic) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*ProdCharacteristic)(nil)

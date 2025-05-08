@@ -89,3 +89,11 @@ func UnmarshalRiskAssessment(b []byte) (RiskAssessment, error) {
 	}
 	return riskAssessment, nil
 }
+func (r RiskAssessment) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r RiskAssessment) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*RiskAssessment)(nil)

@@ -111,3 +111,11 @@ func UnmarshalImagingStudy(b []byte) (ImagingStudy, error) {
 	}
 	return imagingStudy, nil
 }
+func (r ImagingStudy) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r ImagingStudy) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*ImagingStudy)(nil)

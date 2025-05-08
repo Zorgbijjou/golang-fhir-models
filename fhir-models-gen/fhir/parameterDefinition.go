@@ -29,3 +29,12 @@ type ParameterDefinition struct {
 	Type          string                `bson:"type" json:"type"`
 	Profile       *string               `bson:"profile,omitempty" json:"profile,omitempty"`
 }
+
+func (r ParameterDefinition) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r ParameterDefinition) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*ParameterDefinition)(nil)

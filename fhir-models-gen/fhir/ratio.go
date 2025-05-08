@@ -24,3 +24,12 @@ type Ratio struct {
 	Numerator   *Quantity   `bson:"numerator,omitempty" json:"numerator,omitempty"`
 	Denominator *Quantity   `bson:"denominator,omitempty" json:"denominator,omitempty"`
 }
+
+func (r Ratio) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Ratio) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Ratio)(nil)

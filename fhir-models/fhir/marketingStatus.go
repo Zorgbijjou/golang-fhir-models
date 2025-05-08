@@ -28,3 +28,12 @@ type MarketingStatus struct {
 	DateRange         Period           `bson:"dateRange" json:"dateRange"`
 	RestoreDate       *string          `bson:"restoreDate,omitempty" json:"restoreDate,omitempty"`
 }
+
+func (r MarketingStatus) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r MarketingStatus) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*MarketingStatus)(nil)

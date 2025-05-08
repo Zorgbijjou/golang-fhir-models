@@ -99,3 +99,11 @@ func UnmarshalInvoice(b []byte) (Invoice, error) {
 	}
 	return invoice, nil
 }
+func (r Invoice) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Invoice) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Invoice)(nil)

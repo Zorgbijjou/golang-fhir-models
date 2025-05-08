@@ -77,3 +77,11 @@ func UnmarshalPractitioner(b []byte) (Practitioner, error) {
 	}
 	return practitioner, nil
 }
+func (r Practitioner) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Practitioner) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Practitioner)(nil)

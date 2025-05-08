@@ -76,7 +76,17 @@ var genResourcesCmd = &cobra.Command{
 		resources["ValueSet"] = make(map[string][]byte)
 		resources["CodeSystem"] = make(map[string][]byte)
 
-		err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
+		baseFile := jen.NewFile("fhir")
+		appendLicenseComment(baseFile)
+		appendGeneratorComment(baseFile)
+		generateHasExtensionInterface(baseFile)
+		err := baseFile.Save("hasExtension.go")
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+
+		err = filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
 			if err != nil {
 				return err
 			}
@@ -247,6 +257,25 @@ func generateTypes(resources ResourceMap, alreadyGeneratedTypes map[string]bool,
 	return nil
 }
 
+func generateHasExtensionInterface(file *jen.File) {
+	file.Commentf("HasExtension defines common methods that allow to get and set extensions.")
+	file.Type().Id("HasExtension").InterfaceFunc(func(g *jen.Group) {
+		g.Id("GetExtensions").Params().Params(jen.Op("[]").Id("Extension"))
+		g.Id("SetExtensions").Params(jen.Op("[]").Id("Extension"))
+	})
+}
+
+func hasExtensionField(elementDefinitions []fhir.ElementDefinition, resourceName string) bool {
+	for _, element := range elementDefinitions {
+		// Check if this element is directly under the resource and is named "extension"
+		pathParts := Split(element.Path, ".")
+		if len(pathParts) == 2 && pathParts[0] == resourceName && ToLower(pathParts[1]) == "extension" {
+			return true
+		}
+	}
+	return false
+}
+
 func generateResourceOrType(resources ResourceMap, requiredTypes map[string]bool, requiredValueSetBindings map[string]bool, definition fhir.StructureDefinition) (*jen.File, error) {
 	elementDefinitions := definition.Snapshot.Element
 	if len(elementDefinitions) == 0 {
@@ -307,6 +336,24 @@ func generateResourceOrType(resources ResourceMap, requiredTypes map[string]bool
 				),
 				jen.Return(jen.Id(FirstLower(definition.Name)), jen.Nil()),
 			)
+	}
+
+	// generate GetExtensions and SetExtensions methods
+	if hasExtensionField(elementDefinitions, definition.Name) {
+		// Add GetExtensions method
+		file.Func().Params(jen.Id("r").Op("").Id(definition.Name)).Id("GetExtensions").
+			Params().Params(jen.Op("[]").Id("Extension")).Block(
+			jen.Return(jen.Id("r").Op(".").Id("Extension")),
+		)
+
+		// Add SetExtensions method
+		file.Func().Params(jen.Id("r").Op("").Id(definition.Name)).Id("SetExtensions").
+			Params(jen.Id("extensions").Op("[]").Id("Extension")).Block(
+			jen.Id("r").Op(".").Id("Extension").Op("=").Id("extensions"),
+		)
+
+		// Add compile-time check that the type implements HasExtension
+		file.Var().Op("_").Id("HasExtension").Op("=").Parens(jen.Op("*").Id(definition.Name)).Call(jen.Nil())
 	}
 
 	return file, nil

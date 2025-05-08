@@ -81,3 +81,11 @@ func UnmarshalSubstance(b []byte) (Substance, error) {
 	}
 	return substance, nil
 }
+func (r Substance) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Substance) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Substance)(nil)

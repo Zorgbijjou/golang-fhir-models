@@ -89,3 +89,11 @@ func UnmarshalImmunizationRecommendation(b []byte) (ImmunizationRecommendation, 
 	}
 	return immunizationRecommendation, nil
 }
+func (r ImmunizationRecommendation) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r ImmunizationRecommendation) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*ImmunizationRecommendation)(nil)

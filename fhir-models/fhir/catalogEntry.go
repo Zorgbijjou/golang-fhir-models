@@ -78,3 +78,11 @@ func UnmarshalCatalogEntry(b []byte) (CatalogEntry, error) {
 	}
 	return catalogEntry, nil
 }
+func (r CatalogEntry) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r CatalogEntry) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*CatalogEntry)(nil)

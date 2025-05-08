@@ -73,3 +73,12 @@ type Extension struct {
 	ValueDosage              *Dosage              `bson:"valueDosage,omitempty" json:"valueDosage,omitempty"`
 	ValueMeta                *Meta                `bson:"valueMeta,omitempty" json:"valueMeta,omitempty"`
 }
+
+func (r Extension) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Extension) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Extension)(nil)

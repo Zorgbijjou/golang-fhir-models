@@ -144,3 +144,11 @@ func UnmarshalEffectEvidenceSynthesis(b []byte) (EffectEvidenceSynthesis, error)
 	}
 	return effectEvidenceSynthesis, nil
 }
+func (r EffectEvidenceSynthesis) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r EffectEvidenceSynthesis) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*EffectEvidenceSynthesis)(nil)

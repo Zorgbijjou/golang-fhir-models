@@ -24,3 +24,12 @@ type Period struct {
 	Start     *string     `bson:"start,omitempty" json:"start,omitempty"`
 	End       *string     `bson:"end,omitempty" json:"end,omitempty"`
 }
+
+func (r Period) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Period) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Period)(nil)

@@ -105,3 +105,11 @@ func UnmarshalEvidenceVariable(b []byte) (EvidenceVariable, error) {
 	}
 	return evidenceVariable, nil
 }
+func (r EvidenceVariable) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r EvidenceVariable) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*EvidenceVariable)(nil)

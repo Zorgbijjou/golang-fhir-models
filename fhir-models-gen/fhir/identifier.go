@@ -28,3 +28,12 @@ type Identifier struct {
 	Period    *Period          `bson:"period,omitempty" json:"period,omitempty"`
 	Assigner  *Reference       `bson:"assigner,omitempty" json:"assigner,omitempty"`
 }
+
+func (r Identifier) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Identifier) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Identifier)(nil)

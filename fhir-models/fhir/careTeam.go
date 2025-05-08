@@ -80,3 +80,11 @@ func UnmarshalCareTeam(b []byte) (CareTeam, error) {
 	}
 	return careTeam, nil
 }
+func (r CareTeam) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r CareTeam) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*CareTeam)(nil)

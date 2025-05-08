@@ -54,3 +54,12 @@ type DataRequirementSort struct {
 	Path      string        `bson:"path" json:"path"`
 	Direction SortDirection `bson:"direction" json:"direction"`
 }
+
+func (r DataRequirement) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r DataRequirement) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*DataRequirement)(nil)

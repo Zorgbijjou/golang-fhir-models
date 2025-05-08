@@ -231,3 +231,11 @@ func UnmarshalClaim(b []byte) (Claim, error) {
 	}
 	return claim, nil
 }
+func (r Claim) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Claim) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Claim)(nil)

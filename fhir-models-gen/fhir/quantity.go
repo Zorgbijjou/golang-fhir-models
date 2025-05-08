@@ -27,3 +27,12 @@ type Quantity struct {
 	System     *string             `bson:"system,omitempty" json:"system,omitempty"`
 	Code       *string             `bson:"code,omitempty" json:"code,omitempty"`
 }
+
+func (r Quantity) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Quantity) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Quantity)(nil)

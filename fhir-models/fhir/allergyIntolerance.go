@@ -90,3 +90,11 @@ func UnmarshalAllergyIntolerance(b []byte) (AllergyIntolerance, error) {
 	}
 	return allergyIntolerance, nil
 }
+func (r AllergyIntolerance) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r AllergyIntolerance) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*AllergyIntolerance)(nil)

@@ -27,3 +27,12 @@ type UsageContext struct {
 	ValueRange           *Range           `bson:"valueRange,omitempty" json:"valueRange,omitempty"`
 	ValueReference       *Reference       `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
 }
+
+func (r UsageContext) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r UsageContext) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*UsageContext)(nil)

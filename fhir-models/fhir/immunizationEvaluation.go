@@ -73,3 +73,11 @@ func UnmarshalImmunizationEvaluation(b []byte) (ImmunizationEvaluation, error) {
 	}
 	return immunizationEvaluation, nil
 }
+func (r ImmunizationEvaluation) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r ImmunizationEvaluation) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*ImmunizationEvaluation)(nil)

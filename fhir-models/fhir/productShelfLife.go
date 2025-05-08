@@ -27,3 +27,12 @@ type ProductShelfLife struct {
 	Period                       Quantity          `bson:"period" json:"period"`
 	SpecialPrecautionsForStorage []CodeableConcept `bson:"specialPrecautionsForStorage,omitempty" json:"specialPrecautionsForStorage,omitempty"`
 }
+
+func (r ProductShelfLife) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r ProductShelfLife) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*ProductShelfLife)(nil)

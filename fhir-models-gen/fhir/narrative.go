@@ -24,3 +24,12 @@ type Narrative struct {
 	Status    NarrativeStatus `bson:"status" json:"status"`
 	Div       string          `bson:"div" json:"div"`
 }
+
+func (r Narrative) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Narrative) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Narrative)(nil)

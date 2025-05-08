@@ -97,3 +97,11 @@ func UnmarshalFamilyMemberHistory(b []byte) (FamilyMemberHistory, error) {
 	}
 	return familyMemberHistory, nil
 }
+func (r FamilyMemberHistory) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r FamilyMemberHistory) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*FamilyMemberHistory)(nil)

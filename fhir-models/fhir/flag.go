@@ -66,3 +66,11 @@ func UnmarshalFlag(b []byte) (Flag, error) {
 	}
 	return flag, nil
 }
+func (r Flag) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Flag) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Flag)(nil)

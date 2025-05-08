@@ -29,3 +29,12 @@ type Signature struct {
 	SigFormat    *string     `bson:"sigFormat,omitempty" json:"sigFormat,omitempty"`
 	Data         *string     `bson:"data,omitempty" json:"data,omitempty"`
 }
+
+func (r Signature) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Signature) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Signature)(nil)

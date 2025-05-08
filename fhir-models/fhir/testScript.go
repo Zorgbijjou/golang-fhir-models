@@ -239,3 +239,11 @@ func UnmarshalTestScript(b []byte) (TestScript, error) {
 	}
 	return testScript, nil
 }
+func (r TestScript) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r TestScript) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*TestScript)(nil)

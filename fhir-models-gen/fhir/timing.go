@@ -47,3 +47,12 @@ type TimingRepeat struct {
 	When           []string     `bson:"when,omitempty" json:"when,omitempty"`
 	Offset         *int         `bson:"offset,omitempty" json:"offset,omitempty"`
 }
+
+func (r Timing) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r Timing) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*Timing)(nil)

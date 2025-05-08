@@ -29,3 +29,12 @@ type HumanName struct {
 	Suffix    []string    `bson:"suffix,omitempty" json:"suffix,omitempty"`
 	Period    *Period     `bson:"period,omitempty" json:"period,omitempty"`
 }
+
+func (r HumanName) GetExtensions() []Extension {
+	return r.Extension
+}
+func (r HumanName) SetExtensions(extensions []Extension) {
+	r.Extension = extensions
+}
+
+var _ HasExtension = (*HumanName)(nil)
