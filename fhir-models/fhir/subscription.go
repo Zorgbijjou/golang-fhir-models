@@ -74,11 +74,11 @@ func UnmarshalSubscription(b []byte) (Subscription, error) {
 	}
 	return subscription, nil
 }
-func (r Subscription) GetExtensions() []Extension {
+func (r *Subscription) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Subscription) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Subscription) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Subscription)(nil)

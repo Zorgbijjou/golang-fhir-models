@@ -70,11 +70,11 @@ func UnmarshalOrganizationAffiliation(b []byte) (OrganizationAffiliation, error)
 	}
 	return organizationAffiliation, nil
 }
-func (r OrganizationAffiliation) GetExtensions() []Extension {
+func (r *OrganizationAffiliation) GetExtension() []Extension {
 	return r.Extension
 }
-func (r OrganizationAffiliation) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *OrganizationAffiliation) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*OrganizationAffiliation)(nil)

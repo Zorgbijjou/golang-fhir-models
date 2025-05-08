@@ -75,11 +75,11 @@ func UnmarshalGuidanceResponse(b []byte) (GuidanceResponse, error) {
 	}
 	return guidanceResponse, nil
 }
-func (r GuidanceResponse) GetExtensions() []Extension {
+func (r *GuidanceResponse) GetExtension() []Extension {
 	return r.Extension
 }
-func (r GuidanceResponse) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *GuidanceResponse) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*GuidanceResponse)(nil)

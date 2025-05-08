@@ -31,11 +31,11 @@ type TriggerDefinition struct {
 	Condition       *Expression       `bson:"condition,omitempty" json:"condition,omitempty"`
 }
 
-func (r TriggerDefinition) GetExtensions() []Extension {
+func (r *TriggerDefinition) GetExtension() []Extension {
 	return r.Extension
 }
-func (r TriggerDefinition) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *TriggerDefinition) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*TriggerDefinition)(nil)

@@ -25,11 +25,11 @@ type Ratio struct {
 	Denominator *Quantity   `bson:"denominator,omitempty" json:"denominator,omitempty"`
 }
 
-func (r Ratio) GetExtensions() []Extension {
+func (r *Ratio) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Ratio) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Ratio) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Ratio)(nil)

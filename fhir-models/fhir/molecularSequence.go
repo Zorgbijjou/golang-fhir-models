@@ -166,11 +166,11 @@ func UnmarshalMolecularSequence(b []byte) (MolecularSequence, error) {
 	}
 	return molecularSequence, nil
 }
-func (r MolecularSequence) GetExtensions() []Extension {
+func (r *MolecularSequence) GetExtension() []Extension {
 	return r.Extension
 }
-func (r MolecularSequence) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *MolecularSequence) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*MolecularSequence)(nil)

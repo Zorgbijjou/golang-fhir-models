@@ -126,11 +126,11 @@ func UnmarshalObservation(b []byte) (Observation, error) {
 	}
 	return observation, nil
 }
-func (r Observation) GetExtensions() []Extension {
+func (r *Observation) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Observation) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Observation) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Observation)(nil)

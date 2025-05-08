@@ -97,11 +97,11 @@ func UnmarshalResearchStudy(b []byte) (ResearchStudy, error) {
 	}
 	return researchStudy, nil
 }
-func (r ResearchStudy) GetExtensions() []Extension {
+func (r *ResearchStudy) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ResearchStudy) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ResearchStudy) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ResearchStudy)(nil)

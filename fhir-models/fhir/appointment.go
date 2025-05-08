@@ -90,11 +90,11 @@ func UnmarshalAppointment(b []byte) (Appointment, error) {
 	}
 	return appointment, nil
 }
-func (r Appointment) GetExtensions() []Extension {
+func (r *Appointment) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Appointment) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Appointment) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Appointment)(nil)

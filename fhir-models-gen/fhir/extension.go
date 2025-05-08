@@ -74,11 +74,11 @@ type Extension struct {
 	ValueMeta                *Meta                `bson:"valueMeta,omitempty" json:"valueMeta,omitempty"`
 }
 
-func (r Extension) GetExtensions() []Extension {
+func (r *Extension) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Extension) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Extension) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Extension)(nil)

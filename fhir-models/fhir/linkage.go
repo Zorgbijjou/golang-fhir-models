@@ -68,11 +68,11 @@ func UnmarshalLinkage(b []byte) (Linkage, error) {
 	}
 	return linkage, nil
 }
-func (r Linkage) GetExtensions() []Extension {
+func (r *Linkage) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Linkage) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Linkage) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Linkage)(nil)

@@ -105,11 +105,11 @@ func UnmarshalProcedure(b []byte) (Procedure, error) {
 	}
 	return procedure, nil
 }
-func (r Procedure) GetExtensions() []Extension {
+func (r *Procedure) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Procedure) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Procedure) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Procedure)(nil)

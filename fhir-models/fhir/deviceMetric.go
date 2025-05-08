@@ -76,11 +76,11 @@ func UnmarshalDeviceMetric(b []byte) (DeviceMetric, error) {
 	}
 	return deviceMetric, nil
 }
-func (r DeviceMetric) GetExtensions() []Extension {
+func (r *DeviceMetric) GetExtension() []Extension {
 	return r.Extension
 }
-func (r DeviceMetric) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *DeviceMetric) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*DeviceMetric)(nil)

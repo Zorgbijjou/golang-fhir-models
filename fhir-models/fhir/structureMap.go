@@ -211,11 +211,11 @@ func UnmarshalStructureMap(b []byte) (StructureMap, error) {
 	}
 	return structureMap, nil
 }
-func (r StructureMap) GetExtensions() []Extension {
+func (r *StructureMap) GetExtension() []Extension {
 	return r.Extension
 }
-func (r StructureMap) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *StructureMap) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*StructureMap)(nil)

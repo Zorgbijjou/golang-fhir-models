@@ -69,11 +69,11 @@ func UnmarshalEndpoint(b []byte) (Endpoint, error) {
 	}
 	return endpoint, nil
 }
-func (r Endpoint) GetExtensions() []Extension {
+func (r *Endpoint) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Endpoint) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Endpoint) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Endpoint)(nil)

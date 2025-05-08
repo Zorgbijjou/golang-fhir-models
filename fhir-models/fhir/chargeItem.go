@@ -94,11 +94,11 @@ func UnmarshalChargeItem(b []byte) (ChargeItem, error) {
 	}
 	return chargeItem, nil
 }
-func (r ChargeItem) GetExtensions() []Extension {
+func (r *ChargeItem) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ChargeItem) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ChargeItem) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ChargeItem)(nil)

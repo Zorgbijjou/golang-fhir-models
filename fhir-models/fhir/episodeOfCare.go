@@ -85,11 +85,11 @@ func UnmarshalEpisodeOfCare(b []byte) (EpisodeOfCare, error) {
 	}
 	return episodeOfCare, nil
 }
-func (r EpisodeOfCare) GetExtensions() []Extension {
+func (r *EpisodeOfCare) GetExtension() []Extension {
 	return r.Extension
 }
-func (r EpisodeOfCare) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *EpisodeOfCare) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*EpisodeOfCare)(nil)

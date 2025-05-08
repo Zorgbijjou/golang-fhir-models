@@ -25,11 +25,11 @@ type Money struct {
 	Currency  *string     `bson:"currency,omitempty" json:"currency,omitempty"`
 }
 
-func (r Money) GetExtensions() []Extension {
+func (r *Money) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Money) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Money) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Money)(nil)

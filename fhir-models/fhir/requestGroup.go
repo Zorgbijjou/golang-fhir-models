@@ -121,11 +121,11 @@ func UnmarshalRequestGroup(b []byte) (RequestGroup, error) {
 	}
 	return requestGroup, nil
 }
-func (r RequestGroup) GetExtensions() []Extension {
+func (r *RequestGroup) GetExtension() []Extension {
 	return r.Extension
 }
-func (r RequestGroup) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *RequestGroup) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*RequestGroup)(nil)

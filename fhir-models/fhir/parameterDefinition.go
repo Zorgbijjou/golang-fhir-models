@@ -30,11 +30,11 @@ type ParameterDefinition struct {
 	Profile       *string               `bson:"profile,omitempty" json:"profile,omitempty"`
 }
 
-func (r ParameterDefinition) GetExtensions() []Extension {
+func (r *ParameterDefinition) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ParameterDefinition) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ParameterDefinition) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ParameterDefinition)(nil)

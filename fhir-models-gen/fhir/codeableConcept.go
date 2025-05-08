@@ -25,11 +25,11 @@ type CodeableConcept struct {
 	Text      *string     `bson:"text,omitempty" json:"text,omitempty"`
 }
 
-func (r CodeableConcept) GetExtensions() []Extension {
+func (r *CodeableConcept) GetExtension() []Extension {
 	return r.Extension
 }
-func (r CodeableConcept) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *CodeableConcept) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*CodeableConcept)(nil)

@@ -29,11 +29,11 @@ type Identifier struct {
 	Assigner  *Reference       `bson:"assigner,omitempty" json:"assigner,omitempty"`
 }
 
-func (r Identifier) GetExtensions() []Extension {
+func (r *Identifier) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Identifier) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Identifier) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Identifier)(nil)

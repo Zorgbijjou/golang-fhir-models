@@ -70,11 +70,11 @@ func UnmarshalPaymentNotice(b []byte) (PaymentNotice, error) {
 	}
 	return paymentNotice, nil
 }
-func (r PaymentNotice) GetExtensions() []Extension {
+func (r *PaymentNotice) GetExtension() []Extension {
 	return r.Extension
 }
-func (r PaymentNotice) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *PaymentNotice) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*PaymentNotice)(nil)

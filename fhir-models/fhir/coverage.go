@@ -99,11 +99,11 @@ func UnmarshalCoverage(b []byte) (Coverage, error) {
 	}
 	return coverage, nil
 }
-func (r Coverage) GetExtensions() []Extension {
+func (r *Coverage) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Coverage) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Coverage) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Coverage)(nil)

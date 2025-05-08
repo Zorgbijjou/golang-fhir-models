@@ -219,11 +219,11 @@ func UnmarshalClaimResponse(b []byte) (ClaimResponse, error) {
 	}
 	return claimResponse, nil
 }
-func (r ClaimResponse) GetExtensions() []Extension {
+func (r *ClaimResponse) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ClaimResponse) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ClaimResponse) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ClaimResponse)(nil)

@@ -30,11 +30,11 @@ type RelatedArtifact struct {
 	Resource  *string             `bson:"resource,omitempty" json:"resource,omitempty"`
 }
 
-func (r RelatedArtifact) GetExtensions() []Extension {
+func (r *RelatedArtifact) GetExtension() []Extension {
 	return r.Extension
 }
-func (r RelatedArtifact) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *RelatedArtifact) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*RelatedArtifact)(nil)

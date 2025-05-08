@@ -19,6 +19,6 @@ package fhir
 
 // HasExtension defines common methods that allow to get and set extensions.
 type HasExtension interface {
-	GetExtensions() []Extension
-	SetExtensions([]Extension)
+	GetExtension() []Extension
+	SetExtension([]Extension)
 }

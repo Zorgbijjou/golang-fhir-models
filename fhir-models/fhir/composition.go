@@ -112,11 +112,11 @@ func UnmarshalComposition(b []byte) (Composition, error) {
 	}
 	return composition, nil
 }
-func (r Composition) GetExtensions() []Extension {
+func (r *Composition) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Composition) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Composition) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Composition)(nil)

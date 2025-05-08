@@ -28,11 +28,11 @@ type ProductShelfLife struct {
 	SpecialPrecautionsForStorage []CodeableConcept `bson:"specialPrecautionsForStorage,omitempty" json:"specialPrecautionsForStorage,omitempty"`
 }
 
-func (r ProductShelfLife) GetExtensions() []Extension {
+func (r *ProductShelfLife) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ProductShelfLife) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ProductShelfLife) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ProductShelfLife)(nil)

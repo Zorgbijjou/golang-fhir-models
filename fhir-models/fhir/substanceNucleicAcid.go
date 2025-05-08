@@ -93,11 +93,11 @@ func UnmarshalSubstanceNucleicAcid(b []byte) (SubstanceNucleicAcid, error) {
 	}
 	return substanceNucleicAcid, nil
 }
-func (r SubstanceNucleicAcid) GetExtensions() []Extension {
+func (r *SubstanceNucleicAcid) GetExtension() []Extension {
 	return r.Extension
 }
-func (r SubstanceNucleicAcid) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *SubstanceNucleicAcid) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*SubstanceNucleicAcid)(nil)

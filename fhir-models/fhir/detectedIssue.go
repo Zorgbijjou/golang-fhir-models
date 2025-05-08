@@ -86,11 +86,11 @@ func UnmarshalDetectedIssue(b []byte) (DetectedIssue, error) {
 	}
 	return detectedIssue, nil
 }
-func (r DetectedIssue) GetExtensions() []Extension {
+func (r *DetectedIssue) GetExtension() []Extension {
 	return r.Extension
 }
-func (r DetectedIssue) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *DetectedIssue) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*DetectedIssue)(nil)

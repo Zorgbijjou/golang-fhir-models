@@ -70,11 +70,11 @@ func UnmarshalOperationOutcome(b []byte) (OperationOutcome, error) {
 	}
 	return operationOutcome, nil
 }
-func (r OperationOutcome) GetExtensions() []Extension {
+func (r *OperationOutcome) GetExtension() []Extension {
 	return r.Extension
 }
-func (r OperationOutcome) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *OperationOutcome) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*OperationOutcome)(nil)

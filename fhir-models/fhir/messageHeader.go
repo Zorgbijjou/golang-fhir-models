@@ -97,11 +97,11 @@ func UnmarshalMessageHeader(b []byte) (MessageHeader, error) {
 	}
 	return messageHeader, nil
 }
-func (r MessageHeader) GetExtensions() []Extension {
+func (r *MessageHeader) GetExtension() []Extension {
 	return r.Extension
 }
-func (r MessageHeader) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *MessageHeader) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*MessageHeader)(nil)

@@ -66,11 +66,11 @@ func UnmarshalSchedule(b []byte) (Schedule, error) {
 	}
 	return schedule, nil
 }
-func (r Schedule) GetExtensions() []Extension {
+func (r *Schedule) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Schedule) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Schedule) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Schedule)(nil)

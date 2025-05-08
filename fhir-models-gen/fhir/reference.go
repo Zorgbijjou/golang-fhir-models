@@ -27,11 +27,11 @@ type Reference struct {
 	Display    *string     `bson:"display,omitempty" json:"display,omitempty"`
 }
 
-func (r Reference) GetExtensions() []Extension {
+func (r *Reference) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Reference) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Reference) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Reference)(nil)

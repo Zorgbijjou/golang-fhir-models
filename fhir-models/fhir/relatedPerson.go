@@ -77,11 +77,11 @@ func UnmarshalRelatedPerson(b []byte) (RelatedPerson, error) {
 	}
 	return relatedPerson, nil
 }
-func (r RelatedPerson) GetExtensions() []Extension {
+func (r *RelatedPerson) GetExtension() []Extension {
 	return r.Extension
 }
-func (r RelatedPerson) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *RelatedPerson) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*RelatedPerson)(nil)

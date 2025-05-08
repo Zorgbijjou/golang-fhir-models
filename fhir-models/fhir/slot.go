@@ -69,11 +69,11 @@ func UnmarshalSlot(b []byte) (Slot, error) {
 	}
 	return slot, nil
 }
-func (r Slot) GetExtensions() []Extension {
+func (r *Slot) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Slot) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Slot) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Slot)(nil)

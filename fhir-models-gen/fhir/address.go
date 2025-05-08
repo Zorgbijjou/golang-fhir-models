@@ -33,11 +33,11 @@ type Address struct {
 	Period     *Period      `bson:"period,omitempty" json:"period,omitempty"`
 }
 
-func (r Address) GetExtensions() []Extension {
+func (r *Address) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Address) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Address) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Address)(nil)

@@ -30,11 +30,11 @@ type Signature struct {
 	Data         *string     `bson:"data,omitempty" json:"data,omitempty"`
 }
 
-func (r Signature) GetExtensions() []Extension {
+func (r *Signature) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Signature) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Signature) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Signature)(nil)

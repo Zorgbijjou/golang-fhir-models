@@ -25,11 +25,11 @@ type Period struct {
 	End       *string     `bson:"end,omitempty" json:"end,omitempty"`
 }
 
-func (r Period) GetExtensions() []Extension {
+func (r *Period) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Period) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Period) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Period)(nil)

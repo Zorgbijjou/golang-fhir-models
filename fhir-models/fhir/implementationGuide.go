@@ -174,11 +174,11 @@ func UnmarshalImplementationGuide(b []byte) (ImplementationGuide, error) {
 	}
 	return implementationGuide, nil
 }
-func (r ImplementationGuide) GetExtensions() []Extension {
+func (r *ImplementationGuide) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ImplementationGuide) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ImplementationGuide) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ImplementationGuide)(nil)

@@ -92,11 +92,11 @@ func UnmarshalLocation(b []byte) (Location, error) {
 	}
 	return location, nil
 }
-func (r Location) GetExtensions() []Extension {
+func (r *Location) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Location) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Location) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Location)(nil)

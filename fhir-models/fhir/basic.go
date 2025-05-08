@@ -63,11 +63,11 @@ func UnmarshalBasic(b []byte) (Basic, error) {
 	}
 	return basic, nil
 }
-func (r Basic) GetExtensions() []Extension {
+func (r *Basic) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Basic) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Basic) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Basic)(nil)

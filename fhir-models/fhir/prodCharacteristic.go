@@ -35,11 +35,11 @@ type ProdCharacteristic struct {
 	Scoring           *CodeableConcept `bson:"scoring,omitempty" json:"scoring,omitempty"`
 }
 
-func (r ProdCharacteristic) GetExtensions() []Extension {
+func (r *ProdCharacteristic) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ProdCharacteristic) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ProdCharacteristic) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ProdCharacteristic)(nil)

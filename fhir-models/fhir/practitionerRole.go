@@ -88,11 +88,11 @@ func UnmarshalPractitionerRole(b []byte) (PractitionerRole, error) {
 	}
 	return practitionerRole, nil
 }
-func (r PractitionerRole) GetExtensions() []Extension {
+func (r *PractitionerRole) GetExtension() []Extension {
 	return r.Extension
 }
-func (r PractitionerRole) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *PractitionerRole) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*PractitionerRole)(nil)

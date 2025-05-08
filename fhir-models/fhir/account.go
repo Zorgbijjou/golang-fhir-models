@@ -84,11 +84,11 @@ func UnmarshalAccount(b []byte) (Account, error) {
 	}
 	return account, nil
 }
-func (r Account) GetExtensions() []Extension {
+func (r *Account) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Account) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Account) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Account)(nil)

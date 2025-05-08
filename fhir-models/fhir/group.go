@@ -89,11 +89,11 @@ func UnmarshalGroup(b []byte) (Group, error) {
 	}
 	return group, nil
 }
-func (r Group) GetExtensions() []Extension {
+func (r *Group) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Group) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Group) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Group)(nil)

@@ -28,11 +28,11 @@ type Coding struct {
 	UserSelected *bool       `bson:"userSelected,omitempty" json:"userSelected,omitempty"`
 }
 
-func (r Coding) GetExtensions() []Extension {
+func (r *Coding) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Coding) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Coding) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Coding)(nil)

@@ -125,11 +125,11 @@ func UnmarshalActivityDefinition(b []byte) (ActivityDefinition, error) {
 	}
 	return activityDefinition, nil
 }
-func (r ActivityDefinition) GetExtensions() []Extension {
+func (r *ActivityDefinition) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ActivityDefinition) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ActivityDefinition) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ActivityDefinition)(nil)

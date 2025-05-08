@@ -98,11 +98,11 @@ func UnmarshalCondition(b []byte) (Condition, error) {
 	}
 	return condition, nil
 }
-func (r Condition) GetExtensions() []Extension {
+func (r *Condition) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Condition) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Condition) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Condition)(nil)

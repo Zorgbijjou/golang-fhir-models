@@ -116,11 +116,11 @@ func UnmarshalCarePlan(b []byte) (CarePlan, error) {
 	}
 	return carePlan, nil
 }
-func (r CarePlan) GetExtensions() []Extension {
+func (r *CarePlan) GetExtension() []Extension {
 	return r.Extension
 }
-func (r CarePlan) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *CarePlan) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*CarePlan)(nil)

@@ -28,11 +28,11 @@ type Age struct {
 	Code       *string             `bson:"code,omitempty" json:"code,omitempty"`
 }
 
-func (r Age) GetExtensions() []Extension {
+func (r *Age) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Age) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Age) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Age)(nil)

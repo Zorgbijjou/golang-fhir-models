@@ -80,11 +80,11 @@ func UnmarshalCompartmentDefinition(b []byte) (CompartmentDefinition, error) {
 	}
 	return compartmentDefinition, nil
 }
-func (r CompartmentDefinition) GetExtensions() []Extension {
+func (r *CompartmentDefinition) GetExtension() []Extension {
 	return r.Extension
 }
-func (r CompartmentDefinition) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *CompartmentDefinition) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*CompartmentDefinition)(nil)

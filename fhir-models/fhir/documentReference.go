@@ -100,11 +100,11 @@ func UnmarshalDocumentReference(b []byte) (DocumentReference, error) {
 	}
 	return documentReference, nil
 }
-func (r DocumentReference) GetExtensions() []Extension {
+func (r *DocumentReference) GetExtension() []Extension {
 	return r.Extension
 }
-func (r DocumentReference) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *DocumentReference) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*DocumentReference)(nil)

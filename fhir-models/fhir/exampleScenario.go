@@ -151,11 +151,11 @@ func UnmarshalExampleScenario(b []byte) (ExampleScenario, error) {
 	}
 	return exampleScenario, nil
 }
-func (r ExampleScenario) GetExtensions() []Extension {
+func (r *ExampleScenario) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ExampleScenario) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ExampleScenario) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ExampleScenario)(nil)

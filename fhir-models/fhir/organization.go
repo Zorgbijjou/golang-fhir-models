@@ -77,11 +77,11 @@ func UnmarshalOrganization(b []byte) (Organization, error) {
 	}
 	return organization, nil
 }
-func (r Organization) GetExtensions() []Extension {
+func (r *Organization) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Organization) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Organization) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Organization)(nil)

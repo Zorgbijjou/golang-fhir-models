@@ -28,11 +28,11 @@ type Expression struct {
 	Reference   *string     `bson:"reference,omitempty" json:"reference,omitempty"`
 }
 
-func (r Expression) GetExtensions() []Extension {
+func (r *Expression) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Expression) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Expression) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Expression)(nil)

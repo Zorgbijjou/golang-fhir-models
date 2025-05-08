@@ -86,11 +86,11 @@ func UnmarshalSupplyRequest(b []byte) (SupplyRequest, error) {
 	}
 	return supplyRequest, nil
 }
-func (r SupplyRequest) GetExtensions() []Extension {
+func (r *SupplyRequest) GetExtension() []Extension {
 	return r.Extension
 }
-func (r SupplyRequest) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *SupplyRequest) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*SupplyRequest)(nil)
