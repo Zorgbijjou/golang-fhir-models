@@ -30,11 +30,11 @@ type SampledData struct {
 	Data       *string     `bson:"data,omitempty" json:"data,omitempty"`
 }
 
-func (r SampledData) GetExtensions() []Extension {
+func (r *SampledData) GetExtension() []Extension {
 	return r.Extension
 }
-func (r SampledData) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *SampledData) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*SampledData)(nil)

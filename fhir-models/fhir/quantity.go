@@ -28,11 +28,11 @@ type Quantity struct {
 	Code       *string             `bson:"code,omitempty" json:"code,omitempty"`
 }
 
-func (r Quantity) GetExtensions() []Extension {
+func (r *Quantity) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Quantity) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Quantity) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Quantity)(nil)

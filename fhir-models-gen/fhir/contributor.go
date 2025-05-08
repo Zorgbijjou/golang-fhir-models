@@ -26,11 +26,11 @@ type Contributor struct {
 	Contact   []ContactDetail `bson:"contact,omitempty" json:"contact,omitempty"`
 }
 
-func (r Contributor) GetExtensions() []Extension {
+func (r *Contributor) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Contributor) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Contributor) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Contributor)(nil)

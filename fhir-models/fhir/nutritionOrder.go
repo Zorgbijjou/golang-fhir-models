@@ -133,11 +133,11 @@ func UnmarshalNutritionOrder(b []byte) (NutritionOrder, error) {
 	}
 	return nutritionOrder, nil
 }
-func (r NutritionOrder) GetExtensions() []Extension {
+func (r *NutritionOrder) GetExtension() []Extension {
 	return r.Extension
 }
-func (r NutritionOrder) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *NutritionOrder) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*NutritionOrder)(nil)

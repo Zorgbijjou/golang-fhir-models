@@ -90,11 +90,11 @@ func UnmarshalGoal(b []byte) (Goal, error) {
 	}
 	return goal, nil
 }
-func (r Goal) GetExtensions() []Extension {
+func (r *Goal) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Goal) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Goal) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Goal)(nil)

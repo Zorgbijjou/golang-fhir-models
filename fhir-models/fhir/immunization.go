@@ -123,11 +123,11 @@ func UnmarshalImmunization(b []byte) (Immunization, error) {
 	}
 	return immunization, nil
 }
-func (r Immunization) GetExtensions() []Extension {
+func (r *Immunization) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Immunization) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Immunization) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Immunization)(nil)

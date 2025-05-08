@@ -282,11 +282,11 @@ func UnmarshalContract(b []byte) (Contract, error) {
 	}
 	return contract, nil
 }
-func (r Contract) GetExtensions() []Extension {
+func (r *Contract) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Contract) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Contract) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Contract)(nil)

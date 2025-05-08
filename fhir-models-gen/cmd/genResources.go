@@ -260,8 +260,8 @@ func generateTypes(resources ResourceMap, alreadyGeneratedTypes map[string]bool,
 func generateHasExtensionInterface(file *jen.File) {
 	file.Commentf("HasExtension defines common methods that allow to get and set extensions.")
 	file.Type().Id("HasExtension").InterfaceFunc(func(g *jen.Group) {
-		g.Id("GetExtensions").Params().Params(jen.Op("[]").Id("Extension"))
-		g.Id("SetExtensions").Params(jen.Op("[]").Id("Extension"))
+		g.Id("GetExtension").Params().Params(jen.Op("[]").Id("Extension"))
+		g.Id("SetExtension").Params(jen.Op("[]").Id("Extension"))
 	})
 }
 
@@ -338,18 +338,18 @@ func generateResourceOrType(resources ResourceMap, requiredTypes map[string]bool
 			)
 	}
 
-	// generate GetExtensions and SetExtensions methods
+	// generate GetExtension and SetExtension methods
 	if hasExtensionField(elementDefinitions, definition.Name) {
-		// Add GetExtensions method
-		file.Func().Params(jen.Id("r").Op("").Id(definition.Name)).Id("GetExtensions").
+		// Add GetExtension method
+		file.Func().Params(jen.Id("r").Op("*").Id(definition.Name)).Id("GetExtension").
 			Params().Params(jen.Op("[]").Id("Extension")).Block(
 			jen.Return(jen.Id("r").Op(".").Id("Extension")),
 		)
 
 		// Add SetExtensions method
-		file.Func().Params(jen.Id("r").Op("").Id(definition.Name)).Id("SetExtensions").
-			Params(jen.Id("extensions").Op("[]").Id("Extension")).Block(
-			jen.Id("r").Op(".").Id("Extension").Op("=").Id("extensions"),
+		file.Func().Params(jen.Id("r").Op("*").Id(definition.Name)).Id("SetExtension").
+			Params(jen.Id("extension").Op("[]").Id("Extension")).Block(
+			jen.Id("r").Op(".").Id("Extension").Op("=").Id("extension"),
 		)
 
 		// Add compile-time check that the type implements HasExtension

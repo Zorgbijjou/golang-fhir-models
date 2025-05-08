@@ -28,11 +28,11 @@ type Duration struct {
 	Code       *string             `bson:"code,omitempty" json:"code,omitempty"`
 }
 
-func (r Duration) GetExtensions() []Extension {
+func (r *Duration) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Duration) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Duration) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Duration)(nil)

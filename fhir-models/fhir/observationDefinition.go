@@ -93,11 +93,11 @@ func UnmarshalObservationDefinition(b []byte) (ObservationDefinition, error) {
 	}
 	return observationDefinition, nil
 }
-func (r ObservationDefinition) GetExtensions() []Extension {
+func (r *ObservationDefinition) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ObservationDefinition) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ObservationDefinition) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ObservationDefinition)(nil)

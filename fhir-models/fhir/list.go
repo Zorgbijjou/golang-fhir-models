@@ -80,11 +80,11 @@ func UnmarshalList(b []byte) (List, error) {
 	}
 	return list, nil
 }
-func (r List) GetExtensions() []Extension {
+func (r *List) GetExtension() []Extension {
 	return r.Extension
 }
-func (r List) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *List) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*List)(nil)

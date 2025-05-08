@@ -121,11 +121,11 @@ func UnmarshalOperationDefinition(b []byte) (OperationDefinition, error) {
 	}
 	return operationDefinition, nil
 }
-func (r OperationDefinition) GetExtensions() []Extension {
+func (r *OperationDefinition) GetExtension() []Extension {
 	return r.Extension
 }
-func (r OperationDefinition) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *OperationDefinition) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*OperationDefinition)(nil)

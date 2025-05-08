@@ -105,11 +105,11 @@ func UnmarshalVerificationResult(b []byte) (VerificationResult, error) {
 	}
 	return verificationResult, nil
 }
-func (r VerificationResult) GetExtensions() []Extension {
+func (r *VerificationResult) GetExtension() []Extension {
 	return r.Extension
 }
-func (r VerificationResult) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *VerificationResult) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*VerificationResult)(nil)

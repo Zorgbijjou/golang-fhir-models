@@ -86,11 +86,11 @@ func UnmarshalProvenance(b []byte) (Provenance, error) {
 	}
 	return provenance, nil
 }
-func (r Provenance) GetExtensions() []Extension {
+func (r *Provenance) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Provenance) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Provenance) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Provenance)(nil)

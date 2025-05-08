@@ -117,11 +117,11 @@ func UnmarshalConsent(b []byte) (Consent, error) {
 	}
 	return consent, nil
 }
-func (r Consent) GetExtensions() []Extension {
+func (r *Consent) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Consent) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Consent) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Consent)(nil)

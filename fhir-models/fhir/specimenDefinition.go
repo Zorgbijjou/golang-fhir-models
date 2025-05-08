@@ -107,11 +107,11 @@ func UnmarshalSpecimenDefinition(b []byte) (SpecimenDefinition, error) {
 	}
 	return specimenDefinition, nil
 }
-func (r SpecimenDefinition) GetExtensions() []Extension {
+func (r *SpecimenDefinition) GetExtension() []Extension {
 	return r.Extension
 }
-func (r SpecimenDefinition) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *SpecimenDefinition) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*SpecimenDefinition)(nil)

@@ -103,11 +103,11 @@ func UnmarshalSubstanceReferenceInformation(b []byte) (SubstanceReferenceInforma
 	}
 	return substanceReferenceInformation, nil
 }
-func (r SubstanceReferenceInformation) GetExtensions() []Extension {
+func (r *SubstanceReferenceInformation) GetExtension() []Extension {
 	return r.Extension
 }
-func (r SubstanceReferenceInformation) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *SubstanceReferenceInformation) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*SubstanceReferenceInformation)(nil)

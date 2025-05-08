@@ -29,11 +29,11 @@ type Meta struct {
 	Tag         []Coding    `bson:"tag,omitempty" json:"tag,omitempty"`
 }
 
-func (r Meta) GetExtensions() []Extension {
+func (r *Meta) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Meta) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Meta) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Meta)(nil)

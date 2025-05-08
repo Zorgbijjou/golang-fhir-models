@@ -73,11 +73,11 @@ func UnmarshalDeviceUseStatement(b []byte) (DeviceUseStatement, error) {
 	}
 	return deviceUseStatement, nil
 }
-func (r DeviceUseStatement) GetExtensions() []Extension {
+func (r *DeviceUseStatement) GetExtension() []Extension {
 	return r.Extension
 }
-func (r DeviceUseStatement) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *DeviceUseStatement) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*DeviceUseStatement)(nil)

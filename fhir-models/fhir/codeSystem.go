@@ -134,11 +134,11 @@ func UnmarshalCodeSystem(b []byte) (CodeSystem, error) {
 	}
 	return codeSystem, nil
 }
-func (r CodeSystem) GetExtensions() []Extension {
+func (r *CodeSystem) GetExtension() []Extension {
 	return r.Extension
 }
-func (r CodeSystem) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *CodeSystem) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*CodeSystem)(nil)

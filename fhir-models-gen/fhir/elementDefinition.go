@@ -332,11 +332,11 @@ type ElementDefinitionMapping struct {
 	Comment   *string     `bson:"comment,omitempty" json:"comment,omitempty"`
 }
 
-func (r ElementDefinition) GetExtensions() []Extension {
+func (r *ElementDefinition) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ElementDefinition) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ElementDefinition) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ElementDefinition)(nil)

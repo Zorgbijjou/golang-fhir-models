@@ -147,11 +147,11 @@ func UnmarshalInsurancePlan(b []byte) (InsurancePlan, error) {
 	}
 	return insurancePlan, nil
 }
-func (r InsurancePlan) GetExtensions() []Extension {
+func (r *InsurancePlan) GetExtension() []Extension {
 	return r.Extension
 }
-func (r InsurancePlan) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *InsurancePlan) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*InsurancePlan)(nil)

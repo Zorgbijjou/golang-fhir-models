@@ -86,11 +86,11 @@ func UnmarshalEvidence(b []byte) (Evidence, error) {
 	}
 	return evidence, nil
 }
-func (r Evidence) GetExtensions() []Extension {
+func (r *Evidence) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Evidence) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Evidence) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Evidence)(nil)

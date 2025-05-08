@@ -77,11 +77,11 @@ func UnmarshalMedicationStatement(b []byte) (MedicationStatement, error) {
 	}
 	return medicationStatement, nil
 }
-func (r MedicationStatement) GetExtensions() []Extension {
+func (r *MedicationStatement) GetExtension() []Extension {
 	return r.Extension
 }
-func (r MedicationStatement) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *MedicationStatement) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*MedicationStatement)(nil)

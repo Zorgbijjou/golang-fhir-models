@@ -29,11 +29,11 @@ type MarketingStatus struct {
 	RestoreDate       *string          `bson:"restoreDate,omitempty" json:"restoreDate,omitempty"`
 }
 
-func (r MarketingStatus) GetExtensions() []Extension {
+func (r *MarketingStatus) GetExtension() []Extension {
 	return r.Extension
 }
-func (r MarketingStatus) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *MarketingStatus) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*MarketingStatus)(nil)

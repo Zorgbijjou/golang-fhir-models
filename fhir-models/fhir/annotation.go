@@ -27,11 +27,11 @@ type Annotation struct {
 	Text            string      `bson:"text" json:"text"`
 }
 
-func (r Annotation) GetExtensions() []Extension {
+func (r *Annotation) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Annotation) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Annotation) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Annotation)(nil)

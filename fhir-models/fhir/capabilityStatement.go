@@ -205,11 +205,11 @@ func UnmarshalCapabilityStatement(b []byte) (CapabilityStatement, error) {
 	}
 	return capabilityStatement, nil
 }
-func (r CapabilityStatement) GetExtensions() []Extension {
+func (r *CapabilityStatement) GetExtension() []Extension {
 	return r.Extension
 }
-func (r CapabilityStatement) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *CapabilityStatement) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*CapabilityStatement)(nil)

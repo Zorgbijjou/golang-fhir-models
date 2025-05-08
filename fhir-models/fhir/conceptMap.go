@@ -126,11 +126,11 @@ func UnmarshalConceptMap(b []byte) (ConceptMap, error) {
 	}
 	return conceptMap, nil
 }
-func (r ConceptMap) GetExtensions() []Extension {
+func (r *ConceptMap) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ConceptMap) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ConceptMap) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ConceptMap)(nil)

@@ -89,11 +89,11 @@ func UnmarshalCommunicationRequest(b []byte) (CommunicationRequest, error) {
 	}
 	return communicationRequest, nil
 }
-func (r CommunicationRequest) GetExtensions() []Extension {
+func (r *CommunicationRequest) GetExtension() []Extension {
 	return r.Extension
 }
-func (r CommunicationRequest) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *CommunicationRequest) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*CommunicationRequest)(nil)

@@ -95,11 +95,11 @@ func UnmarshalPaymentReconciliation(b []byte) (PaymentReconciliation, error) {
 	}
 	return paymentReconciliation, nil
 }
-func (r PaymentReconciliation) GetExtensions() []Extension {
+func (r *PaymentReconciliation) GetExtension() []Extension {
 	return r.Extension
 }
-func (r PaymentReconciliation) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *PaymentReconciliation) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*PaymentReconciliation)(nil)

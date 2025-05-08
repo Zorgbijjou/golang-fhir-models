@@ -104,11 +104,11 @@ func UnmarshalGraphDefinition(b []byte) (GraphDefinition, error) {
 	}
 	return graphDefinition, nil
 }
-func (r GraphDefinition) GetExtensions() []Extension {
+func (r *GraphDefinition) GetExtension() []Extension {
 	return r.Extension
 }
-func (r GraphDefinition) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *GraphDefinition) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*GraphDefinition)(nil)

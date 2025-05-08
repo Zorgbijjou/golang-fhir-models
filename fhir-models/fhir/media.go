@@ -81,11 +81,11 @@ func UnmarshalMedia(b []byte) (Media, error) {
 	}
 	return media, nil
 }
-func (r Media) GetExtensions() []Extension {
+func (r *Media) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Media) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Media) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Media)(nil)

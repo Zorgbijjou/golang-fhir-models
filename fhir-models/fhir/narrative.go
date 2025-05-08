@@ -25,11 +25,11 @@ type Narrative struct {
 	Div       string          `bson:"div" json:"div"`
 }
 
-func (r Narrative) GetExtensions() []Extension {
+func (r *Narrative) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Narrative) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Narrative) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Narrative)(nil)

@@ -55,11 +55,11 @@ type DataRequirementSort struct {
 	Direction SortDirection `bson:"direction" json:"direction"`
 }
 
-func (r DataRequirement) GetExtensions() []Extension {
+func (r *DataRequirement) GetExtension() []Extension {
 	return r.Extension
 }
-func (r DataRequirement) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *DataRequirement) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*DataRequirement)(nil)

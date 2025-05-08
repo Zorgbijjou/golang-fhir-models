@@ -31,11 +31,11 @@ type Attachment struct {
 	Creation    *string     `bson:"creation,omitempty" json:"creation,omitempty"`
 }
 
-func (r Attachment) GetExtensions() []Extension {
+func (r *Attachment) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Attachment) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Attachment) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Attachment)(nil)

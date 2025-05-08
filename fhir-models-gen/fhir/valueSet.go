@@ -156,11 +156,11 @@ func UnmarshalValueSet(b []byte) (ValueSet, error) {
 	}
 	return valueSet, nil
 }
-func (r ValueSet) GetExtensions() []Extension {
+func (r *ValueSet) GetExtension() []Extension {
 	return r.Extension
 }
-func (r ValueSet) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *ValueSet) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*ValueSet)(nil)

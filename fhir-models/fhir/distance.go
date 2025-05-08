@@ -28,11 +28,11 @@ type Distance struct {
 	Code       *string             `bson:"code,omitempty" json:"code,omitempty"`
 }
 
-func (r Distance) GetExtensions() []Extension {
+func (r *Distance) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Distance) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Distance) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Distance)(nil)

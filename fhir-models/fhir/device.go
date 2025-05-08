@@ -125,11 +125,11 @@ func UnmarshalDevice(b []byte) (Device, error) {
 	}
 	return device, nil
 }
-func (r Device) GetExtensions() []Extension {
+func (r *Device) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Device) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Device) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Device)(nil)

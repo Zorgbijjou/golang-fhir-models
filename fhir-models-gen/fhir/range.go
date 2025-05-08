@@ -25,11 +25,11 @@ type Range struct {
 	High      *Quantity   `bson:"high,omitempty" json:"high,omitempty"`
 }
 
-func (r Range) GetExtensions() []Extension {
+func (r *Range) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Range) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Range) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Range)(nil)

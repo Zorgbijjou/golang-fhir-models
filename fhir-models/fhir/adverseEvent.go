@@ -94,11 +94,11 @@ func UnmarshalAdverseEvent(b []byte) (AdverseEvent, error) {
 	}
 	return adverseEvent, nil
 }
-func (r AdverseEvent) GetExtensions() []Extension {
+func (r *AdverseEvent) GetExtension() []Extension {
 	return r.Extension
 }
-func (r AdverseEvent) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *AdverseEvent) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*AdverseEvent)(nil)

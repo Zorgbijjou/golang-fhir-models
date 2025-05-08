@@ -28,11 +28,11 @@ type Count struct {
 	Code       *string             `bson:"code,omitempty" json:"code,omitempty"`
 }
 
-func (r Count) GetExtensions() []Extension {
+func (r *Count) GetExtension() []Extension {
 	return r.Extension
 }
-func (r Count) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *Count) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*Count)(nil)

@@ -81,11 +81,11 @@ func UnmarshalNamingSystem(b []byte) (NamingSystem, error) {
 	}
 	return namingSystem, nil
 }
-func (r NamingSystem) GetExtensions() []Extension {
+func (r *NamingSystem) GetExtension() []Extension {
 	return r.Extension
 }
-func (r NamingSystem) SetExtensions(extensions []Extension) {
-	r.Extension = extensions
+func (r *NamingSystem) SetExtension(extension []Extension) {
+	r.Extension = extension
 }
 
 var _ HasExtension = (*NamingSystem)(nil)
