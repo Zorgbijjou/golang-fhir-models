@@ -182,3 +182,12 @@ func (r *ImplementationGuide) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ImplementationGuide)(nil)
+
+func (r *ImplementationGuide) GetId() *string {
+	return r.Id
+}
+func (r *ImplementationGuide) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ImplementationGuide)(nil)

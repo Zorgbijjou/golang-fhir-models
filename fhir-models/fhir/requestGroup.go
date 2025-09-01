@@ -129,3 +129,12 @@ func (r *RequestGroup) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*RequestGroup)(nil)
+
+func (r *RequestGroup) GetId() *string {
+	return r.Id
+}
+func (r *RequestGroup) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*RequestGroup)(nil)

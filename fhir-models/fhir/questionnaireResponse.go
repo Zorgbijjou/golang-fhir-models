@@ -105,3 +105,12 @@ func (r *QuestionnaireResponse) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*QuestionnaireResponse)(nil)
+
+func (r *QuestionnaireResponse) GetId() *string {
+	return r.Id
+}
+func (r *QuestionnaireResponse) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*QuestionnaireResponse)(nil)

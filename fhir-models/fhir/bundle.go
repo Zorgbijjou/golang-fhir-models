@@ -107,3 +107,11 @@ func UnmarshalBundle(b []byte) (Bundle, error) {
 	}
 	return bundle, nil
 }
+func (r *Bundle) GetId() *string {
+	return r.Id
+}
+func (r *Bundle) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Bundle)(nil)

@@ -38,3 +38,12 @@ func (r *RelatedArtifact) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*RelatedArtifact)(nil)
+
+func (r *RelatedArtifact) GetId() *string {
+	return r.Id
+}
+func (r *RelatedArtifact) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*RelatedArtifact)(nil)

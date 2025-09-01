@@ -174,3 +174,12 @@ func (r *MolecularSequence) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*MolecularSequence)(nil)
+
+func (r *MolecularSequence) GetId() *string {
+	return r.Id
+}
+func (r *MolecularSequence) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*MolecularSequence)(nil)

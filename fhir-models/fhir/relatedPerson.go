@@ -85,3 +85,12 @@ func (r *RelatedPerson) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*RelatedPerson)(nil)
+
+func (r *RelatedPerson) GetId() *string {
+	return r.Id
+}
+func (r *RelatedPerson) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*RelatedPerson)(nil)

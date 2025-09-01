@@ -142,3 +142,12 @@ func (r *RiskEvidenceSynthesis) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*RiskEvidenceSynthesis)(nil)
+
+func (r *RiskEvidenceSynthesis) GetId() *string {
+	return r.Id
+}
+func (r *RiskEvidenceSynthesis) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*RiskEvidenceSynthesis)(nil)

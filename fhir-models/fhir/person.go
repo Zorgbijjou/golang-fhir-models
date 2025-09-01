@@ -83,3 +83,12 @@ func (r *Person) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Person)(nil)
+
+func (r *Person) GetId() *string {
+	return r.Id
+}
+func (r *Person) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Person)(nil)

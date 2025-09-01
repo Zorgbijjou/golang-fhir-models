@@ -142,3 +142,12 @@ func (r *TestReport) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*TestReport)(nil)
+
+func (r *TestReport) GetId() *string {
+	return r.Id
+}
+func (r *TestReport) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*TestReport)(nil)

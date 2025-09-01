@@ -113,3 +113,12 @@ func (r *EvidenceVariable) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*EvidenceVariable)(nil)
+
+func (r *EvidenceVariable) GetId() *string {
+	return r.Id
+}
+func (r *EvidenceVariable) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*EvidenceVariable)(nil)

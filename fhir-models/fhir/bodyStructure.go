@@ -74,3 +74,12 @@ func (r *BodyStructure) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*BodyStructure)(nil)
+
+func (r *BodyStructure) GetId() *string {
+	return r.Id
+}
+func (r *BodyStructure) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*BodyStructure)(nil)

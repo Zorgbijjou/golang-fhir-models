@@ -159,3 +159,12 @@ func (r *ExampleScenario) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ExampleScenario)(nil)
+
+func (r *ExampleScenario) GetId() *string {
+	return r.Id
+}
+func (r *ExampleScenario) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ExampleScenario)(nil)

@@ -134,3 +134,12 @@ func (r *ConceptMap) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ConceptMap)(nil)
+
+func (r *ConceptMap) GetId() *string {
+	return r.Id
+}
+func (r *ConceptMap) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ConceptMap)(nil)

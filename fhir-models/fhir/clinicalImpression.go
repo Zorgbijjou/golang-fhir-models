@@ -102,3 +102,12 @@ func (r *ClinicalImpression) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ClinicalImpression)(nil)
+
+func (r *ClinicalImpression) GetId() *string {
+	return r.Id
+}
+func (r *ClinicalImpression) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ClinicalImpression)(nil)

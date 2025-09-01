@@ -74,3 +74,12 @@ func (r *Schedule) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Schedule)(nil)
+
+func (r *Schedule) GetId() *string {
+	return r.Id
+}
+func (r *Schedule) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Schedule)(nil)

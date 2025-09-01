@@ -97,3 +97,12 @@ func (r *ImmunizationRecommendation) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ImmunizationRecommendation)(nil)
+
+func (r *ImmunizationRecommendation) GetId() *string {
+	return r.Id
+}
+func (r *ImmunizationRecommendation) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ImmunizationRecommendation)(nil)

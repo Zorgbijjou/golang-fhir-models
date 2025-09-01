@@ -115,3 +115,12 @@ func (r *SpecimenDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*SpecimenDefinition)(nil)
+
+func (r *SpecimenDefinition) GetId() *string {
+	return r.Id
+}
+func (r *SpecimenDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*SpecimenDefinition)(nil)

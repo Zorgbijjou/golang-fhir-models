@@ -56,3 +56,12 @@ func (r *Dosage) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Dosage)(nil)
+
+func (r *Dosage) GetId() *string {
+	return r.Id
+}
+func (r *Dosage) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Dosage)(nil)

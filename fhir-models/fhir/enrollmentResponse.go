@@ -74,3 +74,12 @@ func (r *EnrollmentResponse) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*EnrollmentResponse)(nil)
+
+func (r *EnrollmentResponse) GetId() *string {
+	return r.Id
+}
+func (r *EnrollmentResponse) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*EnrollmentResponse)(nil)

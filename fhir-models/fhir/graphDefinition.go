@@ -112,3 +112,12 @@ func (r *GraphDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*GraphDefinition)(nil)
+
+func (r *GraphDefinition) GetId() *string {
+	return r.Id
+}
+func (r *GraphDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*GraphDefinition)(nil)

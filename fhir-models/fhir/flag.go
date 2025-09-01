@@ -74,3 +74,12 @@ func (r *Flag) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Flag)(nil)
+
+func (r *Flag) GetId() *string {
+	return r.Id
+}
+func (r *Flag) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Flag)(nil)

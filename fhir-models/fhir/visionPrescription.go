@@ -100,3 +100,12 @@ func (r *VisionPrescription) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*VisionPrescription)(nil)
+
+func (r *VisionPrescription) GetId() *string {
+	return r.Id
+}
+func (r *VisionPrescription) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*VisionPrescription)(nil)

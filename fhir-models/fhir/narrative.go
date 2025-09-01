@@ -33,3 +33,12 @@ func (r *Narrative) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Narrative)(nil)
+
+func (r *Narrative) GetId() *string {
+	return r.Id
+}
+func (r *Narrative) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Narrative)(nil)

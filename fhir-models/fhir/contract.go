@@ -290,3 +290,12 @@ func (r *Contract) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Contract)(nil)
+
+func (r *Contract) GetId() *string {
+	return r.Id
+}
+func (r *Contract) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Contract)(nil)

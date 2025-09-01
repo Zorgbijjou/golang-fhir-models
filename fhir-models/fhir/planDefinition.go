@@ -189,3 +189,12 @@ func (r *PlanDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*PlanDefinition)(nil)
+
+func (r *PlanDefinition) GetId() *string {
+	return r.Id
+}
+func (r *PlanDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*PlanDefinition)(nil)

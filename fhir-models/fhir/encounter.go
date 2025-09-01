@@ -142,3 +142,12 @@ func (r *Encounter) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Encounter)(nil)
+
+func (r *Encounter) GetId() *string {
+	return r.Id
+}
+func (r *Encounter) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Encounter)(nil)

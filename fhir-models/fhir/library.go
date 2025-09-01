@@ -98,3 +98,12 @@ func (r *Library) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Library)(nil)
+
+func (r *Library) GetId() *string {
+	return r.Id
+}
+func (r *Library) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Library)(nil)

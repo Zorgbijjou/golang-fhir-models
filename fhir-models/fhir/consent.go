@@ -125,3 +125,12 @@ func (r *Consent) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Consent)(nil)
+
+func (r *Consent) GetId() *string {
+	return r.Id
+}
+func (r *Consent) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Consent)(nil)

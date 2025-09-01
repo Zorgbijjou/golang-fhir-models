@@ -41,3 +41,12 @@ func (r *Address) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Address)(nil)
+
+func (r *Address) GetId() *string {
+	return r.Id
+}
+func (r *Address) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Address)(nil)

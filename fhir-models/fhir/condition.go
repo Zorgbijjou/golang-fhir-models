@@ -106,3 +106,12 @@ func (r *Condition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Condition)(nil)
+
+func (r *Condition) GetId() *string {
+	return r.Id
+}
+func (r *Condition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Condition)(nil)

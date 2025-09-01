@@ -97,3 +97,12 @@ func (r *RiskAssessment) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*RiskAssessment)(nil)
+
+func (r *RiskAssessment) GetId() *string {
+	return r.Id
+}
+func (r *RiskAssessment) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*RiskAssessment)(nil)

@@ -63,3 +63,12 @@ func (r *DataRequirement) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*DataRequirement)(nil)
+
+func (r *DataRequirement) GetId() *string {
+	return r.Id
+}
+func (r *DataRequirement) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*DataRequirement)(nil)

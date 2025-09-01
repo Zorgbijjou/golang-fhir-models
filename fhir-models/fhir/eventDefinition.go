@@ -95,3 +95,12 @@ func (r *EventDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*EventDefinition)(nil)
+
+func (r *EventDefinition) GetId() *string {
+	return r.Id
+}
+func (r *EventDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*EventDefinition)(nil)

@@ -84,3 +84,12 @@ func (r *DeviceMetric) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*DeviceMetric)(nil)
+
+func (r *DeviceMetric) GetId() *string {
+	return r.Id
+}
+func (r *DeviceMetric) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*DeviceMetric)(nil)

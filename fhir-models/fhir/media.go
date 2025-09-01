@@ -89,3 +89,12 @@ func (r *Media) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Media)(nil)
+
+func (r *Media) GetId() *string {
+	return r.Id
+}
+func (r *Media) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Media)(nil)

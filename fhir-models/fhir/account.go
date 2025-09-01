@@ -92,3 +92,12 @@ func (r *Account) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Account)(nil)
+
+func (r *Account) GetId() *string {
+	return r.Id
+}
+func (r *Account) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Account)(nil)

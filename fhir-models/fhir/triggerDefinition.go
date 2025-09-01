@@ -39,3 +39,12 @@ func (r *TriggerDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*TriggerDefinition)(nil)
+
+func (r *TriggerDefinition) GetId() *string {
+	return r.Id
+}
+func (r *TriggerDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*TriggerDefinition)(nil)

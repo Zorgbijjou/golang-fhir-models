@@ -74,3 +74,12 @@ func (r *AppointmentResponse) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*AppointmentResponse)(nil)
+
+func (r *AppointmentResponse) GetId() *string {
+	return r.Id
+}
+func (r *AppointmentResponse) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*AppointmentResponse)(nil)

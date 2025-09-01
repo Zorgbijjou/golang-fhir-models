@@ -33,3 +33,12 @@ func (r *Ratio) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Ratio)(nil)
+
+func (r *Ratio) GetId() *string {
+	return r.Id
+}
+func (r *Ratio) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Ratio)(nil)

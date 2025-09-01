@@ -340,3 +340,12 @@ func (r *ElementDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ElementDefinition)(nil)
+
+func (r *ElementDefinition) GetId() *string {
+	return r.Id
+}
+func (r *ElementDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ElementDefinition)(nil)

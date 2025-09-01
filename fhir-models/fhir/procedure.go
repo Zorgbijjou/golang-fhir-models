@@ -113,3 +113,12 @@ func (r *Procedure) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Procedure)(nil)
+
+func (r *Procedure) GetId() *string {
+	return r.Id
+}
+func (r *Procedure) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Procedure)(nil)

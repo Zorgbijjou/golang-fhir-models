@@ -36,3 +36,12 @@ func (r *UsageContext) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*UsageContext)(nil)
+
+func (r *UsageContext) GetId() *string {
+	return r.Id
+}
+func (r *UsageContext) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*UsageContext)(nil)

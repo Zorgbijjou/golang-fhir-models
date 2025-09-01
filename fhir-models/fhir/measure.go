@@ -151,3 +151,12 @@ func (r *Measure) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Measure)(nil)
+
+func (r *Measure) GetId() *string {
+	return r.Id
+}
+func (r *Measure) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Measure)(nil)

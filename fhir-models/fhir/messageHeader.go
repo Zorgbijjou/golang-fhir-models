@@ -105,3 +105,12 @@ func (r *MessageHeader) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*MessageHeader)(nil)
+
+func (r *MessageHeader) GetId() *string {
+	return r.Id
+}
+func (r *MessageHeader) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*MessageHeader)(nil)

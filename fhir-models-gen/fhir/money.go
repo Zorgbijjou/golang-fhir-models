@@ -33,3 +33,12 @@ func (r *Money) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Money)(nil)
+
+func (r *Money) GetId() *string {
+	return r.Id
+}
+func (r *Money) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Money)(nil)

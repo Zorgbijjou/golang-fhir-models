@@ -94,3 +94,12 @@ func (r *SupplyRequest) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*SupplyRequest)(nil)
+
+func (r *SupplyRequest) GetId() *string {
+	return r.Id
+}
+func (r *SupplyRequest) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*SupplyRequest)(nil)

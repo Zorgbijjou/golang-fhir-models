@@ -165,3 +165,12 @@ func (r *TerminologyCapabilities) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*TerminologyCapabilities)(nil)
+
+func (r *TerminologyCapabilities) GetId() *string {
+	return r.Id
+}
+func (r *TerminologyCapabilities) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*TerminologyCapabilities)(nil)

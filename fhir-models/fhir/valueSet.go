@@ -164,3 +164,12 @@ func (r *ValueSet) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ValueSet)(nil)
+
+func (r *ValueSet) GetId() *string {
+	return r.Id
+}
+func (r *ValueSet) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ValueSet)(nil)

@@ -152,3 +152,12 @@ func (r *EffectEvidenceSynthesis) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*EffectEvidenceSynthesis)(nil)
+
+func (r *EffectEvidenceSynthesis) GetId() *string {
+	return r.Id
+}
+func (r *EffectEvidenceSynthesis) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*EffectEvidenceSynthesis)(nil)

@@ -155,3 +155,12 @@ func (r *Questionnaire) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Questionnaire)(nil)
+
+func (r *Questionnaire) GetId() *string {
+	return r.Id
+}
+func (r *Questionnaire) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Questionnaire)(nil)

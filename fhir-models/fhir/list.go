@@ -88,3 +88,12 @@ func (r *List) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*List)(nil)
+
+func (r *List) GetId() *string {
+	return r.Id
+}
+func (r *List) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*List)(nil)

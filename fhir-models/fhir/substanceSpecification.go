@@ -199,3 +199,12 @@ func (r *SubstanceSpecification) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*SubstanceSpecification)(nil)
+
+func (r *SubstanceSpecification) GetId() *string {
+	return r.Id
+}
+func (r *SubstanceSpecification) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*SubstanceSpecification)(nil)

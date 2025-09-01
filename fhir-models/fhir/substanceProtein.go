@@ -83,3 +83,12 @@ func (r *SubstanceProtein) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*SubstanceProtein)(nil)
+
+func (r *SubstanceProtein) GetId() *string {
+	return r.Id
+}
+func (r *SubstanceProtein) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*SubstanceProtein)(nil)

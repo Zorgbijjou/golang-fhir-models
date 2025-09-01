@@ -100,3 +100,12 @@ func (r *Location) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Location)(nil)
+
+func (r *Location) GetId() *string {
+	return r.Id
+}
+func (r *Location) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Location)(nil)

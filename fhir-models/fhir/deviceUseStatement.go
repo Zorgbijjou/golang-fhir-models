@@ -81,3 +81,12 @@ func (r *DeviceUseStatement) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*DeviceUseStatement)(nil)
+
+func (r *DeviceUseStatement) GetId() *string {
+	return r.Id
+}
+func (r *DeviceUseStatement) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*DeviceUseStatement)(nil)

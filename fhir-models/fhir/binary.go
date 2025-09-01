@@ -57,3 +57,11 @@ func UnmarshalBinary(b []byte) (Binary, error) {
 	}
 	return binary, nil
 }
+func (r *Binary) GetId() *string {
+	return r.Id
+}
+func (r *Binary) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Binary)(nil)

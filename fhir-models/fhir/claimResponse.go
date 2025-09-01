@@ -227,3 +227,12 @@ func (r *ClaimResponse) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ClaimResponse)(nil)
+
+func (r *ClaimResponse) GetId() *string {
+	return r.Id
+}
+func (r *ClaimResponse) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ClaimResponse)(nil)

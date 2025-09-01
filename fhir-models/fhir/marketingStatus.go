@@ -37,3 +37,12 @@ func (r *MarketingStatus) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*MarketingStatus)(nil)
+
+func (r *MarketingStatus) GetId() *string {
+	return r.Id
+}
+func (r *MarketingStatus) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*MarketingStatus)(nil)

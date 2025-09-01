@@ -38,3 +38,12 @@ func (r *HumanName) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*HumanName)(nil)
+
+func (r *HumanName) GetId() *string {
+	return r.Id
+}
+func (r *HumanName) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*HumanName)(nil)

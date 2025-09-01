@@ -370,3 +370,12 @@ func (r *ExplanationOfBenefit) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ExplanationOfBenefit)(nil)
+
+func (r *ExplanationOfBenefit) GetId() *string {
+	return r.Id
+}
+func (r *ExplanationOfBenefit) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ExplanationOfBenefit)(nil)

@@ -105,3 +105,12 @@ func (r *ResearchStudy) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ResearchStudy)(nil)
+
+func (r *ResearchStudy) GetId() *string {
+	return r.Id
+}
+func (r *ResearchStudy) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ResearchStudy)(nil)

@@ -107,3 +107,12 @@ func (r *Coverage) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Coverage)(nil)
+
+func (r *Coverage) GetId() *string {
+	return r.Id
+}
+func (r *Coverage) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Coverage)(nil)

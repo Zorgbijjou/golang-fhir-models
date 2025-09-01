@@ -113,3 +113,12 @@ func (r *VerificationResult) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*VerificationResult)(nil)
+
+func (r *VerificationResult) GetId() *string {
+	return r.Id
+}
+func (r *VerificationResult) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*VerificationResult)(nil)

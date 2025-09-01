@@ -36,3 +36,12 @@ func (r *Quantity) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Quantity)(nil)
+
+func (r *Quantity) GetId() *string {
+	return r.Id
+}
+func (r *Quantity) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Quantity)(nil)

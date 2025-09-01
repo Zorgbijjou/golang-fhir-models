@@ -66,3 +66,12 @@ func (r *DomainResource) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*DomainResource)(nil)
+
+func (r *DomainResource) GetId() *string {
+	return r.Id
+}
+func (r *DomainResource) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*DomainResource)(nil)

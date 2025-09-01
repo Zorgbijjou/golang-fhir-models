@@ -101,3 +101,12 @@ func (r *ObservationDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ObservationDefinition)(nil)
+
+func (r *ObservationDefinition) GetId() *string {
+	return r.Id
+}
+func (r *ObservationDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ObservationDefinition)(nil)

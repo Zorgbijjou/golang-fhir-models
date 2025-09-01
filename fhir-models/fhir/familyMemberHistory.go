@@ -105,3 +105,12 @@ func (r *FamilyMemberHistory) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*FamilyMemberHistory)(nil)
+
+func (r *FamilyMemberHistory) GetId() *string {
+	return r.Id
+}
+func (r *FamilyMemberHistory) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*FamilyMemberHistory)(nil)

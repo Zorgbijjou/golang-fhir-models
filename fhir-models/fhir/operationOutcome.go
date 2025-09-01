@@ -78,3 +78,12 @@ func (r *OperationOutcome) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*OperationOutcome)(nil)
+
+func (r *OperationOutcome) GetId() *string {
+	return r.Id
+}
+func (r *OperationOutcome) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*OperationOutcome)(nil)

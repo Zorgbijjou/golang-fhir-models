@@ -86,6 +86,16 @@ var genResourcesCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
+		idFile := jen.NewFile("fhir")
+		appendLicenseComment(idFile)
+		appendGeneratorComment(idFile)
+		generateHasIdInterface(idFile)
+		err = idFile.Save("hasId.go")
+		if err != nil {
+			fmt.Println(err)
+			os.Exit(1)
+		}
+
 		err = filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
 			if err != nil {
 				return err
@@ -265,11 +275,30 @@ func generateHasExtensionInterface(file *jen.File) {
 	})
 }
 
+func generateHasIdInterface(file *jen.File) {
+	file.Commentf("HasId defines common methods that allow to get and set id.")
+	file.Type().Id("HasId").InterfaceFunc(func(g *jen.Group) {
+		g.Id("GetId").Params().Params(jen.Op("*").Id("string"))
+		g.Id("SetId").Params(jen.Op("*").Id("string"))
+	})
+}
+
 func hasExtensionField(elementDefinitions []fhir.ElementDefinition, resourceName string) bool {
 	for _, element := range elementDefinitions {
 		// Check if this element is directly under the resource and is named "extension"
 		pathParts := Split(element.Path, ".")
 		if len(pathParts) == 2 && pathParts[0] == resourceName && ToLower(pathParts[1]) == "extension" {
+			return true
+		}
+	}
+	return false
+}
+
+func hasIdField(elementDefinitions []fhir.ElementDefinition, resourceName string) bool {
+	for _, element := range elementDefinitions {
+		// Check if this element is directly under the resource and is named "id"
+		pathParts := Split(element.Path, ".")
+		if len(pathParts) == 2 && pathParts[0] == resourceName && ToLower(pathParts[1]) == "id" {
 			return true
 		}
 	}
@@ -354,6 +383,24 @@ func generateResourceOrType(resources ResourceMap, requiredTypes map[string]bool
 
 		// Add compile-time check that the type implements HasExtension
 		file.Var().Op("_").Id("HasExtension").Op("=").Parens(jen.Op("*").Id(definition.Name)).Call(jen.Nil())
+	}
+
+	// generate GetId and SetId methods
+	if hasIdField(elementDefinitions, definition.Name) {
+		// Add GetId method
+		file.Func().Params(jen.Id("r").Op("*").Id(definition.Name)).Id("GetId").
+			Params().Params(jen.Op("*").Id("string")).Block(
+			jen.Return(jen.Id("r").Op(".").Id("Id")),
+		)
+
+		// Add SetId method
+		file.Func().Params(jen.Id("r").Op("*").Id(definition.Name)).Id("SetId").
+			Params(jen.Id("id").Op("*").Id("string")).Block(
+			jen.Id("r").Op(".").Id("Id").Op("=").Id("id"),
+		)
+
+		// Add compile-time check that the type implements HasId
+		file.Var().Op("_").Id("HasId").Op("=").Parens(jen.Op("*").Id(definition.Name)).Call(jen.Nil())
 	}
 
 	return file, nil

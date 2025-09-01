@@ -98,3 +98,12 @@ func (r *AllergyIntolerance) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*AllergyIntolerance)(nil)
+
+func (r *AllergyIntolerance) GetId() *string {
+	return r.Id
+}
+func (r *AllergyIntolerance) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*AllergyIntolerance)(nil)

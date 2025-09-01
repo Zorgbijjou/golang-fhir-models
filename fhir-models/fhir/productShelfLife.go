@@ -36,3 +36,12 @@ func (r *ProductShelfLife) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ProductShelfLife)(nil)
+
+func (r *ProductShelfLife) GetId() *string {
+	return r.Id
+}
+func (r *ProductShelfLife) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ProductShelfLife)(nil)

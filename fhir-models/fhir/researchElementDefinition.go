@@ -126,3 +126,12 @@ func (r *ResearchElementDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ResearchElementDefinition)(nil)
+
+func (r *ResearchElementDefinition) GetId() *string {
+	return r.Id
+}
+func (r *ResearchElementDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ResearchElementDefinition)(nil)

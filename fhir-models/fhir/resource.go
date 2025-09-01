@@ -54,3 +54,11 @@ func UnmarshalResource(b []byte) (Resource, error) {
 	}
 	return resource, nil
 }
+func (r *Resource) GetId() *string {
+	return r.Id
+}
+func (r *Resource) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Resource)(nil)

@@ -38,3 +38,12 @@ func (r *Signature) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Signature)(nil)
+
+func (r *Signature) GetId() *string {
+	return r.Id
+}
+func (r *Signature) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Signature)(nil)

@@ -85,3 +85,12 @@ func (r *DocumentManifest) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*DocumentManifest)(nil)
+
+func (r *DocumentManifest) GetId() *string {
+	return r.Id
+}
+func (r *DocumentManifest) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*DocumentManifest)(nil)

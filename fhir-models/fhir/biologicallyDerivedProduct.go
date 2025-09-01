@@ -113,3 +113,12 @@ func (r *BiologicallyDerivedProduct) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*BiologicallyDerivedProduct)(nil)
+
+func (r *BiologicallyDerivedProduct) GetId() *string {
+	return r.Id
+}
+func (r *BiologicallyDerivedProduct) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*BiologicallyDerivedProduct)(nil)

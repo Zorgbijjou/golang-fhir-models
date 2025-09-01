@@ -56,3 +56,12 @@ func (r *Timing) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Timing)(nil)
+
+func (r *Timing) GetId() *string {
+	return r.Id
+}
+func (r *Timing) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Timing)(nil)

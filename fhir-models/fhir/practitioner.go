@@ -85,3 +85,12 @@ func (r *Practitioner) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Practitioner)(nil)
+
+func (r *Practitioner) GetId() *string {
+	return r.Id
+}
+func (r *Practitioner) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Practitioner)(nil)

@@ -217,3 +217,12 @@ func (r *Task) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Task)(nil)
+
+func (r *Task) GetId() *string {
+	return r.Id
+}
+func (r *Task) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Task)(nil)

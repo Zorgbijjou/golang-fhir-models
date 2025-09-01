@@ -142,3 +142,12 @@ func (r *CodeSystem) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*CodeSystem)(nil)
+
+func (r *CodeSystem) GetId() *string {
+	return r.Id
+}
+func (r *CodeSystem) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*CodeSystem)(nil)

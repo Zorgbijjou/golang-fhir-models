@@ -39,3 +39,12 @@ func (r *Attachment) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Attachment)(nil)
+
+func (r *Attachment) GetId() *string {
+	return r.Id
+}
+func (r *Attachment) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Attachment)(nil)

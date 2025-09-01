@@ -36,3 +36,12 @@ func (r *Distance) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Distance)(nil)
+
+func (r *Distance) GetId() *string {
+	return r.Id
+}
+func (r *Distance) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Distance)(nil)

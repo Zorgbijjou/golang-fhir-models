@@ -36,3 +36,12 @@ func (r *Expression) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Expression)(nil)
+
+func (r *Expression) GetId() *string {
+	return r.Id
+}
+func (r *Expression) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Expression)(nil)

@@ -102,3 +102,12 @@ func (r *ChargeItem) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ChargeItem)(nil)
+
+func (r *ChargeItem) GetId() *string {
+	return r.Id
+}
+func (r *ChargeItem) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ChargeItem)(nil)

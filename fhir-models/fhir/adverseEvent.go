@@ -102,3 +102,12 @@ func (r *AdverseEvent) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*AdverseEvent)(nil)
+
+func (r *AdverseEvent) GetId() *string {
+	return r.Id
+}
+func (r *AdverseEvent) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*AdverseEvent)(nil)

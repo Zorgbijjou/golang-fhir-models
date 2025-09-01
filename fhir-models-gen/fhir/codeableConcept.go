@@ -33,3 +33,12 @@ func (r *CodeableConcept) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*CodeableConcept)(nil)
+
+func (r *CodeableConcept) GetId() *string {
+	return r.Id
+}
+func (r *CodeableConcept) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*CodeableConcept)(nil)

@@ -128,3 +128,12 @@ func (r *CoverageEligibilityResponse) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*CoverageEligibilityResponse)(nil)
+
+func (r *CoverageEligibilityResponse) GetId() *string {
+	return r.Id
+}
+func (r *CoverageEligibilityResponse) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*CoverageEligibilityResponse)(nil)

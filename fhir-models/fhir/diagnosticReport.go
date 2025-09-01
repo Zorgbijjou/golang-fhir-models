@@ -92,3 +92,12 @@ func (r *DiagnosticReport) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*DiagnosticReport)(nil)
+
+func (r *DiagnosticReport) GetId() *string {
+	return r.Id
+}
+func (r *DiagnosticReport) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*DiagnosticReport)(nil)

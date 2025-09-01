@@ -98,3 +98,12 @@ func (r *Goal) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Goal)(nil)
+
+func (r *Goal) GetId() *string {
+	return r.Id
+}
+func (r *Goal) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Goal)(nil)

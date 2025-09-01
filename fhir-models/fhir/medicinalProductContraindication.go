@@ -81,3 +81,12 @@ func (r *MedicinalProductContraindication) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*MedicinalProductContraindication)(nil)
+
+func (r *MedicinalProductContraindication) GetId() *string {
+	return r.Id
+}
+func (r *MedicinalProductContraindication) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*MedicinalProductContraindication)(nil)

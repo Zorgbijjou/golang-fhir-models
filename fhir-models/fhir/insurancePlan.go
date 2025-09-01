@@ -155,3 +155,12 @@ func (r *InsurancePlan) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*InsurancePlan)(nil)
+
+func (r *InsurancePlan) GetId() *string {
+	return r.Id
+}
+func (r *InsurancePlan) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*InsurancePlan)(nil)

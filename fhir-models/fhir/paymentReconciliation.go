@@ -103,3 +103,12 @@ func (r *PaymentReconciliation) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*PaymentReconciliation)(nil)
+
+func (r *PaymentReconciliation) GetId() *string {
+	return r.Id
+}
+func (r *PaymentReconciliation) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*PaymentReconciliation)(nil)

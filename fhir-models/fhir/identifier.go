@@ -37,3 +37,12 @@ func (r *Identifier) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Identifier)(nil)
+
+func (r *Identifier) GetId() *string {
+	return r.Id
+}
+func (r *Identifier) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Identifier)(nil)

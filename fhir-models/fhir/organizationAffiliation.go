@@ -78,3 +78,12 @@ func (r *OrganizationAffiliation) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*OrganizationAffiliation)(nil)
+
+func (r *OrganizationAffiliation) GetId() *string {
+	return r.Id
+}
+func (r *OrganizationAffiliation) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*OrganizationAffiliation)(nil)

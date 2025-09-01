@@ -89,3 +89,12 @@ func (r *NamingSystem) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*NamingSystem)(nil)
+
+func (r *NamingSystem) GetId() *string {
+	return r.Id
+}
+func (r *NamingSystem) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*NamingSystem)(nil)

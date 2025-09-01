@@ -33,3 +33,12 @@ func (r *Period) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Period)(nil)
+
+func (r *Period) GetId() *string {
+	return r.Id
+}
+func (r *Period) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Period)(nil)

@@ -122,3 +122,12 @@ func (r *SubstancePolymer) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*SubstancePolymer)(nil)
+
+func (r *SubstancePolymer) GetId() *string {
+	return r.Id
+}
+func (r *SubstancePolymer) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*SubstancePolymer)(nil)

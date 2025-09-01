@@ -124,3 +124,12 @@ func (r *CarePlan) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*CarePlan)(nil)
+
+func (r *CarePlan) GetId() *string {
+	return r.Id
+}
+func (r *CarePlan) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*CarePlan)(nil)

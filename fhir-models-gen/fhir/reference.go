@@ -35,3 +35,12 @@ func (r *Reference) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Reference)(nil)
+
+func (r *Reference) GetId() *string {
+	return r.Id
+}
+func (r *Reference) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Reference)(nil)

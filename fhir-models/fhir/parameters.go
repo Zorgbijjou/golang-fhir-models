@@ -113,3 +113,11 @@ func UnmarshalParameters(b []byte) (Parameters, error) {
 	}
 	return parameters, nil
 }
+func (r *Parameters) GetId() *string {
+	return r.Id
+}
+func (r *Parameters) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Parameters)(nil)

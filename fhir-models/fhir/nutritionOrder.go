@@ -141,3 +141,12 @@ func (r *NutritionOrder) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*NutritionOrder)(nil)
+
+func (r *NutritionOrder) GetId() *string {
+	return r.Id
+}
+func (r *NutritionOrder) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*NutritionOrder)(nil)

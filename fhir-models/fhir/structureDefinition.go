@@ -121,3 +121,12 @@ func (r *StructureDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*StructureDefinition)(nil)
+
+func (r *StructureDefinition) GetId() *string {
+	return r.Id
+}
+func (r *StructureDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*StructureDefinition)(nil)

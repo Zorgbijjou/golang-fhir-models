@@ -107,3 +107,12 @@ func (r *MessageDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*MessageDefinition)(nil)
+
+func (r *MessageDefinition) GetId() *string {
+	return r.Id
+}
+func (r *MessageDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*MessageDefinition)(nil)

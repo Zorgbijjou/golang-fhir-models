@@ -97,3 +97,12 @@ func (r *Communication) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Communication)(nil)
+
+func (r *Communication) GetId() *string {
+	return r.Id
+}
+func (r *Communication) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Communication)(nil)

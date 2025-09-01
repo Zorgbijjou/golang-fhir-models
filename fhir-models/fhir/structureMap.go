@@ -219,3 +219,12 @@ func (r *StructureMap) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*StructureMap)(nil)
+
+func (r *StructureMap) GetId() *string {
+	return r.Id
+}
+func (r *StructureMap) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*StructureMap)(nil)

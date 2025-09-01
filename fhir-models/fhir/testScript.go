@@ -247,3 +247,12 @@ func (r *TestScript) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*TestScript)(nil)
+
+func (r *TestScript) GetId() *string {
+	return r.Id
+}
+func (r *TestScript) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*TestScript)(nil)

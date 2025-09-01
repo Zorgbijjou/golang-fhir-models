@@ -90,3 +90,12 @@ func (r *Medication) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Medication)(nil)
+
+func (r *Medication) GetId() *string {
+	return r.Id
+}
+func (r *Medication) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Medication)(nil)

@@ -99,3 +99,12 @@ func (r *SearchParameter) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*SearchParameter)(nil)
+
+func (r *SearchParameter) GetId() *string {
+	return r.Id
+}
+func (r *SearchParameter) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*SearchParameter)(nil)

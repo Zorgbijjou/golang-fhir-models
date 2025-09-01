@@ -108,3 +108,12 @@ func (r *DocumentReference) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*DocumentReference)(nil)
+
+func (r *DocumentReference) GetId() *string {
+	return r.Id
+}
+func (r *DocumentReference) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*DocumentReference)(nil)

@@ -134,3 +134,12 @@ func (r *Observation) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Observation)(nil)
+
+func (r *Observation) GetId() *string {
+	return r.Id
+}
+func (r *Observation) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Observation)(nil)

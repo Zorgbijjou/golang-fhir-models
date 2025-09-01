@@ -120,3 +120,12 @@ func (r *Composition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Composition)(nil)
+
+func (r *Composition) GetId() *string {
+	return r.Id
+}
+func (r *Composition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Composition)(nil)

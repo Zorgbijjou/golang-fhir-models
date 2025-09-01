@@ -129,3 +129,12 @@ func (r *OperationDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*OperationDefinition)(nil)
+
+func (r *OperationDefinition) GetId() *string {
+	return r.Id
+}
+func (r *OperationDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*OperationDefinition)(nil)

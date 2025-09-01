@@ -93,3 +93,12 @@ func (r *EpisodeOfCare) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*EpisodeOfCare)(nil)
+
+func (r *EpisodeOfCare) GetId() *string {
+	return r.Id
+}
+func (r *EpisodeOfCare) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*EpisodeOfCare)(nil)

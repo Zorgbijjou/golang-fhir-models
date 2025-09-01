@@ -38,3 +38,12 @@ func (r *SampledData) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*SampledData)(nil)
+
+func (r *SampledData) GetId() *string {
+	return r.Id
+}
+func (r *SampledData) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*SampledData)(nil)

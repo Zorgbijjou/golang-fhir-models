@@ -86,3 +86,12 @@ func (r *CatalogEntry) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*CatalogEntry)(nil)
+
+func (r *CatalogEntry) GetId() *string {
+	return r.Id
+}
+func (r *CatalogEntry) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*CatalogEntry)(nil)

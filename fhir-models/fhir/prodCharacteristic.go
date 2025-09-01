@@ -43,3 +43,12 @@ func (r *ProdCharacteristic) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ProdCharacteristic)(nil)
+
+func (r *ProdCharacteristic) GetId() *string {
+	return r.Id
+}
+func (r *ProdCharacteristic) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ProdCharacteristic)(nil)

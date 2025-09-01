@@ -81,3 +81,12 @@ func (r *ImmunizationEvaluation) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ImmunizationEvaluation)(nil)
+
+func (r *ImmunizationEvaluation) GetId() *string {
+	return r.Id
+}
+func (r *ImmunizationEvaluation) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ImmunizationEvaluation)(nil)

@@ -101,3 +101,12 @@ func (r *SubstanceNucleicAcid) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*SubstanceNucleicAcid)(nil)
+
+func (r *SubstanceNucleicAcid) GetId() *string {
+	return r.Id
+}
+func (r *SubstanceNucleicAcid) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*SubstanceNucleicAcid)(nil)

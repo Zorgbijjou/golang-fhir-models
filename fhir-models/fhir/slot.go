@@ -77,3 +77,12 @@ func (r *Slot) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Slot)(nil)
+
+func (r *Slot) GetId() *string {
+	return r.Id
+}
+func (r *Slot) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Slot)(nil)

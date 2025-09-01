@@ -77,3 +77,12 @@ func (r *Endpoint) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Endpoint)(nil)
+
+func (r *Endpoint) GetId() *string {
+	return r.Id
+}
+func (r *Endpoint) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Endpoint)(nil)

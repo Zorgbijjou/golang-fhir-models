@@ -213,3 +213,12 @@ func (r *CapabilityStatement) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*CapabilityStatement)(nil)
+
+func (r *CapabilityStatement) GetId() *string {
+	return r.Id
+}
+func (r *CapabilityStatement) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*CapabilityStatement)(nil)

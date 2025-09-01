@@ -107,3 +107,12 @@ func (r *Invoice) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Invoice)(nil)
+
+func (r *Invoice) GetId() *string {
+	return r.Id
+}
+func (r *Invoice) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Invoice)(nil)

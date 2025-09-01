@@ -94,3 +94,12 @@ func (r *Provenance) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Provenance)(nil)
+
+func (r *Provenance) GetId() *string {
+	return r.Id
+}
+func (r *Provenance) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Provenance)(nil)

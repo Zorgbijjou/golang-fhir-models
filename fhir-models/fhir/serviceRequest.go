@@ -104,3 +104,12 @@ func (r *ServiceRequest) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ServiceRequest)(nil)
+
+func (r *ServiceRequest) GetId() *string {
+	return r.Id
+}
+func (r *ServiceRequest) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ServiceRequest)(nil)

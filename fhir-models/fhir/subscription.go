@@ -82,3 +82,12 @@ func (r *Subscription) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Subscription)(nil)
+
+func (r *Subscription) GetId() *string {
+	return r.Id
+}
+func (r *Subscription) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Subscription)(nil)

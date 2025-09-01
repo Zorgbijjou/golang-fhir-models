@@ -76,3 +76,12 @@ func (r *Linkage) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Linkage)(nil)
+
+func (r *Linkage) GetId() *string {
+	return r.Id
+}
+func (r *Linkage) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Linkage)(nil)

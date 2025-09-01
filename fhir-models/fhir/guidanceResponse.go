@@ -83,3 +83,12 @@ func (r *GuidanceResponse) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*GuidanceResponse)(nil)
+
+func (r *GuidanceResponse) GetId() *string {
+	return r.Id
+}
+func (r *GuidanceResponse) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*GuidanceResponse)(nil)

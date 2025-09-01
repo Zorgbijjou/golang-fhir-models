@@ -33,3 +33,12 @@ func (r *ContactDetail) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ContactDetail)(nil)
+
+func (r *ContactDetail) GetId() *string {
+	return r.Id
+}
+func (r *ContactDetail) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ContactDetail)(nil)

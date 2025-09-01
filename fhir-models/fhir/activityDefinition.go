@@ -133,3 +133,12 @@ func (r *ActivityDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*ActivityDefinition)(nil)
+
+func (r *ActivityDefinition) GetId() *string {
+	return r.Id
+}
+func (r *ActivityDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*ActivityDefinition)(nil)

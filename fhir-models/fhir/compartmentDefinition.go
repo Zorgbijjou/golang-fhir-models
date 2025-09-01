@@ -88,3 +88,12 @@ func (r *CompartmentDefinition) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*CompartmentDefinition)(nil)
+
+func (r *CompartmentDefinition) GetId() *string {
+	return r.Id
+}
+func (r *CompartmentDefinition) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*CompartmentDefinition)(nil)

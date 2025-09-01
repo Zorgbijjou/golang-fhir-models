@@ -35,3 +35,12 @@ func (r *Annotation) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*Annotation)(nil)
+
+func (r *Annotation) GetId() *string {
+	return r.Id
+}
+func (r *Annotation) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*Annotation)(nil)

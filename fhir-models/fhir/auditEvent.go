@@ -130,3 +130,12 @@ func (r *AuditEvent) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*AuditEvent)(nil)
+
+func (r *AuditEvent) GetId() *string {
+	return r.Id
+}
+func (r *AuditEvent) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*AuditEvent)(nil)

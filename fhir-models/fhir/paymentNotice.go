@@ -78,3 +78,12 @@ func (r *PaymentNotice) SetExtension(extension []Extension) {
 }
 
 var _ HasExtension = (*PaymentNotice)(nil)
+
+func (r *PaymentNotice) GetId() *string {
+	return r.Id
+}
+func (r *PaymentNotice) SetId(id *string) {
+	r.Id = id
+}
+
+var _ HasId = (*PaymentNotice)(nil)
