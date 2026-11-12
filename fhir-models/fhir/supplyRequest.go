@@ -24,42 +24,51 @@ import (
 
 // SupplyRequest is documented here http://hl7.org/fhir/StructureDefinition/SupplyRequest
 type SupplyRequest struct {
-	Id                  *string                  `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                *Meta                    `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules       *string                  `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language            *string                  `bson:"language,omitempty" json:"language,omitempty"`
-	Text                *Narrative               `bson:"text,omitempty" json:"text,omitempty"`
-	Contained           json.RawMessage          `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension           []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension   []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier          []Identifier             `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status              *SupplyRequestStatus     `bson:"status,omitempty" json:"status,omitempty"`
-	Category            *CodeableConcept         `bson:"category,omitempty" json:"category,omitempty"`
-	Priority            *RequestPriority         `bson:"priority,omitempty" json:"priority,omitempty"`
-	ItemCodeableConcept *CodeableConcept         `bson:"itemCodeableConcept,omitempty" json:"itemCodeableConcept,omitempty"`
-	ItemReference       *Reference               `bson:"itemReference,omitempty" json:"itemReference,omitempty"`
-	Quantity            Quantity                 `bson:"quantity" json:"quantity"`
-	Parameter           []SupplyRequestParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
-	OccurrenceDateTime  *string                  `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
-	OccurrencePeriod    *Period                  `bson:"occurrencePeriod,omitempty" json:"occurrencePeriod,omitempty"`
-	OccurrenceTiming    *Timing                  `bson:"occurrenceTiming,omitempty" json:"occurrenceTiming,omitempty"`
-	AuthoredOn          *string                  `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
-	Requester           *Reference               `bson:"requester,omitempty" json:"requester,omitempty"`
-	Supplier            []Reference              `bson:"supplier,omitempty" json:"supplier,omitempty"`
-	ReasonCode          []CodeableConcept        `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
-	ReasonReference     []Reference              `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`
-	DeliverFrom         *Reference               `bson:"deliverFrom,omitempty" json:"deliverFrom,omitempty"`
-	DeliverTo           *Reference               `bson:"deliverTo,omitempty" json:"deliverTo,omitempty"`
+	Id                                 *string                  `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                 *PrimitiveElement        `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                               *Meta                    `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                      *string                  `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement      *PrimitiveElement        `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                           *string                  `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement           *PrimitiveElement        `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                               *Narrative               `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                          json.RawMessage          `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                          []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                  []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                         []Identifier             `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Status                             *SupplyRequestStatus     `bson:"status,omitempty" json:"status,omitempty"`
+	StatusPrimitiveElement             *PrimitiveElement        `bson:"_status,omitempty" json:"_status,omitempty"`
+	Category                           *CodeableConcept         `bson:"category,omitempty" json:"category,omitempty"`
+	Priority                           *RequestPriority         `bson:"priority,omitempty" json:"priority,omitempty"`
+	PriorityPrimitiveElement           *PrimitiveElement        `bson:"_priority,omitempty" json:"_priority,omitempty"`
+	ItemCodeableConcept                *CodeableConcept         `bson:"itemCodeableConcept,omitempty" json:"itemCodeableConcept,omitempty"`
+	ItemReference                      *Reference               `bson:"itemReference,omitempty" json:"itemReference,omitempty"`
+	Quantity                           Quantity                 `bson:"quantity" json:"quantity"`
+	Parameter                          []SupplyRequestParameter `bson:"parameter,omitempty" json:"parameter,omitempty"`
+	OccurrenceDateTime                 *string                  `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
+	OccurrenceDateTimePrimitiveElement *PrimitiveElement        `bson:"_occurrenceDateTime,omitempty" json:"_occurrenceDateTime,omitempty"`
+	OccurrencePeriod                   *Period                  `bson:"occurrencePeriod,omitempty" json:"occurrencePeriod,omitempty"`
+	OccurrenceTiming                   *Timing                  `bson:"occurrenceTiming,omitempty" json:"occurrenceTiming,omitempty"`
+	AuthoredOn                         *string                  `bson:"authoredOn,omitempty" json:"authoredOn,omitempty"`
+	AuthoredOnPrimitiveElement         *PrimitiveElement        `bson:"_authoredOn,omitempty" json:"_authoredOn,omitempty"`
+	Requester                          *Reference               `bson:"requester,omitempty" json:"requester,omitempty"`
+	Supplier                           []Reference              `bson:"supplier,omitempty" json:"supplier,omitempty"`
+	ReasonCode                         []CodeableConcept        `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
+	ReasonReference                    []Reference              `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`
+	DeliverFrom                        *Reference               `bson:"deliverFrom,omitempty" json:"deliverFrom,omitempty"`
+	DeliverTo                          *Reference               `bson:"deliverTo,omitempty" json:"deliverTo,omitempty"`
 }
 type SupplyRequestParameter struct {
-	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension            []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension    []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code                 *CodeableConcept `bson:"code,omitempty" json:"code,omitempty"`
-	ValueCodeableConcept *CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
-	ValueQuantity        *Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
-	ValueRange           *Range           `bson:"valueRange,omitempty" json:"valueRange,omitempty"`
-	ValueBoolean         *bool            `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	Id                           *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement           *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                    []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension            []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Code                         *CodeableConcept  `bson:"code,omitempty" json:"code,omitempty"`
+	ValueCodeableConcept         *CodeableConcept  `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
+	ValueQuantity                *Quantity         `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
+	ValueRange                   *Range            `bson:"valueRange,omitempty" json:"valueRange,omitempty"`
+	ValueBoolean                 *bool             `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueBooleanPrimitiveElement *PrimitiveElement `bson:"_valueBoolean,omitempty" json:"_valueBoolean,omitempty"`
 }
 type OtherSupplyRequest SupplyRequest
 

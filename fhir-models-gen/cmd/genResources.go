@@ -491,9 +491,13 @@ func addFieldStatement(
 	element := elementDefinitions[elementIndex]
 	statement := fields.Id(fieldName)
 	isPolymorphic := HasSuffix(element.Path, "[x]")
+	// A primitive has nowhere to put its id and extensions, so they live in a sibling property.
+	// See the PrimitiveElement type and appendPrimitiveElementField below.
+	isPrimitive := false
 
 	switch elementType.Code {
 	case "code":
+		isPrimitive = true
 		if *element.Max == "*" {
 			statement.Op("[]")
 		} else if *element.Min == 0 || isPolymorphic {
@@ -560,6 +564,9 @@ func addFieldStatement(
 		} else {
 			if unicode.IsUpper(rune(typeIdentifier[0])) {
 				requiredTypes[typeIdentifier] = true
+			} else {
+				// Mapped onto a Go builtin (string, bool, int, float64), so it is a FHIR primitive.
+				isPrimitive = true
 			}
 			statement.Id(typeIdentifier)
 		}
@@ -571,7 +578,26 @@ func addFieldStatement(
 		statement.Tag(map[string]string{"json": name, "bson": name})
 	}
 
+	if isPrimitive {
+		appendPrimitiveElementField(fields, fieldName, name, *element.Max == "*")
+	}
+
 	return elementIndex, err
+}
+
+// appendPrimitiveElementField adds the sibling field that holds the id and extensions of a
+// primitive field, which FHIR JSON stores under the field name prefixed with an underscore.
+// For a repeating primitive the sibling is an array, positionally matched to the values, so its
+// entries are pointers: an entry is null when that value has no id or extensions.
+func appendPrimitiveElementField(fields *jen.Group, fieldName string, name string, repeats bool) {
+	statement := fields.Id(fieldName + "PrimitiveElement")
+	if repeats {
+		statement.Op("[]").Op("*")
+	} else {
+		statement.Op("*")
+	}
+	statement.Id("PrimitiveElement").
+		Tag(map[string]string{"json": "_" + name + ",omitempty", "bson": "_" + name + ",omitempty"})
 }
 
 func requiredValueSetBinding(elementDefinition fhir.ElementDefinition) *string {

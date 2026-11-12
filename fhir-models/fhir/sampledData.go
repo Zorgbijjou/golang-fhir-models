@@ -19,15 +19,22 @@ package fhir
 
 // SampledData is documented here http://hl7.org/fhir/StructureDefinition/SampledData
 type SampledData struct {
-	Id         *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension  []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	Origin     Quantity    `bson:"origin" json:"origin"`
-	Period     float64     `bson:"period" json:"period"`
-	Factor     *float64    `bson:"factor,omitempty" json:"factor,omitempty"`
-	LowerLimit *float64    `bson:"lowerLimit,omitempty" json:"lowerLimit,omitempty"`
-	UpperLimit *float64    `bson:"upperLimit,omitempty" json:"upperLimit,omitempty"`
-	Dimensions int         `bson:"dimensions" json:"dimensions"`
-	Data       *string     `bson:"data,omitempty" json:"data,omitempty"`
+	Id                         *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement         *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                  []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	Origin                     Quantity          `bson:"origin" json:"origin"`
+	Period                     float64           `bson:"period" json:"period"`
+	PeriodPrimitiveElement     *PrimitiveElement `bson:"_period,omitempty" json:"_period,omitempty"`
+	Factor                     *float64          `bson:"factor,omitempty" json:"factor,omitempty"`
+	FactorPrimitiveElement     *PrimitiveElement `bson:"_factor,omitempty" json:"_factor,omitempty"`
+	LowerLimit                 *float64          `bson:"lowerLimit,omitempty" json:"lowerLimit,omitempty"`
+	LowerLimitPrimitiveElement *PrimitiveElement `bson:"_lowerLimit,omitempty" json:"_lowerLimit,omitempty"`
+	UpperLimit                 *float64          `bson:"upperLimit,omitempty" json:"upperLimit,omitempty"`
+	UpperLimitPrimitiveElement *PrimitiveElement `bson:"_upperLimit,omitempty" json:"_upperLimit,omitempty"`
+	Dimensions                 int               `bson:"dimensions" json:"dimensions"`
+	DimensionsPrimitiveElement *PrimitiveElement `bson:"_dimensions,omitempty" json:"_dimensions,omitempty"`
+	Data                       *string           `bson:"data,omitempty" json:"data,omitempty"`
+	DataPrimitiveElement       *PrimitiveElement `bson:"_data,omitempty" json:"_data,omitempty"`
 }
 
 func (r *SampledData) GetExtension() []Extension {

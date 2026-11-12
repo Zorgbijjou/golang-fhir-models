@@ -19,12 +19,16 @@ package fhir
 
 // Reference is documented here http://hl7.org/fhir/StructureDefinition/Reference
 type Reference struct {
-	Id         *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension  []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	Reference  *string     `bson:"reference,omitempty" json:"reference,omitempty"`
-	Type       *string     `bson:"type,omitempty" json:"type,omitempty"`
-	Identifier *Identifier `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Display    *string     `bson:"display,omitempty" json:"display,omitempty"`
+	Id                        *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement        *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                 []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	Reference                 *string           `bson:"reference,omitempty" json:"reference,omitempty"`
+	ReferencePrimitiveElement *PrimitiveElement `bson:"_reference,omitempty" json:"_reference,omitempty"`
+	Type                      *string           `bson:"type,omitempty" json:"type,omitempty"`
+	TypePrimitiveElement      *PrimitiveElement `bson:"_type,omitempty" json:"_type,omitempty"`
+	Identifier                *Identifier       `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Display                   *string           `bson:"display,omitempty" json:"display,omitempty"`
+	DisplayPrimitiveElement   *PrimitiveElement `bson:"_display,omitempty" json:"_display,omitempty"`
 }
 
 func (r *Reference) GetExtension() []Extension {

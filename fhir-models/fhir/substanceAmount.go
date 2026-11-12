@@ -19,21 +19,25 @@ package fhir
 
 // SubstanceAmount is documented here http://hl7.org/fhir/StructureDefinition/SubstanceAmount
 type SubstanceAmount struct {
-	Id                *string                        `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension                    `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension                    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	AmountQuantity    *Quantity                      `bson:"amountQuantity,omitempty" json:"amountQuantity,omitempty"`
-	AmountRange       *Range                         `bson:"amountRange,omitempty" json:"amountRange,omitempty"`
-	AmountString      *string                        `bson:"amountString,omitempty" json:"amountString,omitempty"`
-	AmountType        *CodeableConcept               `bson:"amountType,omitempty" json:"amountType,omitempty"`
-	AmountText        *string                        `bson:"amountText,omitempty" json:"amountText,omitempty"`
-	ReferenceRange    *SubstanceAmountReferenceRange `bson:"referenceRange,omitempty" json:"referenceRange,omitempty"`
+	Id                           *string                        `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement           *PrimitiveElement              `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                    []Extension                    `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension            []Extension                    `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	AmountQuantity               *Quantity                      `bson:"amountQuantity,omitempty" json:"amountQuantity,omitempty"`
+	AmountRange                  *Range                         `bson:"amountRange,omitempty" json:"amountRange,omitempty"`
+	AmountString                 *string                        `bson:"amountString,omitempty" json:"amountString,omitempty"`
+	AmountStringPrimitiveElement *PrimitiveElement              `bson:"_amountString,omitempty" json:"_amountString,omitempty"`
+	AmountType                   *CodeableConcept               `bson:"amountType,omitempty" json:"amountType,omitempty"`
+	AmountText                   *string                        `bson:"amountText,omitempty" json:"amountText,omitempty"`
+	AmountTextPrimitiveElement   *PrimitiveElement              `bson:"_amountText,omitempty" json:"_amountText,omitempty"`
+	ReferenceRange               *SubstanceAmountReferenceRange `bson:"referenceRange,omitempty" json:"referenceRange,omitempty"`
 }
 type SubstanceAmountReferenceRange struct {
-	Id        *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	LowLimit  *Quantity   `bson:"lowLimit,omitempty" json:"lowLimit,omitempty"`
-	HighLimit *Quantity   `bson:"highLimit,omitempty" json:"highLimit,omitempty"`
+	Id                 *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension          []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	LowLimit           *Quantity         `bson:"lowLimit,omitempty" json:"lowLimit,omitempty"`
+	HighLimit          *Quantity         `bson:"highLimit,omitempty" json:"highLimit,omitempty"`
 }
 
 func (r *SubstanceAmount) GetExtension() []Extension {

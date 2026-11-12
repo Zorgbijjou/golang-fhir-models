@@ -24,33 +24,39 @@ import (
 
 // MedicinalProductPackaged is documented here http://hl7.org/fhir/StructureDefinition/MedicinalProductPackaged
 type MedicinalProductPackaged struct {
-	Id                     *string                                   `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                   *Meta                                     `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules          *string                                   `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language               *string                                   `bson:"language,omitempty" json:"language,omitempty"`
-	Text                   *Narrative                                `bson:"text,omitempty" json:"text,omitempty"`
-	Contained              json.RawMessage                           `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension              []Extension                               `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension      []Extension                               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier             []Identifier                              `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Subject                []Reference                               `bson:"subject,omitempty" json:"subject,omitempty"`
-	Description            *string                                   `bson:"description,omitempty" json:"description,omitempty"`
-	LegalStatusOfSupply    *CodeableConcept                          `bson:"legalStatusOfSupply,omitempty" json:"legalStatusOfSupply,omitempty"`
-	MarketingStatus        []MarketingStatus                         `bson:"marketingStatus,omitempty" json:"marketingStatus,omitempty"`
-	MarketingAuthorization *Reference                                `bson:"marketingAuthorization,omitempty" json:"marketingAuthorization,omitempty"`
-	Manufacturer           []Reference                               `bson:"manufacturer,omitempty" json:"manufacturer,omitempty"`
-	BatchIdentifier        []MedicinalProductPackagedBatchIdentifier `bson:"batchIdentifier,omitempty" json:"batchIdentifier,omitempty"`
-	PackageItem            []MedicinalProductPackagedPackageItem     `bson:"packageItem" json:"packageItem"`
+	Id                            *string                                   `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement                         `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta                                     `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string                                   `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement                         `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string                                   `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement                         `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                          *Narrative                                `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                     json.RawMessage                           `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                     []Extension                               `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension                               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                    []Identifier                              `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Subject                       []Reference                               `bson:"subject,omitempty" json:"subject,omitempty"`
+	Description                   *string                                   `bson:"description,omitempty" json:"description,omitempty"`
+	DescriptionPrimitiveElement   *PrimitiveElement                         `bson:"_description,omitempty" json:"_description,omitempty"`
+	LegalStatusOfSupply           *CodeableConcept                          `bson:"legalStatusOfSupply,omitempty" json:"legalStatusOfSupply,omitempty"`
+	MarketingStatus               []MarketingStatus                         `bson:"marketingStatus,omitempty" json:"marketingStatus,omitempty"`
+	MarketingAuthorization        *Reference                                `bson:"marketingAuthorization,omitempty" json:"marketingAuthorization,omitempty"`
+	Manufacturer                  []Reference                               `bson:"manufacturer,omitempty" json:"manufacturer,omitempty"`
+	BatchIdentifier               []MedicinalProductPackagedBatchIdentifier `bson:"batchIdentifier,omitempty" json:"batchIdentifier,omitempty"`
+	PackageItem                   []MedicinalProductPackagedPackageItem     `bson:"packageItem" json:"packageItem"`
 }
 type MedicinalProductPackagedBatchIdentifier struct {
-	Id                 *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension          []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension  []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	OuterPackaging     Identifier  `bson:"outerPackaging" json:"outerPackaging"`
-	ImmediatePackaging *Identifier `bson:"immediatePackaging,omitempty" json:"immediatePackaging,omitempty"`
+	Id                 *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension          []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension  []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	OuterPackaging     Identifier        `bson:"outerPackaging" json:"outerPackaging"`
+	ImmediatePackaging *Identifier       `bson:"immediatePackaging,omitempty" json:"immediatePackaging,omitempty"`
 }
 type MedicinalProductPackagedPackageItem struct {
 	Id                      *string                               `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement      *PrimitiveElement                     `bson:"_id,omitempty" json:"_id,omitempty"`
 	Extension               []Extension                           `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension       []Extension                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier              []Identifier                          `bson:"identifier,omitempty" json:"identifier,omitempty"`

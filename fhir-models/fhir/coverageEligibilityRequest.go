@@ -24,67 +24,83 @@ import (
 
 // CoverageEligibilityRequest is documented here http://hl7.org/fhir/StructureDefinition/CoverageEligibilityRequest
 type CoverageEligibilityRequest struct {
-	Id                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
-	Meta              *Meta                                      `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules     *string                                    `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language          *string                                    `bson:"language,omitempty" json:"language,omitempty"`
-	Text              *Narrative                                 `bson:"text,omitempty" json:"text,omitempty"`
-	Contained         json.RawMessage                            `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension         []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier        []Identifier                               `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            FinancialResourceStatusCodes               `bson:"status" json:"status"`
-	Priority          *CodeableConcept                           `bson:"priority,omitempty" json:"priority,omitempty"`
-	Purpose           []EligibilityRequestPurpose                `bson:"purpose" json:"purpose"`
-	Patient           Reference                                  `bson:"patient" json:"patient"`
-	ServicedDate      *string                                    `bson:"servicedDate,omitempty" json:"servicedDate,omitempty"`
-	ServicedPeriod    *Period                                    `bson:"servicedPeriod,omitempty" json:"servicedPeriod,omitempty"`
-	Created           string                                     `bson:"created" json:"created"`
-	Enterer           *Reference                                 `bson:"enterer,omitempty" json:"enterer,omitempty"`
-	Provider          *Reference                                 `bson:"provider,omitempty" json:"provider,omitempty"`
-	Insurer           Reference                                  `bson:"insurer" json:"insurer"`
-	Facility          *Reference                                 `bson:"facility,omitempty" json:"facility,omitempty"`
-	SupportingInfo    []CoverageEligibilityRequestSupportingInfo `bson:"supportingInfo,omitempty" json:"supportingInfo,omitempty"`
-	Insurance         []CoverageEligibilityRequestInsurance      `bson:"insurance,omitempty" json:"insurance,omitempty"`
-	Item              []CoverageEligibilityRequestItem           `bson:"item,omitempty" json:"item,omitempty"`
+	Id                            *string                                    `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement                          `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta                                      `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string                                    `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement                          `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string                                    `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement                          `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                          *Narrative                                 `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                     json.RawMessage                            `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                     []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                    []Identifier                               `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Status                        FinancialResourceStatusCodes               `bson:"status" json:"status"`
+	StatusPrimitiveElement        *PrimitiveElement                          `bson:"_status,omitempty" json:"_status,omitempty"`
+	Priority                      *CodeableConcept                           `bson:"priority,omitempty" json:"priority,omitempty"`
+	Purpose                       []EligibilityRequestPurpose                `bson:"purpose" json:"purpose"`
+	PurposePrimitiveElement       []*PrimitiveElement                        `bson:"_purpose,omitempty" json:"_purpose,omitempty"`
+	Patient                       Reference                                  `bson:"patient" json:"patient"`
+	ServicedDate                  *string                                    `bson:"servicedDate,omitempty" json:"servicedDate,omitempty"`
+	ServicedDatePrimitiveElement  *PrimitiveElement                          `bson:"_servicedDate,omitempty" json:"_servicedDate,omitempty"`
+	ServicedPeriod                *Period                                    `bson:"servicedPeriod,omitempty" json:"servicedPeriod,omitempty"`
+	Created                       string                                     `bson:"created" json:"created"`
+	CreatedPrimitiveElement       *PrimitiveElement                          `bson:"_created,omitempty" json:"_created,omitempty"`
+	Enterer                       *Reference                                 `bson:"enterer,omitempty" json:"enterer,omitempty"`
+	Provider                      *Reference                                 `bson:"provider,omitempty" json:"provider,omitempty"`
+	Insurer                       Reference                                  `bson:"insurer" json:"insurer"`
+	Facility                      *Reference                                 `bson:"facility,omitempty" json:"facility,omitempty"`
+	SupportingInfo                []CoverageEligibilityRequestSupportingInfo `bson:"supportingInfo,omitempty" json:"supportingInfo,omitempty"`
+	Insurance                     []CoverageEligibilityRequestInsurance      `bson:"insurance,omitempty" json:"insurance,omitempty"`
+	Item                          []CoverageEligibilityRequestItem           `bson:"item,omitempty" json:"item,omitempty"`
 }
 type CoverageEligibilityRequestSupportingInfo struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Sequence          int         `bson:"sequence" json:"sequence"`
-	Information       Reference   `bson:"information" json:"information"`
-	AppliesToAll      *bool       `bson:"appliesToAll,omitempty" json:"appliesToAll,omitempty"`
+	Id                           *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement           *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                    []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension            []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Sequence                     int               `bson:"sequence" json:"sequence"`
+	SequencePrimitiveElement     *PrimitiveElement `bson:"_sequence,omitempty" json:"_sequence,omitempty"`
+	Information                  Reference         `bson:"information" json:"information"`
+	AppliesToAll                 *bool             `bson:"appliesToAll,omitempty" json:"appliesToAll,omitempty"`
+	AppliesToAllPrimitiveElement *PrimitiveElement `bson:"_appliesToAll,omitempty" json:"_appliesToAll,omitempty"`
 }
 type CoverageEligibilityRequestInsurance struct {
-	Id                  *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension           []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension   []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Focal               *bool       `bson:"focal,omitempty" json:"focal,omitempty"`
-	Coverage            Reference   `bson:"coverage" json:"coverage"`
-	BusinessArrangement *string     `bson:"businessArrangement,omitempty" json:"businessArrangement,omitempty"`
+	Id                                  *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                  *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                           []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                   []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Focal                               *bool             `bson:"focal,omitempty" json:"focal,omitempty"`
+	FocalPrimitiveElement               *PrimitiveElement `bson:"_focal,omitempty" json:"_focal,omitempty"`
+	Coverage                            Reference         `bson:"coverage" json:"coverage"`
+	BusinessArrangement                 *string           `bson:"businessArrangement,omitempty" json:"businessArrangement,omitempty"`
+	BusinessArrangementPrimitiveElement *PrimitiveElement `bson:"_businessArrangement,omitempty" json:"_businessArrangement,omitempty"`
 }
 type CoverageEligibilityRequestItem struct {
-	Id                     *string                                   `bson:"id,omitempty" json:"id,omitempty"`
-	Extension              []Extension                               `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension      []Extension                               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	SupportingInfoSequence []int                                     `bson:"supportingInfoSequence,omitempty" json:"supportingInfoSequence,omitempty"`
-	Category               *CodeableConcept                          `bson:"category,omitempty" json:"category,omitempty"`
-	ProductOrService       *CodeableConcept                          `bson:"productOrService,omitempty" json:"productOrService,omitempty"`
-	Modifier               []CodeableConcept                         `bson:"modifier,omitempty" json:"modifier,omitempty"`
-	Provider               *Reference                                `bson:"provider,omitempty" json:"provider,omitempty"`
-	Quantity               *Quantity                                 `bson:"quantity,omitempty" json:"quantity,omitempty"`
-	UnitPrice              *Money                                    `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
-	Facility               *Reference                                `bson:"facility,omitempty" json:"facility,omitempty"`
-	Diagnosis              []CoverageEligibilityRequestItemDiagnosis `bson:"diagnosis,omitempty" json:"diagnosis,omitempty"`
-	Detail                 []Reference                               `bson:"detail,omitempty" json:"detail,omitempty"`
+	Id                                     *string                                   `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                     *PrimitiveElement                         `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                              []Extension                               `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                      []Extension                               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	SupportingInfoSequence                 []int                                     `bson:"supportingInfoSequence,omitempty" json:"supportingInfoSequence,omitempty"`
+	SupportingInfoSequencePrimitiveElement []*PrimitiveElement                       `bson:"_supportingInfoSequence,omitempty" json:"_supportingInfoSequence,omitempty"`
+	Category                               *CodeableConcept                          `bson:"category,omitempty" json:"category,omitempty"`
+	ProductOrService                       *CodeableConcept                          `bson:"productOrService,omitempty" json:"productOrService,omitempty"`
+	Modifier                               []CodeableConcept                         `bson:"modifier,omitempty" json:"modifier,omitempty"`
+	Provider                               *Reference                                `bson:"provider,omitempty" json:"provider,omitempty"`
+	Quantity                               *Quantity                                 `bson:"quantity,omitempty" json:"quantity,omitempty"`
+	UnitPrice                              *Money                                    `bson:"unitPrice,omitempty" json:"unitPrice,omitempty"`
+	Facility                               *Reference                                `bson:"facility,omitempty" json:"facility,omitempty"`
+	Diagnosis                              []CoverageEligibilityRequestItemDiagnosis `bson:"diagnosis,omitempty" json:"diagnosis,omitempty"`
+	Detail                                 []Reference                               `bson:"detail,omitempty" json:"detail,omitempty"`
 }
 type CoverageEligibilityRequestItemDiagnosis struct {
-	Id                       *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension                []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension        []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	DiagnosisCodeableConcept *CodeableConcept `bson:"diagnosisCodeableConcept,omitempty" json:"diagnosisCodeableConcept,omitempty"`
-	DiagnosisReference       *Reference       `bson:"diagnosisReference,omitempty" json:"diagnosisReference,omitempty"`
+	Id                       *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement       *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension        []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	DiagnosisCodeableConcept *CodeableConcept  `bson:"diagnosisCodeableConcept,omitempty" json:"diagnosisCodeableConcept,omitempty"`
+	DiagnosisReference       *Reference        `bson:"diagnosisReference,omitempty" json:"diagnosisReference,omitempty"`
 }
 type OtherCoverageEligibilityRequest CoverageEligibilityRequest
 

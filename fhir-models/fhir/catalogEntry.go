@@ -24,34 +24,43 @@ import (
 
 // CatalogEntry is documented here http://hl7.org/fhir/StructureDefinition/CatalogEntry
 type CatalogEntry struct {
-	Id                       *string                    `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                     *Meta                      `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules            *string                    `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language                 *string                    `bson:"language,omitempty" json:"language,omitempty"`
-	Text                     *Narrative                 `bson:"text,omitempty" json:"text,omitempty"`
-	Contained                json.RawMessage            `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension                []Extension                `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension        []Extension                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier               []Identifier               `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Type                     *CodeableConcept           `bson:"type,omitempty" json:"type,omitempty"`
-	Orderable                bool                       `bson:"orderable" json:"orderable"`
-	ReferencedItem           Reference                  `bson:"referencedItem" json:"referencedItem"`
-	AdditionalIdentifier     []Identifier               `bson:"additionalIdentifier,omitempty" json:"additionalIdentifier,omitempty"`
-	Classification           []CodeableConcept          `bson:"classification,omitempty" json:"classification,omitempty"`
-	Status                   *PublicationStatus         `bson:"status,omitempty" json:"status,omitempty"`
-	ValidityPeriod           *Period                    `bson:"validityPeriod,omitempty" json:"validityPeriod,omitempty"`
-	ValidTo                  *string                    `bson:"validTo,omitempty" json:"validTo,omitempty"`
-	LastUpdated              *string                    `bson:"lastUpdated,omitempty" json:"lastUpdated,omitempty"`
-	AdditionalCharacteristic []CodeableConcept          `bson:"additionalCharacteristic,omitempty" json:"additionalCharacteristic,omitempty"`
-	AdditionalClassification []CodeableConcept          `bson:"additionalClassification,omitempty" json:"additionalClassification,omitempty"`
-	RelatedEntry             []CatalogEntryRelatedEntry `bson:"relatedEntry,omitempty" json:"relatedEntry,omitempty"`
+	Id                            *string                    `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement          `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta                      `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string                    `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement          `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string                    `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement          `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                          *Narrative                 `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                     json.RawMessage            `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                     []Extension                `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                    []Identifier               `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Type                          *CodeableConcept           `bson:"type,omitempty" json:"type,omitempty"`
+	Orderable                     bool                       `bson:"orderable" json:"orderable"`
+	OrderablePrimitiveElement     *PrimitiveElement          `bson:"_orderable,omitempty" json:"_orderable,omitempty"`
+	ReferencedItem                Reference                  `bson:"referencedItem" json:"referencedItem"`
+	AdditionalIdentifier          []Identifier               `bson:"additionalIdentifier,omitempty" json:"additionalIdentifier,omitempty"`
+	Classification                []CodeableConcept          `bson:"classification,omitempty" json:"classification,omitempty"`
+	Status                        *PublicationStatus         `bson:"status,omitempty" json:"status,omitempty"`
+	StatusPrimitiveElement        *PrimitiveElement          `bson:"_status,omitempty" json:"_status,omitempty"`
+	ValidityPeriod                *Period                    `bson:"validityPeriod,omitempty" json:"validityPeriod,omitempty"`
+	ValidTo                       *string                    `bson:"validTo,omitempty" json:"validTo,omitempty"`
+	ValidToPrimitiveElement       *PrimitiveElement          `bson:"_validTo,omitempty" json:"_validTo,omitempty"`
+	LastUpdated                   *string                    `bson:"lastUpdated,omitempty" json:"lastUpdated,omitempty"`
+	LastUpdatedPrimitiveElement   *PrimitiveElement          `bson:"_lastUpdated,omitempty" json:"_lastUpdated,omitempty"`
+	AdditionalCharacteristic      []CodeableConcept          `bson:"additionalCharacteristic,omitempty" json:"additionalCharacteristic,omitempty"`
+	AdditionalClassification      []CodeableConcept          `bson:"additionalClassification,omitempty" json:"additionalClassification,omitempty"`
+	RelatedEntry                  []CatalogEntryRelatedEntry `bson:"relatedEntry,omitempty" json:"relatedEntry,omitempty"`
 }
 type CatalogEntryRelatedEntry struct {
-	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Relationtype      CatalogEntryRelationType `bson:"relationtype" json:"relationtype"`
-	Item              Reference                `bson:"item" json:"item"`
+	Id                           *string                  `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement           *PrimitiveElement        `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                    []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension            []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Relationtype                 CatalogEntryRelationType `bson:"relationtype" json:"relationtype"`
+	RelationtypePrimitiveElement *PrimitiveElement        `bson:"_relationtype,omitempty" json:"_relationtype,omitempty"`
+	Item                         Reference                `bson:"item" json:"item"`
 }
 type OtherCatalogEntry CatalogEntry
 

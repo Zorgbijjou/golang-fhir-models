@@ -24,22 +24,27 @@ import (
 
 // BodyStructure is documented here http://hl7.org/fhir/StructureDefinition/BodyStructure
 type BodyStructure struct {
-	Id                *string           `bson:"id,omitempty" json:"id,omitempty"`
-	Meta              *Meta             `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules     *string           `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language          *string           `bson:"language,omitempty" json:"language,omitempty"`
-	Text              *Narrative        `bson:"text,omitempty" json:"text,omitempty"`
-	Contained         json.RawMessage   `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension         []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier        []Identifier      `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Active            *bool             `bson:"active,omitempty" json:"active,omitempty"`
-	Morphology        *CodeableConcept  `bson:"morphology,omitempty" json:"morphology,omitempty"`
-	Location          *CodeableConcept  `bson:"location,omitempty" json:"location,omitempty"`
-	LocationQualifier []CodeableConcept `bson:"locationQualifier,omitempty" json:"locationQualifier,omitempty"`
-	Description       *string           `bson:"description,omitempty" json:"description,omitempty"`
-	Image             []Attachment      `bson:"image,omitempty" json:"image,omitempty"`
-	Patient           Reference         `bson:"patient" json:"patient"`
+	Id                            *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta             `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string           `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string           `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                          *Narrative        `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                     json.RawMessage   `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                     []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                    []Identifier      `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Active                        *bool             `bson:"active,omitempty" json:"active,omitempty"`
+	ActivePrimitiveElement        *PrimitiveElement `bson:"_active,omitempty" json:"_active,omitempty"`
+	Morphology                    *CodeableConcept  `bson:"morphology,omitempty" json:"morphology,omitempty"`
+	Location                      *CodeableConcept  `bson:"location,omitempty" json:"location,omitempty"`
+	LocationQualifier             []CodeableConcept `bson:"locationQualifier,omitempty" json:"locationQualifier,omitempty"`
+	Description                   *string           `bson:"description,omitempty" json:"description,omitempty"`
+	DescriptionPrimitiveElement   *PrimitiveElement `bson:"_description,omitempty" json:"_description,omitempty"`
+	Image                         []Attachment      `bson:"image,omitempty" json:"image,omitempty"`
+	Patient                       Reference         `bson:"patient" json:"patient"`
 }
 type OtherBodyStructure BodyStructure
 

@@ -24,55 +24,68 @@ import (
 
 // Invoice is documented here http://hl7.org/fhir/StructureDefinition/Invoice
 type Invoice struct {
-	Id                  *string                         `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                *Meta                           `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules       *string                         `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language            *string                         `bson:"language,omitempty" json:"language,omitempty"`
-	Text                *Narrative                      `bson:"text,omitempty" json:"text,omitempty"`
-	Contained           json.RawMessage                 `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension           []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension   []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier          []Identifier                    `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status              InvoiceStatus                   `bson:"status" json:"status"`
-	CancelledReason     *string                         `bson:"cancelledReason,omitempty" json:"cancelledReason,omitempty"`
-	Type                *CodeableConcept                `bson:"type,omitempty" json:"type,omitempty"`
-	Subject             *Reference                      `bson:"subject,omitempty" json:"subject,omitempty"`
-	Recipient           *Reference                      `bson:"recipient,omitempty" json:"recipient,omitempty"`
-	Date                *string                         `bson:"date,omitempty" json:"date,omitempty"`
-	Participant         []InvoiceParticipant            `bson:"participant,omitempty" json:"participant,omitempty"`
-	Issuer              *Reference                      `bson:"issuer,omitempty" json:"issuer,omitempty"`
-	Account             *Reference                      `bson:"account,omitempty" json:"account,omitempty"`
-	LineItem            []InvoiceLineItem               `bson:"lineItem,omitempty" json:"lineItem,omitempty"`
-	TotalPriceComponent []InvoiceLineItemPriceComponent `bson:"totalPriceComponent,omitempty" json:"totalPriceComponent,omitempty"`
-	TotalNet            *Money                          `bson:"totalNet,omitempty" json:"totalNet,omitempty"`
-	TotalGross          *Money                          `bson:"totalGross,omitempty" json:"totalGross,omitempty"`
-	PaymentTerms        *string                         `bson:"paymentTerms,omitempty" json:"paymentTerms,omitempty"`
-	Note                []Annotation                    `bson:"note,omitempty" json:"note,omitempty"`
+	Id                              *string                         `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement              *PrimitiveElement               `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                            *Meta                           `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                   *string                         `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement   *PrimitiveElement               `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                        *string                         `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement        *PrimitiveElement               `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                            *Narrative                      `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                       json.RawMessage                 `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                       []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension               []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                      []Identifier                    `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Status                          InvoiceStatus                   `bson:"status" json:"status"`
+	StatusPrimitiveElement          *PrimitiveElement               `bson:"_status,omitempty" json:"_status,omitempty"`
+	CancelledReason                 *string                         `bson:"cancelledReason,omitempty" json:"cancelledReason,omitempty"`
+	CancelledReasonPrimitiveElement *PrimitiveElement               `bson:"_cancelledReason,omitempty" json:"_cancelledReason,omitempty"`
+	Type                            *CodeableConcept                `bson:"type,omitempty" json:"type,omitempty"`
+	Subject                         *Reference                      `bson:"subject,omitempty" json:"subject,omitempty"`
+	Recipient                       *Reference                      `bson:"recipient,omitempty" json:"recipient,omitempty"`
+	Date                            *string                         `bson:"date,omitempty" json:"date,omitempty"`
+	DatePrimitiveElement            *PrimitiveElement               `bson:"_date,omitempty" json:"_date,omitempty"`
+	Participant                     []InvoiceParticipant            `bson:"participant,omitempty" json:"participant,omitempty"`
+	Issuer                          *Reference                      `bson:"issuer,omitempty" json:"issuer,omitempty"`
+	Account                         *Reference                      `bson:"account,omitempty" json:"account,omitempty"`
+	LineItem                        []InvoiceLineItem               `bson:"lineItem,omitempty" json:"lineItem,omitempty"`
+	TotalPriceComponent             []InvoiceLineItemPriceComponent `bson:"totalPriceComponent,omitempty" json:"totalPriceComponent,omitempty"`
+	TotalNet                        *Money                          `bson:"totalNet,omitempty" json:"totalNet,omitempty"`
+	TotalGross                      *Money                          `bson:"totalGross,omitempty" json:"totalGross,omitempty"`
+	PaymentTerms                    *string                         `bson:"paymentTerms,omitempty" json:"paymentTerms,omitempty"`
+	PaymentTermsPrimitiveElement    *PrimitiveElement               `bson:"_paymentTerms,omitempty" json:"_paymentTerms,omitempty"`
+	Note                            []Annotation                    `bson:"note,omitempty" json:"note,omitempty"`
 }
 type InvoiceParticipant struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Role              *CodeableConcept `bson:"role,omitempty" json:"role,omitempty"`
-	Actor             Reference        `bson:"actor" json:"actor"`
+	Id                 *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension          []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension  []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Role               *CodeableConcept  `bson:"role,omitempty" json:"role,omitempty"`
+	Actor              Reference         `bson:"actor" json:"actor"`
 }
 type InvoiceLineItem struct {
 	Id                        *string                         `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement        *PrimitiveElement               `bson:"_id,omitempty" json:"_id,omitempty"`
 	Extension                 []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Sequence                  *int                            `bson:"sequence,omitempty" json:"sequence,omitempty"`
+	SequencePrimitiveElement  *PrimitiveElement               `bson:"_sequence,omitempty" json:"_sequence,omitempty"`
 	ChargeItemReference       *Reference                      `bson:"chargeItemReference,omitempty" json:"chargeItemReference,omitempty"`
 	ChargeItemCodeableConcept *CodeableConcept                `bson:"chargeItemCodeableConcept,omitempty" json:"chargeItemCodeableConcept,omitempty"`
 	PriceComponent            []InvoiceLineItemPriceComponent `bson:"priceComponent,omitempty" json:"priceComponent,omitempty"`
 }
 type InvoiceLineItemPriceComponent struct {
-	Id                *string                   `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              InvoicePriceComponentType `bson:"type" json:"type"`
-	Code              *CodeableConcept          `bson:"code,omitempty" json:"code,omitempty"`
-	Factor            *float64                  `bson:"factor,omitempty" json:"factor,omitempty"`
-	Amount            *Money                    `bson:"amount,omitempty" json:"amount,omitempty"`
+	Id                     *string                   `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement     *PrimitiveElement         `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension              []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension      []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Type                   InvoicePriceComponentType `bson:"type" json:"type"`
+	TypePrimitiveElement   *PrimitiveElement         `bson:"_type,omitempty" json:"_type,omitempty"`
+	Code                   *CodeableConcept          `bson:"code,omitempty" json:"code,omitempty"`
+	Factor                 *float64                  `bson:"factor,omitempty" json:"factor,omitempty"`
+	FactorPrimitiveElement *PrimitiveElement         `bson:"_factor,omitempty" json:"_factor,omitempty"`
+	Amount                 *Money                    `bson:"amount,omitempty" json:"amount,omitempty"`
 }
 type OtherInvoice Invoice
 

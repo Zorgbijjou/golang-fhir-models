@@ -19,15 +19,23 @@ package fhir
 
 // ParameterDefinition is documented here http://hl7.org/fhir/StructureDefinition/ParameterDefinition
 type ParameterDefinition struct {
-	Id            *string               `bson:"id,omitempty" json:"id,omitempty"`
-	Extension     []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
-	Name          *string               `bson:"name,omitempty" json:"name,omitempty"`
-	Use           OperationParameterUse `bson:"use" json:"use"`
-	Min           *int                  `bson:"min,omitempty" json:"min,omitempty"`
-	Max           *string               `bson:"max,omitempty" json:"max,omitempty"`
-	Documentation *string               `bson:"documentation,omitempty" json:"documentation,omitempty"`
-	Type          string                `bson:"type" json:"type"`
-	Profile       *string               `bson:"profile,omitempty" json:"profile,omitempty"`
+	Id                            *string               `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement     `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                     []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
+	Name                          *string               `bson:"name,omitempty" json:"name,omitempty"`
+	NamePrimitiveElement          *PrimitiveElement     `bson:"_name,omitempty" json:"_name,omitempty"`
+	Use                           OperationParameterUse `bson:"use" json:"use"`
+	UsePrimitiveElement           *PrimitiveElement     `bson:"_use,omitempty" json:"_use,omitempty"`
+	Min                           *int                  `bson:"min,omitempty" json:"min,omitempty"`
+	MinPrimitiveElement           *PrimitiveElement     `bson:"_min,omitempty" json:"_min,omitempty"`
+	Max                           *string               `bson:"max,omitempty" json:"max,omitempty"`
+	MaxPrimitiveElement           *PrimitiveElement     `bson:"_max,omitempty" json:"_max,omitempty"`
+	Documentation                 *string               `bson:"documentation,omitempty" json:"documentation,omitempty"`
+	DocumentationPrimitiveElement *PrimitiveElement     `bson:"_documentation,omitempty" json:"_documentation,omitempty"`
+	Type                          string                `bson:"type" json:"type"`
+	TypePrimitiveElement          *PrimitiveElement     `bson:"_type,omitempty" json:"_type,omitempty"`
+	Profile                       *string               `bson:"profile,omitempty" json:"profile,omitempty"`
+	ProfilePrimitiveElement       *PrimitiveElement     `bson:"_profile,omitempty" json:"_profile,omitempty"`
 }
 
 func (r *ParameterDefinition) GetExtension() []Extension {

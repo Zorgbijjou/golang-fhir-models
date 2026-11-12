@@ -24,45 +24,58 @@ import (
 
 // ImmunizationRecommendation is documented here http://hl7.org/fhir/StructureDefinition/ImmunizationRecommendation
 type ImmunizationRecommendation struct {
-	Id                *string                                    `bson:"id,omitempty" json:"id,omitempty"`
-	Meta              *Meta                                      `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules     *string                                    `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language          *string                                    `bson:"language,omitempty" json:"language,omitempty"`
-	Text              *Narrative                                 `bson:"text,omitempty" json:"text,omitempty"`
-	Contained         json.RawMessage                            `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension         []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier        []Identifier                               `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Patient           Reference                                  `bson:"patient" json:"patient"`
-	Date              string                                     `bson:"date" json:"date"`
-	Authority         *Reference                                 `bson:"authority,omitempty" json:"authority,omitempty"`
-	Recommendation    []ImmunizationRecommendationRecommendation `bson:"recommendation" json:"recommendation"`
+	Id                            *string                                    `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement                          `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta                                      `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string                                    `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement                          `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string                                    `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement                          `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                          *Narrative                                 `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                     json.RawMessage                            `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                     []Extension                                `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                    []Identifier                               `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Patient                       Reference                                  `bson:"patient" json:"patient"`
+	Date                          string                                     `bson:"date" json:"date"`
+	DatePrimitiveElement          *PrimitiveElement                          `bson:"_date,omitempty" json:"_date,omitempty"`
+	Authority                     *Reference                                 `bson:"authority,omitempty" json:"authority,omitempty"`
+	Recommendation                []ImmunizationRecommendationRecommendation `bson:"recommendation" json:"recommendation"`
 }
 type ImmunizationRecommendationRecommendation struct {
-	Id                           *string                                                 `bson:"id,omitempty" json:"id,omitempty"`
-	Extension                    []Extension                                             `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension            []Extension                                             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	VaccineCode                  []CodeableConcept                                       `bson:"vaccineCode,omitempty" json:"vaccineCode,omitempty"`
-	TargetDisease                *CodeableConcept                                        `bson:"targetDisease,omitempty" json:"targetDisease,omitempty"`
-	ContraindicatedVaccineCode   []CodeableConcept                                       `bson:"contraindicatedVaccineCode,omitempty" json:"contraindicatedVaccineCode,omitempty"`
-	ForecastStatus               CodeableConcept                                         `bson:"forecastStatus" json:"forecastStatus"`
-	ForecastReason               []CodeableConcept                                       `bson:"forecastReason,omitempty" json:"forecastReason,omitempty"`
-	DateCriterion                []ImmunizationRecommendationRecommendationDateCriterion `bson:"dateCriterion,omitempty" json:"dateCriterion,omitempty"`
-	Description                  *string                                                 `bson:"description,omitempty" json:"description,omitempty"`
-	Series                       *string                                                 `bson:"series,omitempty" json:"series,omitempty"`
-	DoseNumberPositiveInt        *int                                                    `bson:"doseNumberPositiveInt,omitempty" json:"doseNumberPositiveInt,omitempty"`
-	DoseNumberString             *string                                                 `bson:"doseNumberString,omitempty" json:"doseNumberString,omitempty"`
-	SeriesDosesPositiveInt       *int                                                    `bson:"seriesDosesPositiveInt,omitempty" json:"seriesDosesPositiveInt,omitempty"`
-	SeriesDosesString            *string                                                 `bson:"seriesDosesString,omitempty" json:"seriesDosesString,omitempty"`
-	SupportingImmunization       []Reference                                             `bson:"supportingImmunization,omitempty" json:"supportingImmunization,omitempty"`
-	SupportingPatientInformation []Reference                                             `bson:"supportingPatientInformation,omitempty" json:"supportingPatientInformation,omitempty"`
+	Id                                     *string                                                 `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                     *PrimitiveElement                                       `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                              []Extension                                             `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                      []Extension                                             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	VaccineCode                            []CodeableConcept                                       `bson:"vaccineCode,omitempty" json:"vaccineCode,omitempty"`
+	TargetDisease                          *CodeableConcept                                        `bson:"targetDisease,omitempty" json:"targetDisease,omitempty"`
+	ContraindicatedVaccineCode             []CodeableConcept                                       `bson:"contraindicatedVaccineCode,omitempty" json:"contraindicatedVaccineCode,omitempty"`
+	ForecastStatus                         CodeableConcept                                         `bson:"forecastStatus" json:"forecastStatus"`
+	ForecastReason                         []CodeableConcept                                       `bson:"forecastReason,omitempty" json:"forecastReason,omitempty"`
+	DateCriterion                          []ImmunizationRecommendationRecommendationDateCriterion `bson:"dateCriterion,omitempty" json:"dateCriterion,omitempty"`
+	Description                            *string                                                 `bson:"description,omitempty" json:"description,omitempty"`
+	DescriptionPrimitiveElement            *PrimitiveElement                                       `bson:"_description,omitempty" json:"_description,omitempty"`
+	Series                                 *string                                                 `bson:"series,omitempty" json:"series,omitempty"`
+	SeriesPrimitiveElement                 *PrimitiveElement                                       `bson:"_series,omitempty" json:"_series,omitempty"`
+	DoseNumberPositiveInt                  *int                                                    `bson:"doseNumberPositiveInt,omitempty" json:"doseNumberPositiveInt,omitempty"`
+	DoseNumberPositiveIntPrimitiveElement  *PrimitiveElement                                       `bson:"_doseNumberPositiveInt,omitempty" json:"_doseNumberPositiveInt,omitempty"`
+	DoseNumberString                       *string                                                 `bson:"doseNumberString,omitempty" json:"doseNumberString,omitempty"`
+	DoseNumberStringPrimitiveElement       *PrimitiveElement                                       `bson:"_doseNumberString,omitempty" json:"_doseNumberString,omitempty"`
+	SeriesDosesPositiveInt                 *int                                                    `bson:"seriesDosesPositiveInt,omitempty" json:"seriesDosesPositiveInt,omitempty"`
+	SeriesDosesPositiveIntPrimitiveElement *PrimitiveElement                                       `bson:"_seriesDosesPositiveInt,omitempty" json:"_seriesDosesPositiveInt,omitempty"`
+	SeriesDosesString                      *string                                                 `bson:"seriesDosesString,omitempty" json:"seriesDosesString,omitempty"`
+	SeriesDosesStringPrimitiveElement      *PrimitiveElement                                       `bson:"_seriesDosesString,omitempty" json:"_seriesDosesString,omitempty"`
+	SupportingImmunization                 []Reference                                             `bson:"supportingImmunization,omitempty" json:"supportingImmunization,omitempty"`
+	SupportingPatientInformation           []Reference                                             `bson:"supportingPatientInformation,omitempty" json:"supportingPatientInformation,omitempty"`
 }
 type ImmunizationRecommendationRecommendationDateCriterion struct {
-	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              CodeableConcept `bson:"code" json:"code"`
-	Value             string          `bson:"value" json:"value"`
+	Id                    *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement    *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension             []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension     []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Code                  CodeableConcept   `bson:"code" json:"code"`
+	Value                 string            `bson:"value" json:"value"`
+	ValuePrimitiveElement *PrimitiveElement `bson:"_value,omitempty" json:"_value,omitempty"`
 }
 type OtherImmunizationRecommendation ImmunizationRecommendation
 

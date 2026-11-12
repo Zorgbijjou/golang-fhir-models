@@ -24,13 +24,18 @@ import (
 
 // Binary is documented here http://hl7.org/fhir/StructureDefinition/Binary
 type Binary struct {
-	Id              *string    `bson:"id,omitempty" json:"id,omitempty"`
-	Meta            *Meta      `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules   *string    `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language        *string    `bson:"language,omitempty" json:"language,omitempty"`
-	ContentType     string     `bson:"contentType" json:"contentType"`
-	SecurityContext *Reference `bson:"securityContext,omitempty" json:"securityContext,omitempty"`
-	Data            *string    `bson:"data,omitempty" json:"data,omitempty"`
+	Id                            *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta             `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string           `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string           `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement `bson:"_language,omitempty" json:"_language,omitempty"`
+	ContentType                   string            `bson:"contentType" json:"contentType"`
+	ContentTypePrimitiveElement   *PrimitiveElement `bson:"_contentType,omitempty" json:"_contentType,omitempty"`
+	SecurityContext               *Reference        `bson:"securityContext,omitempty" json:"securityContext,omitempty"`
+	Data                          *string           `bson:"data,omitempty" json:"data,omitempty"`
+	DataPrimitiveElement          *PrimitiveElement `bson:"_data,omitempty" json:"_data,omitempty"`
 }
 type OtherBinary Binary
 

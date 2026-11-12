@@ -19,15 +19,20 @@ package fhir
 
 // Signature is documented here http://hl7.org/fhir/StructureDefinition/Signature
 type Signature struct {
-	Id           *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension    []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	Type         []Coding    `bson:"type" json:"type"`
-	When         string      `bson:"when" json:"when"`
-	Who          Reference   `bson:"who" json:"who"`
-	OnBehalfOf   *Reference  `bson:"onBehalfOf,omitempty" json:"onBehalfOf,omitempty"`
-	TargetFormat *string     `bson:"targetFormat,omitempty" json:"targetFormat,omitempty"`
-	SigFormat    *string     `bson:"sigFormat,omitempty" json:"sigFormat,omitempty"`
-	Data         *string     `bson:"data,omitempty" json:"data,omitempty"`
+	Id                           *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement           *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                    []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	Type                         []Coding          `bson:"type" json:"type"`
+	When                         string            `bson:"when" json:"when"`
+	WhenPrimitiveElement         *PrimitiveElement `bson:"_when,omitempty" json:"_when,omitempty"`
+	Who                          Reference         `bson:"who" json:"who"`
+	OnBehalfOf                   *Reference        `bson:"onBehalfOf,omitempty" json:"onBehalfOf,omitempty"`
+	TargetFormat                 *string           `bson:"targetFormat,omitempty" json:"targetFormat,omitempty"`
+	TargetFormatPrimitiveElement *PrimitiveElement `bson:"_targetFormat,omitempty" json:"_targetFormat,omitempty"`
+	SigFormat                    *string           `bson:"sigFormat,omitempty" json:"sigFormat,omitempty"`
+	SigFormatPrimitiveElement    *PrimitiveElement `bson:"_sigFormat,omitempty" json:"_sigFormat,omitempty"`
+	Data                         *string           `bson:"data,omitempty" json:"data,omitempty"`
+	DataPrimitiveElement         *PrimitiveElement `bson:"_data,omitempty" json:"_data,omitempty"`
 }
 
 func (r *Signature) GetExtension() []Extension {

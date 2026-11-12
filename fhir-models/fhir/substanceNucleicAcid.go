@@ -24,49 +24,65 @@ import (
 
 // SubstanceNucleicAcid is documented here http://hl7.org/fhir/StructureDefinition/SubstanceNucleicAcid
 type SubstanceNucleicAcid struct {
-	Id                  *string                       `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                *Meta                         `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules       *string                       `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language            *string                       `bson:"language,omitempty" json:"language,omitempty"`
-	Text                *Narrative                    `bson:"text,omitempty" json:"text,omitempty"`
-	Contained           json.RawMessage               `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension           []Extension                   `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension   []Extension                   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	SequenceType        *CodeableConcept              `bson:"sequenceType,omitempty" json:"sequenceType,omitempty"`
-	NumberOfSubunits    *int                          `bson:"numberOfSubunits,omitempty" json:"numberOfSubunits,omitempty"`
-	AreaOfHybridisation *string                       `bson:"areaOfHybridisation,omitempty" json:"areaOfHybridisation,omitempty"`
-	OligoNucleotideType *CodeableConcept              `bson:"oligoNucleotideType,omitempty" json:"oligoNucleotideType,omitempty"`
-	Subunit             []SubstanceNucleicAcidSubunit `bson:"subunit,omitempty" json:"subunit,omitempty"`
+	Id                                  *string                       `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                  *PrimitiveElement             `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                                *Meta                         `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                       *string                       `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement       *PrimitiveElement             `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                            *string                       `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement            *PrimitiveElement             `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                                *Narrative                    `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                           json.RawMessage               `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                           []Extension                   `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                   []Extension                   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	SequenceType                        *CodeableConcept              `bson:"sequenceType,omitempty" json:"sequenceType,omitempty"`
+	NumberOfSubunits                    *int                          `bson:"numberOfSubunits,omitempty" json:"numberOfSubunits,omitempty"`
+	NumberOfSubunitsPrimitiveElement    *PrimitiveElement             `bson:"_numberOfSubunits,omitempty" json:"_numberOfSubunits,omitempty"`
+	AreaOfHybridisation                 *string                       `bson:"areaOfHybridisation,omitempty" json:"areaOfHybridisation,omitempty"`
+	AreaOfHybridisationPrimitiveElement *PrimitiveElement             `bson:"_areaOfHybridisation,omitempty" json:"_areaOfHybridisation,omitempty"`
+	OligoNucleotideType                 *CodeableConcept              `bson:"oligoNucleotideType,omitempty" json:"oligoNucleotideType,omitempty"`
+	Subunit                             []SubstanceNucleicAcidSubunit `bson:"subunit,omitempty" json:"subunit,omitempty"`
 }
 type SubstanceNucleicAcidSubunit struct {
-	Id                 *string                              `bson:"id,omitempty" json:"id,omitempty"`
-	Extension          []Extension                          `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension  []Extension                          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Subunit            *int                                 `bson:"subunit,omitempty" json:"subunit,omitempty"`
-	Sequence           *string                              `bson:"sequence,omitempty" json:"sequence,omitempty"`
-	Length             *int                                 `bson:"length,omitempty" json:"length,omitempty"`
-	SequenceAttachment *Attachment                          `bson:"sequenceAttachment,omitempty" json:"sequenceAttachment,omitempty"`
-	FivePrime          *CodeableConcept                     `bson:"fivePrime,omitempty" json:"fivePrime,omitempty"`
-	ThreePrime         *CodeableConcept                     `bson:"threePrime,omitempty" json:"threePrime,omitempty"`
-	Linkage            []SubstanceNucleicAcidSubunitLinkage `bson:"linkage,omitempty" json:"linkage,omitempty"`
-	Sugar              []SubstanceNucleicAcidSubunitSugar   `bson:"sugar,omitempty" json:"sugar,omitempty"`
+	Id                       *string                              `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement       *PrimitiveElement                    `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                []Extension                          `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension        []Extension                          `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Subunit                  *int                                 `bson:"subunit,omitempty" json:"subunit,omitempty"`
+	SubunitPrimitiveElement  *PrimitiveElement                    `bson:"_subunit,omitempty" json:"_subunit,omitempty"`
+	Sequence                 *string                              `bson:"sequence,omitempty" json:"sequence,omitempty"`
+	SequencePrimitiveElement *PrimitiveElement                    `bson:"_sequence,omitempty" json:"_sequence,omitempty"`
+	Length                   *int                                 `bson:"length,omitempty" json:"length,omitempty"`
+	LengthPrimitiveElement   *PrimitiveElement                    `bson:"_length,omitempty" json:"_length,omitempty"`
+	SequenceAttachment       *Attachment                          `bson:"sequenceAttachment,omitempty" json:"sequenceAttachment,omitempty"`
+	FivePrime                *CodeableConcept                     `bson:"fivePrime,omitempty" json:"fivePrime,omitempty"`
+	ThreePrime               *CodeableConcept                     `bson:"threePrime,omitempty" json:"threePrime,omitempty"`
+	Linkage                  []SubstanceNucleicAcidSubunitLinkage `bson:"linkage,omitempty" json:"linkage,omitempty"`
+	Sugar                    []SubstanceNucleicAcidSubunitSugar   `bson:"sugar,omitempty" json:"sugar,omitempty"`
 }
 type SubstanceNucleicAcidSubunitLinkage struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Connectivity      *string     `bson:"connectivity,omitempty" json:"connectivity,omitempty"`
-	Identifier        *Identifier `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Name              *string     `bson:"name,omitempty" json:"name,omitempty"`
-	ResidueSite       *string     `bson:"residueSite,omitempty" json:"residueSite,omitempty"`
+	Id                           *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement           *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                    []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension            []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Connectivity                 *string           `bson:"connectivity,omitempty" json:"connectivity,omitempty"`
+	ConnectivityPrimitiveElement *PrimitiveElement `bson:"_connectivity,omitempty" json:"_connectivity,omitempty"`
+	Identifier                   *Identifier       `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Name                         *string           `bson:"name,omitempty" json:"name,omitempty"`
+	NamePrimitiveElement         *PrimitiveElement `bson:"_name,omitempty" json:"_name,omitempty"`
+	ResidueSite                  *string           `bson:"residueSite,omitempty" json:"residueSite,omitempty"`
+	ResidueSitePrimitiveElement  *PrimitiveElement `bson:"_residueSite,omitempty" json:"_residueSite,omitempty"`
 }
 type SubstanceNucleicAcidSubunitSugar struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier        *Identifier `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Name              *string     `bson:"name,omitempty" json:"name,omitempty"`
-	ResidueSite       *string     `bson:"residueSite,omitempty" json:"residueSite,omitempty"`
+	Id                          *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement          *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                   []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension           []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                  *Identifier       `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Name                        *string           `bson:"name,omitempty" json:"name,omitempty"`
+	NamePrimitiveElement        *PrimitiveElement `bson:"_name,omitempty" json:"_name,omitempty"`
+	ResidueSite                 *string           `bson:"residueSite,omitempty" json:"residueSite,omitempty"`
+	ResidueSitePrimitiveElement *PrimitiveElement `bson:"_residueSite,omitempty" json:"_residueSite,omitempty"`
 }
 type OtherSubstanceNucleicAcid SubstanceNucleicAcid
 

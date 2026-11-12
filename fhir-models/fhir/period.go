@@ -19,10 +19,13 @@ package fhir
 
 // Period is documented here http://hl7.org/fhir/StructureDefinition/Period
 type Period struct {
-	Id        *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	Start     *string     `bson:"start,omitempty" json:"start,omitempty"`
-	End       *string     `bson:"end,omitempty" json:"end,omitempty"`
+	Id                    *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement    *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension             []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	Start                 *string           `bson:"start,omitempty" json:"start,omitempty"`
+	StartPrimitiveElement *PrimitiveElement `bson:"_start,omitempty" json:"_start,omitempty"`
+	End                   *string           `bson:"end,omitempty" json:"end,omitempty"`
+	EndPrimitiveElement   *PrimitiveElement `bson:"_end,omitempty" json:"_end,omitempty"`
 }
 
 func (r *Period) GetExtension() []Extension {

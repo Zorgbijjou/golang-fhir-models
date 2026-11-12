@@ -24,31 +24,38 @@ import (
 
 // GuidanceResponse is documented here http://hl7.org/fhir/StructureDefinition/GuidanceResponse
 type GuidanceResponse struct {
-	Id                    *string                `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                  *Meta                  `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules         *string                `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language              *string                `bson:"language,omitempty" json:"language,omitempty"`
-	Text                  *Narrative             `bson:"text,omitempty" json:"text,omitempty"`
-	Contained             json.RawMessage        `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension             []Extension            `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension     []Extension            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	RequestIdentifier     *Identifier            `bson:"requestIdentifier,omitempty" json:"requestIdentifier,omitempty"`
-	Identifier            []Identifier           `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	ModuleUri             *string                `bson:"moduleUri,omitempty" json:"moduleUri,omitempty"`
-	ModuleCanonical       *string                `bson:"moduleCanonical,omitempty" json:"moduleCanonical,omitempty"`
-	ModuleCodeableConcept *CodeableConcept       `bson:"moduleCodeableConcept,omitempty" json:"moduleCodeableConcept,omitempty"`
-	Status                GuidanceResponseStatus `bson:"status" json:"status"`
-	Subject               *Reference             `bson:"subject,omitempty" json:"subject,omitempty"`
-	Encounter             *Reference             `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	OccurrenceDateTime    *string                `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
-	Performer             *Reference             `bson:"performer,omitempty" json:"performer,omitempty"`
-	ReasonCode            []CodeableConcept      `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
-	ReasonReference       []Reference            `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`
-	Note                  []Annotation           `bson:"note,omitempty" json:"note,omitempty"`
-	EvaluationMessage     []Reference            `bson:"evaluationMessage,omitempty" json:"evaluationMessage,omitempty"`
-	OutputParameters      *Reference             `bson:"outputParameters,omitempty" json:"outputParameters,omitempty"`
-	Result                *Reference             `bson:"result,omitempty" json:"result,omitempty"`
-	DataRequirement       []DataRequirement      `bson:"dataRequirement,omitempty" json:"dataRequirement,omitempty"`
+	Id                                 *string                `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                 *PrimitiveElement      `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                               *Meta                  `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                      *string                `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement      *PrimitiveElement      `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                           *string                `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement           *PrimitiveElement      `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                               *Narrative             `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                          json.RawMessage        `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                          []Extension            `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                  []Extension            `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	RequestIdentifier                  *Identifier            `bson:"requestIdentifier,omitempty" json:"requestIdentifier,omitempty"`
+	Identifier                         []Identifier           `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	ModuleUri                          *string                `bson:"moduleUri,omitempty" json:"moduleUri,omitempty"`
+	ModuleUriPrimitiveElement          *PrimitiveElement      `bson:"_moduleUri,omitempty" json:"_moduleUri,omitempty"`
+	ModuleCanonical                    *string                `bson:"moduleCanonical,omitempty" json:"moduleCanonical,omitempty"`
+	ModuleCanonicalPrimitiveElement    *PrimitiveElement      `bson:"_moduleCanonical,omitempty" json:"_moduleCanonical,omitempty"`
+	ModuleCodeableConcept              *CodeableConcept       `bson:"moduleCodeableConcept,omitempty" json:"moduleCodeableConcept,omitempty"`
+	Status                             GuidanceResponseStatus `bson:"status" json:"status"`
+	StatusPrimitiveElement             *PrimitiveElement      `bson:"_status,omitempty" json:"_status,omitempty"`
+	Subject                            *Reference             `bson:"subject,omitempty" json:"subject,omitempty"`
+	Encounter                          *Reference             `bson:"encounter,omitempty" json:"encounter,omitempty"`
+	OccurrenceDateTime                 *string                `bson:"occurrenceDateTime,omitempty" json:"occurrenceDateTime,omitempty"`
+	OccurrenceDateTimePrimitiveElement *PrimitiveElement      `bson:"_occurrenceDateTime,omitempty" json:"_occurrenceDateTime,omitempty"`
+	Performer                          *Reference             `bson:"performer,omitempty" json:"performer,omitempty"`
+	ReasonCode                         []CodeableConcept      `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
+	ReasonReference                    []Reference            `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`
+	Note                               []Annotation           `bson:"note,omitempty" json:"note,omitempty"`
+	EvaluationMessage                  []Reference            `bson:"evaluationMessage,omitempty" json:"evaluationMessage,omitempty"`
+	OutputParameters                   *Reference             `bson:"outputParameters,omitempty" json:"outputParameters,omitempty"`
+	Result                             *Reference             `bson:"result,omitempty" json:"result,omitempty"`
+	DataRequirement                    []DataRequirement      `bson:"dataRequirement,omitempty" json:"dataRequirement,omitempty"`
 }
 type OtherGuidanceResponse GuidanceResponse
 

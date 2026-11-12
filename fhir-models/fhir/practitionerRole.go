@@ -24,44 +24,56 @@ import (
 
 // PractitionerRole is documented here http://hl7.org/fhir/StructureDefinition/PractitionerRole
 type PractitionerRole struct {
-	Id                     *string                         `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                   *Meta                           `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules          *string                         `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language               *string                         `bson:"language,omitempty" json:"language,omitempty"`
-	Text                   *Narrative                      `bson:"text,omitempty" json:"text,omitempty"`
-	Contained              json.RawMessage                 `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension              []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension      []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier             []Identifier                    `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Active                 *bool                           `bson:"active,omitempty" json:"active,omitempty"`
-	Period                 *Period                         `bson:"period,omitempty" json:"period,omitempty"`
-	Practitioner           *Reference                      `bson:"practitioner,omitempty" json:"practitioner,omitempty"`
-	Organization           *Reference                      `bson:"organization,omitempty" json:"organization,omitempty"`
-	Code                   []CodeableConcept               `bson:"code,omitempty" json:"code,omitempty"`
-	Specialty              []CodeableConcept               `bson:"specialty,omitempty" json:"specialty,omitempty"`
-	Location               []Reference                     `bson:"location,omitempty" json:"location,omitempty"`
-	HealthcareService      []Reference                     `bson:"healthcareService,omitempty" json:"healthcareService,omitempty"`
-	Telecom                []ContactPoint                  `bson:"telecom,omitempty" json:"telecom,omitempty"`
-	AvailableTime          []PractitionerRoleAvailableTime `bson:"availableTime,omitempty" json:"availableTime,omitempty"`
-	NotAvailable           []PractitionerRoleNotAvailable  `bson:"notAvailable,omitempty" json:"notAvailable,omitempty"`
-	AvailabilityExceptions *string                         `bson:"availabilityExceptions,omitempty" json:"availabilityExceptions,omitempty"`
-	Endpoint               []Reference                     `bson:"endpoint,omitempty" json:"endpoint,omitempty"`
+	Id                                     *string                         `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                     *PrimitiveElement               `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                                   *Meta                           `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                          *string                         `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement          *PrimitiveElement               `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                               *string                         `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement               *PrimitiveElement               `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                                   *Narrative                      `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                              json.RawMessage                 `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                              []Extension                     `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                      []Extension                     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                             []Identifier                    `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Active                                 *bool                           `bson:"active,omitempty" json:"active,omitempty"`
+	ActivePrimitiveElement                 *PrimitiveElement               `bson:"_active,omitempty" json:"_active,omitempty"`
+	Period                                 *Period                         `bson:"period,omitempty" json:"period,omitempty"`
+	Practitioner                           *Reference                      `bson:"practitioner,omitempty" json:"practitioner,omitempty"`
+	Organization                           *Reference                      `bson:"organization,omitempty" json:"organization,omitempty"`
+	Code                                   []CodeableConcept               `bson:"code,omitempty" json:"code,omitempty"`
+	Specialty                              []CodeableConcept               `bson:"specialty,omitempty" json:"specialty,omitempty"`
+	Location                               []Reference                     `bson:"location,omitempty" json:"location,omitempty"`
+	HealthcareService                      []Reference                     `bson:"healthcareService,omitempty" json:"healthcareService,omitempty"`
+	Telecom                                []ContactPoint                  `bson:"telecom,omitempty" json:"telecom,omitempty"`
+	AvailableTime                          []PractitionerRoleAvailableTime `bson:"availableTime,omitempty" json:"availableTime,omitempty"`
+	NotAvailable                           []PractitionerRoleNotAvailable  `bson:"notAvailable,omitempty" json:"notAvailable,omitempty"`
+	AvailabilityExceptions                 *string                         `bson:"availabilityExceptions,omitempty" json:"availabilityExceptions,omitempty"`
+	AvailabilityExceptionsPrimitiveElement *PrimitiveElement               `bson:"_availabilityExceptions,omitempty" json:"_availabilityExceptions,omitempty"`
+	Endpoint                               []Reference                     `bson:"endpoint,omitempty" json:"endpoint,omitempty"`
 }
 type PractitionerRoleAvailableTime struct {
-	Id                 *string      `bson:"id,omitempty" json:"id,omitempty"`
-	Extension          []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension  []Extension  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	DaysOfWeek         []DaysOfWeek `bson:"daysOfWeek,omitempty" json:"daysOfWeek,omitempty"`
-	AllDay             *bool        `bson:"allDay,omitempty" json:"allDay,omitempty"`
-	AvailableStartTime *string      `bson:"availableStartTime,omitempty" json:"availableStartTime,omitempty"`
-	AvailableEndTime   *string      `bson:"availableEndTime,omitempty" json:"availableEndTime,omitempty"`
+	Id                                 *string             `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                 *PrimitiveElement   `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                          []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                  []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	DaysOfWeek                         []DaysOfWeek        `bson:"daysOfWeek,omitempty" json:"daysOfWeek,omitempty"`
+	DaysOfWeekPrimitiveElement         []*PrimitiveElement `bson:"_daysOfWeek,omitempty" json:"_daysOfWeek,omitempty"`
+	AllDay                             *bool               `bson:"allDay,omitempty" json:"allDay,omitempty"`
+	AllDayPrimitiveElement             *PrimitiveElement   `bson:"_allDay,omitempty" json:"_allDay,omitempty"`
+	AvailableStartTime                 *string             `bson:"availableStartTime,omitempty" json:"availableStartTime,omitempty"`
+	AvailableStartTimePrimitiveElement *PrimitiveElement   `bson:"_availableStartTime,omitempty" json:"_availableStartTime,omitempty"`
+	AvailableEndTime                   *string             `bson:"availableEndTime,omitempty" json:"availableEndTime,omitempty"`
+	AvailableEndTimePrimitiveElement   *PrimitiveElement   `bson:"_availableEndTime,omitempty" json:"_availableEndTime,omitempty"`
 }
 type PractitionerRoleNotAvailable struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Description       string      `bson:"description" json:"description"`
-	During            *Period     `bson:"during,omitempty" json:"during,omitempty"`
+	Id                          *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement          *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                   []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension           []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Description                 string            `bson:"description" json:"description"`
+	DescriptionPrimitiveElement *PrimitiveElement `bson:"_description,omitempty" json:"_description,omitempty"`
+	During                      *Period           `bson:"during,omitempty" json:"during,omitempty"`
 }
 type OtherPractitionerRole PractitionerRole
 

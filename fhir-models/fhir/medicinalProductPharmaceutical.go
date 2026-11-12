@@ -24,31 +24,36 @@ import (
 
 // MedicinalProductPharmaceutical is documented here http://hl7.org/fhir/StructureDefinition/MedicinalProductPharmaceutical
 type MedicinalProductPharmaceutical struct {
-	Id                    *string                                               `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                  *Meta                                                 `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules         *string                                               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language              *string                                               `bson:"language,omitempty" json:"language,omitempty"`
-	Text                  *Narrative                                            `bson:"text,omitempty" json:"text,omitempty"`
-	Contained             json.RawMessage                                       `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension             []Extension                                           `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension     []Extension                                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier            []Identifier                                          `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	AdministrableDoseForm CodeableConcept                                       `bson:"administrableDoseForm" json:"administrableDoseForm"`
-	UnitOfPresentation    *CodeableConcept                                      `bson:"unitOfPresentation,omitempty" json:"unitOfPresentation,omitempty"`
-	Ingredient            []Reference                                           `bson:"ingredient,omitempty" json:"ingredient,omitempty"`
-	Device                []Reference                                           `bson:"device,omitempty" json:"device,omitempty"`
-	Characteristics       []MedicinalProductPharmaceuticalCharacteristics       `bson:"characteristics,omitempty" json:"characteristics,omitempty"`
-	RouteOfAdministration []MedicinalProductPharmaceuticalRouteOfAdministration `bson:"routeOfAdministration" json:"routeOfAdministration"`
+	Id                            *string                                               `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement                                     `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta                                                 `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string                                               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement                                     `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string                                               `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement                                     `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                          *Narrative                                            `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                     json.RawMessage                                       `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                     []Extension                                           `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension                                           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                    []Identifier                                          `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	AdministrableDoseForm         CodeableConcept                                       `bson:"administrableDoseForm" json:"administrableDoseForm"`
+	UnitOfPresentation            *CodeableConcept                                      `bson:"unitOfPresentation,omitempty" json:"unitOfPresentation,omitempty"`
+	Ingredient                    []Reference                                           `bson:"ingredient,omitempty" json:"ingredient,omitempty"`
+	Device                        []Reference                                           `bson:"device,omitempty" json:"device,omitempty"`
+	Characteristics               []MedicinalProductPharmaceuticalCharacteristics       `bson:"characteristics,omitempty" json:"characteristics,omitempty"`
+	RouteOfAdministration         []MedicinalProductPharmaceuticalRouteOfAdministration `bson:"routeOfAdministration" json:"routeOfAdministration"`
 }
 type MedicinalProductPharmaceuticalCharacteristics struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              CodeableConcept  `bson:"code" json:"code"`
-	Status            *CodeableConcept `bson:"status,omitempty" json:"status,omitempty"`
+	Id                 *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension          []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension  []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Code               CodeableConcept   `bson:"code" json:"code"`
+	Status             *CodeableConcept  `bson:"status,omitempty" json:"status,omitempty"`
 }
 type MedicinalProductPharmaceuticalRouteOfAdministration struct {
 	Id                        *string                                                            `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement        *PrimitiveElement                                                  `bson:"_id,omitempty" json:"_id,omitempty"`
 	Extension                 []Extension                                                        `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension         []Extension                                                        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Code                      CodeableConcept                                                    `bson:"code" json:"code"`
@@ -60,19 +65,22 @@ type MedicinalProductPharmaceuticalRouteOfAdministration struct {
 	TargetSpecies             []MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies `bson:"targetSpecies,omitempty" json:"targetSpecies,omitempty"`
 }
 type MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies struct {
-	Id                *string                                                                            `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension                                                                        `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension                                                                        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code              CodeableConcept                                                                    `bson:"code" json:"code"`
-	WithdrawalPeriod  []MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod `bson:"withdrawalPeriod,omitempty" json:"withdrawalPeriod,omitempty"`
+	Id                 *string                                                                            `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement *PrimitiveElement                                                                  `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension          []Extension                                                                        `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension  []Extension                                                                        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Code               CodeableConcept                                                                    `bson:"code" json:"code"`
+	WithdrawalPeriod   []MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod `bson:"withdrawalPeriod,omitempty" json:"withdrawalPeriod,omitempty"`
 }
 type MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod struct {
-	Id                    *string         `bson:"id,omitempty" json:"id,omitempty"`
-	Extension             []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension     []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Tissue                CodeableConcept `bson:"tissue" json:"tissue"`
-	Value                 Quantity        `bson:"value" json:"value"`
-	SupportingInformation *string         `bson:"supportingInformation,omitempty" json:"supportingInformation,omitempty"`
+	Id                                    *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                    *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                             []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                     []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Tissue                                CodeableConcept   `bson:"tissue" json:"tissue"`
+	Value                                 Quantity          `bson:"value" json:"value"`
+	SupportingInformation                 *string           `bson:"supportingInformation,omitempty" json:"supportingInformation,omitempty"`
+	SupportingInformationPrimitiveElement *PrimitiveElement `bson:"_supportingInformation,omitempty" json:"_supportingInformation,omitempty"`
 }
 type OtherMedicinalProductPharmaceutical MedicinalProductPharmaceutical
 
