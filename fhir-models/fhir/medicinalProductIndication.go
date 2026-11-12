@@ -24,31 +24,35 @@ import (
 
 // MedicinalProductIndication is documented here http://hl7.org/fhir/StructureDefinition/MedicinalProductIndication
 type MedicinalProductIndication struct {
-	Id                      *string                                  `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                    *Meta                                    `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules           *string                                  `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language                *string                                  `bson:"language,omitempty" json:"language,omitempty"`
-	Text                    *Narrative                               `bson:"text,omitempty" json:"text,omitempty"`
-	Contained               json.RawMessage                          `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension               []Extension                              `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension       []Extension                              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Subject                 []Reference                              `bson:"subject,omitempty" json:"subject,omitempty"`
-	DiseaseSymptomProcedure *CodeableConcept                         `bson:"diseaseSymptomProcedure,omitempty" json:"diseaseSymptomProcedure,omitempty"`
-	DiseaseStatus           *CodeableConcept                         `bson:"diseaseStatus,omitempty" json:"diseaseStatus,omitempty"`
-	Comorbidity             []CodeableConcept                        `bson:"comorbidity,omitempty" json:"comorbidity,omitempty"`
-	IntendedEffect          *CodeableConcept                         `bson:"intendedEffect,omitempty" json:"intendedEffect,omitempty"`
-	Duration                *Quantity                                `bson:"duration,omitempty" json:"duration,omitempty"`
-	OtherTherapy            []MedicinalProductIndicationOtherTherapy `bson:"otherTherapy,omitempty" json:"otherTherapy,omitempty"`
-	UndesirableEffect       []Reference                              `bson:"undesirableEffect,omitempty" json:"undesirableEffect,omitempty"`
-	Population              []Population                             `bson:"population,omitempty" json:"population,omitempty"`
+	Id                            *string                                  `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement                        `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta                                    `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string                                  `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement                        `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string                                  `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement                        `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                          *Narrative                               `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                     json.RawMessage                          `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                     []Extension                              `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension                              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Subject                       []Reference                              `bson:"subject,omitempty" json:"subject,omitempty"`
+	DiseaseSymptomProcedure       *CodeableConcept                         `bson:"diseaseSymptomProcedure,omitempty" json:"diseaseSymptomProcedure,omitempty"`
+	DiseaseStatus                 *CodeableConcept                         `bson:"diseaseStatus,omitempty" json:"diseaseStatus,omitempty"`
+	Comorbidity                   []CodeableConcept                        `bson:"comorbidity,omitempty" json:"comorbidity,omitempty"`
+	IntendedEffect                *CodeableConcept                         `bson:"intendedEffect,omitempty" json:"intendedEffect,omitempty"`
+	Duration                      *Quantity                                `bson:"duration,omitempty" json:"duration,omitempty"`
+	OtherTherapy                  []MedicinalProductIndicationOtherTherapy `bson:"otherTherapy,omitempty" json:"otherTherapy,omitempty"`
+	UndesirableEffect             []Reference                              `bson:"undesirableEffect,omitempty" json:"undesirableEffect,omitempty"`
+	Population                    []Population                             `bson:"population,omitempty" json:"population,omitempty"`
 }
 type MedicinalProductIndicationOtherTherapy struct {
-	Id                        *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension                 []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension         []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	TherapyRelationshipType   CodeableConcept  `bson:"therapyRelationshipType" json:"therapyRelationshipType"`
-	MedicationCodeableConcept *CodeableConcept `bson:"medicationCodeableConcept,omitempty" json:"medicationCodeableConcept,omitempty"`
-	MedicationReference       *Reference       `bson:"medicationReference,omitempty" json:"medicationReference,omitempty"`
+	Id                        *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement        *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                 []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension         []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	TherapyRelationshipType   CodeableConcept   `bson:"therapyRelationshipType" json:"therapyRelationshipType"`
+	MedicationCodeableConcept *CodeableConcept  `bson:"medicationCodeableConcept,omitempty" json:"medicationCodeableConcept,omitempty"`
+	MedicationReference       *Reference        `bson:"medicationReference,omitempty" json:"medicationReference,omitempty"`
 }
 type OtherMedicinalProductIndication MedicinalProductIndication
 

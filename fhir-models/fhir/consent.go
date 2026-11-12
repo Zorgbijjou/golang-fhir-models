@@ -24,73 +24,89 @@ import (
 
 // Consent is documented here http://hl7.org/fhir/StructureDefinition/Consent
 type Consent struct {
-	Id                *string               `bson:"id,omitempty" json:"id,omitempty"`
-	Meta              *Meta                 `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules     *string               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language          *string               `bson:"language,omitempty" json:"language,omitempty"`
-	Text              *Narrative            `bson:"text,omitempty" json:"text,omitempty"`
-	Contained         json.RawMessage       `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension         []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier        []Identifier          `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            ConsentState          `bson:"status" json:"status"`
-	Scope             CodeableConcept       `bson:"scope" json:"scope"`
-	Category          []CodeableConcept     `bson:"category" json:"category"`
-	Patient           *Reference            `bson:"patient,omitempty" json:"patient,omitempty"`
-	DateTime          *string               `bson:"dateTime,omitempty" json:"dateTime,omitempty"`
-	Performer         []Reference           `bson:"performer,omitempty" json:"performer,omitempty"`
-	Organization      []Reference           `bson:"organization,omitempty" json:"organization,omitempty"`
-	SourceAttachment  *Attachment           `bson:"sourceAttachment,omitempty" json:"sourceAttachment,omitempty"`
-	SourceReference   *Reference            `bson:"sourceReference,omitempty" json:"sourceReference,omitempty"`
-	Policy            []ConsentPolicy       `bson:"policy,omitempty" json:"policy,omitempty"`
-	PolicyRule        *CodeableConcept      `bson:"policyRule,omitempty" json:"policyRule,omitempty"`
-	Verification      []ConsentVerification `bson:"verification,omitempty" json:"verification,omitempty"`
-	Provision         *ConsentProvision     `bson:"provision,omitempty" json:"provision,omitempty"`
+	Id                            *string               `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement     `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta                 `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement     `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string               `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement     `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                          *Narrative            `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                     json.RawMessage       `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                     []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                    []Identifier          `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Status                        ConsentState          `bson:"status" json:"status"`
+	StatusPrimitiveElement        *PrimitiveElement     `bson:"_status,omitempty" json:"_status,omitempty"`
+	Scope                         CodeableConcept       `bson:"scope" json:"scope"`
+	Category                      []CodeableConcept     `bson:"category" json:"category"`
+	Patient                       *Reference            `bson:"patient,omitempty" json:"patient,omitempty"`
+	DateTime                      *string               `bson:"dateTime,omitempty" json:"dateTime,omitempty"`
+	DateTimePrimitiveElement      *PrimitiveElement     `bson:"_dateTime,omitempty" json:"_dateTime,omitempty"`
+	Performer                     []Reference           `bson:"performer,omitempty" json:"performer,omitempty"`
+	Organization                  []Reference           `bson:"organization,omitempty" json:"organization,omitempty"`
+	SourceAttachment              *Attachment           `bson:"sourceAttachment,omitempty" json:"sourceAttachment,omitempty"`
+	SourceReference               *Reference            `bson:"sourceReference,omitempty" json:"sourceReference,omitempty"`
+	Policy                        []ConsentPolicy       `bson:"policy,omitempty" json:"policy,omitempty"`
+	PolicyRule                    *CodeableConcept      `bson:"policyRule,omitempty" json:"policyRule,omitempty"`
+	Verification                  []ConsentVerification `bson:"verification,omitempty" json:"verification,omitempty"`
+	Provision                     *ConsentProvision     `bson:"provision,omitempty" json:"provision,omitempty"`
 }
 type ConsentPolicy struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Authority         *string     `bson:"authority,omitempty" json:"authority,omitempty"`
-	Uri               *string     `bson:"uri,omitempty" json:"uri,omitempty"`
+	Id                        *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement        *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                 []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension         []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Authority                 *string           `bson:"authority,omitempty" json:"authority,omitempty"`
+	AuthorityPrimitiveElement *PrimitiveElement `bson:"_authority,omitempty" json:"_authority,omitempty"`
+	Uri                       *string           `bson:"uri,omitempty" json:"uri,omitempty"`
+	UriPrimitiveElement       *PrimitiveElement `bson:"_uri,omitempty" json:"_uri,omitempty"`
 }
 type ConsentVerification struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Verified          bool        `bson:"verified" json:"verified"`
-	VerifiedWith      *Reference  `bson:"verifiedWith,omitempty" json:"verifiedWith,omitempty"`
-	VerificationDate  *string     `bson:"verificationDate,omitempty" json:"verificationDate,omitempty"`
+	Id                               *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement               *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                        []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Verified                         bool              `bson:"verified" json:"verified"`
+	VerifiedPrimitiveElement         *PrimitiveElement `bson:"_verified,omitempty" json:"_verified,omitempty"`
+	VerifiedWith                     *Reference        `bson:"verifiedWith,omitempty" json:"verifiedWith,omitempty"`
+	VerificationDate                 *string           `bson:"verificationDate,omitempty" json:"verificationDate,omitempty"`
+	VerificationDatePrimitiveElement *PrimitiveElement `bson:"_verificationDate,omitempty" json:"_verificationDate,omitempty"`
 }
 type ConsentProvision struct {
-	Id                *string                 `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension             `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              *ConsentProvisionType   `bson:"type,omitempty" json:"type,omitempty"`
-	Period            *Period                 `bson:"period,omitempty" json:"period,omitempty"`
-	Actor             []ConsentProvisionActor `bson:"actor,omitempty" json:"actor,omitempty"`
-	Action            []CodeableConcept       `bson:"action,omitempty" json:"action,omitempty"`
-	SecurityLabel     []Coding                `bson:"securityLabel,omitempty" json:"securityLabel,omitempty"`
-	Purpose           []Coding                `bson:"purpose,omitempty" json:"purpose,omitempty"`
-	Class             []Coding                `bson:"class,omitempty" json:"class,omitempty"`
-	Code              []CodeableConcept       `bson:"code,omitempty" json:"code,omitempty"`
-	DataPeriod        *Period                 `bson:"dataPeriod,omitempty" json:"dataPeriod,omitempty"`
-	Data              []ConsentProvisionData  `bson:"data,omitempty" json:"data,omitempty"`
-	Provision         []ConsentProvision      `bson:"provision,omitempty" json:"provision,omitempty"`
+	Id                   *string                 `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement   *PrimitiveElement       `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension            []Extension             `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension    []Extension             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Type                 *ConsentProvisionType   `bson:"type,omitempty" json:"type,omitempty"`
+	TypePrimitiveElement *PrimitiveElement       `bson:"_type,omitempty" json:"_type,omitempty"`
+	Period               *Period                 `bson:"period,omitempty" json:"period,omitempty"`
+	Actor                []ConsentProvisionActor `bson:"actor,omitempty" json:"actor,omitempty"`
+	Action               []CodeableConcept       `bson:"action,omitempty" json:"action,omitempty"`
+	SecurityLabel        []Coding                `bson:"securityLabel,omitempty" json:"securityLabel,omitempty"`
+	Purpose              []Coding                `bson:"purpose,omitempty" json:"purpose,omitempty"`
+	Class                []Coding                `bson:"class,omitempty" json:"class,omitempty"`
+	Code                 []CodeableConcept       `bson:"code,omitempty" json:"code,omitempty"`
+	DataPeriod           *Period                 `bson:"dataPeriod,omitempty" json:"dataPeriod,omitempty"`
+	Data                 []ConsentProvisionData  `bson:"data,omitempty" json:"data,omitempty"`
+	Provision            []ConsentProvision      `bson:"provision,omitempty" json:"provision,omitempty"`
 }
 type ConsentProvisionActor struct {
-	Id                *string         `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension     `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension     `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Role              CodeableConcept `bson:"role" json:"role"`
-	Reference         Reference       `bson:"reference" json:"reference"`
+	Id                 *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension          []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension  []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Role               CodeableConcept   `bson:"role" json:"role"`
+	Reference          Reference         `bson:"reference" json:"reference"`
 }
 type ConsentProvisionData struct {
-	Id                *string            `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension        `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Meaning           ConsentDataMeaning `bson:"meaning" json:"meaning"`
-	Reference         Reference          `bson:"reference" json:"reference"`
+	Id                      *string            `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement      *PrimitiveElement  `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension               []Extension        `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension       []Extension        `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Meaning                 ConsentDataMeaning `bson:"meaning" json:"meaning"`
+	MeaningPrimitiveElement *PrimitiveElement  `bson:"_meaning,omitempty" json:"_meaning,omitempty"`
+	Reference               Reference          `bson:"reference" json:"reference"`
 }
 type OtherConsent Consent
 

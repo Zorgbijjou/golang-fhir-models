@@ -19,15 +19,22 @@ package fhir
 
 // HumanName is documented here http://hl7.org/fhir/StructureDefinition/HumanName
 type HumanName struct {
-	Id        *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	Use       *NameUse    `bson:"use,omitempty" json:"use,omitempty"`
-	Text      *string     `bson:"text,omitempty" json:"text,omitempty"`
-	Family    *string     `bson:"family,omitempty" json:"family,omitempty"`
-	Given     []string    `bson:"given,omitempty" json:"given,omitempty"`
-	Prefix    []string    `bson:"prefix,omitempty" json:"prefix,omitempty"`
-	Suffix    []string    `bson:"suffix,omitempty" json:"suffix,omitempty"`
-	Period    *Period     `bson:"period,omitempty" json:"period,omitempty"`
+	Id                     *string             `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement     *PrimitiveElement   `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension              []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
+	Use                    *NameUse            `bson:"use,omitempty" json:"use,omitempty"`
+	UsePrimitiveElement    *PrimitiveElement   `bson:"_use,omitempty" json:"_use,omitempty"`
+	Text                   *string             `bson:"text,omitempty" json:"text,omitempty"`
+	TextPrimitiveElement   *PrimitiveElement   `bson:"_text,omitempty" json:"_text,omitempty"`
+	Family                 *string             `bson:"family,omitempty" json:"family,omitempty"`
+	FamilyPrimitiveElement *PrimitiveElement   `bson:"_family,omitempty" json:"_family,omitempty"`
+	Given                  []string            `bson:"given,omitempty" json:"given,omitempty"`
+	GivenPrimitiveElement  []*PrimitiveElement `bson:"_given,omitempty" json:"_given,omitempty"`
+	Prefix                 []string            `bson:"prefix,omitempty" json:"prefix,omitempty"`
+	PrefixPrimitiveElement []*PrimitiveElement `bson:"_prefix,omitempty" json:"_prefix,omitempty"`
+	Suffix                 []string            `bson:"suffix,omitempty" json:"suffix,omitempty"`
+	SuffixPrimitiveElement []*PrimitiveElement `bson:"_suffix,omitempty" json:"_suffix,omitempty"`
+	Period                 *Period             `bson:"period,omitempty" json:"period,omitempty"`
 }
 
 func (r *HumanName) GetExtension() []Extension {

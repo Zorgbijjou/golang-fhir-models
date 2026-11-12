@@ -24,29 +24,35 @@ import (
 
 // DeviceUseStatement is documented here http://hl7.org/fhir/StructureDefinition/DeviceUseStatement
 type DeviceUseStatement struct {
-	Id                *string                  `bson:"id,omitempty" json:"id,omitempty"`
-	Meta              *Meta                    `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules     *string                  `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language          *string                  `bson:"language,omitempty" json:"language,omitempty"`
-	Text              *Narrative               `bson:"text,omitempty" json:"text,omitempty"`
-	Contained         json.RawMessage          `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension         []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier        []Identifier             `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	BasedOn           []Reference              `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
-	Status            DeviceUseStatementStatus `bson:"status" json:"status"`
-	Subject           Reference                `bson:"subject" json:"subject"`
-	DerivedFrom       []Reference              `bson:"derivedFrom,omitempty" json:"derivedFrom,omitempty"`
-	TimingTiming      *Timing                  `bson:"timingTiming,omitempty" json:"timingTiming,omitempty"`
-	TimingPeriod      *Period                  `bson:"timingPeriod,omitempty" json:"timingPeriod,omitempty"`
-	TimingDateTime    *string                  `bson:"timingDateTime,omitempty" json:"timingDateTime,omitempty"`
-	RecordedOn        *string                  `bson:"recordedOn,omitempty" json:"recordedOn,omitempty"`
-	Source            *Reference               `bson:"source,omitempty" json:"source,omitempty"`
-	Device            Reference                `bson:"device" json:"device"`
-	ReasonCode        []CodeableConcept        `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
-	ReasonReference   []Reference              `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`
-	BodySite          *CodeableConcept         `bson:"bodySite,omitempty" json:"bodySite,omitempty"`
-	Note              []Annotation             `bson:"note,omitempty" json:"note,omitempty"`
+	Id                             *string                  `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement             *PrimitiveElement        `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                           *Meta                    `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                  *string                  `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement  *PrimitiveElement        `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                       *string                  `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement       *PrimitiveElement        `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                           *Narrative               `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                      json.RawMessage          `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                      []Extension              `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension              []Extension              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                     []Identifier             `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	BasedOn                        []Reference              `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
+	Status                         DeviceUseStatementStatus `bson:"status" json:"status"`
+	StatusPrimitiveElement         *PrimitiveElement        `bson:"_status,omitempty" json:"_status,omitempty"`
+	Subject                        Reference                `bson:"subject" json:"subject"`
+	DerivedFrom                    []Reference              `bson:"derivedFrom,omitempty" json:"derivedFrom,omitempty"`
+	TimingTiming                   *Timing                  `bson:"timingTiming,omitempty" json:"timingTiming,omitempty"`
+	TimingPeriod                   *Period                  `bson:"timingPeriod,omitempty" json:"timingPeriod,omitempty"`
+	TimingDateTime                 *string                  `bson:"timingDateTime,omitempty" json:"timingDateTime,omitempty"`
+	TimingDateTimePrimitiveElement *PrimitiveElement        `bson:"_timingDateTime,omitempty" json:"_timingDateTime,omitempty"`
+	RecordedOn                     *string                  `bson:"recordedOn,omitempty" json:"recordedOn,omitempty"`
+	RecordedOnPrimitiveElement     *PrimitiveElement        `bson:"_recordedOn,omitempty" json:"_recordedOn,omitempty"`
+	Source                         *Reference               `bson:"source,omitempty" json:"source,omitempty"`
+	Device                         Reference                `bson:"device" json:"device"`
+	ReasonCode                     []CodeableConcept        `bson:"reasonCode,omitempty" json:"reasonCode,omitempty"`
+	ReasonReference                []Reference              `bson:"reasonReference,omitempty" json:"reasonReference,omitempty"`
+	BodySite                       *CodeableConcept         `bson:"bodySite,omitempty" json:"bodySite,omitempty"`
+	Note                           []Annotation             `bson:"note,omitempty" json:"note,omitempty"`
 }
 type OtherDeviceUseStatement DeviceUseStatement
 

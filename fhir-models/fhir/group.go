@@ -24,45 +24,58 @@ import (
 
 // Group is documented here http://hl7.org/fhir/StructureDefinition/Group
 type Group struct {
-	Id                *string               `bson:"id,omitempty" json:"id,omitempty"`
-	Meta              *Meta                 `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules     *string               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language          *string               `bson:"language,omitempty" json:"language,omitempty"`
-	Text              *Narrative            `bson:"text,omitempty" json:"text,omitempty"`
-	Contained         json.RawMessage       `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension         []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier        []Identifier          `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Active            *bool                 `bson:"active,omitempty" json:"active,omitempty"`
-	Type              GroupType             `bson:"type" json:"type"`
-	Actual            bool                  `bson:"actual" json:"actual"`
-	Code              *CodeableConcept      `bson:"code,omitempty" json:"code,omitempty"`
-	Name              *string               `bson:"name,omitempty" json:"name,omitempty"`
-	Quantity          *int                  `bson:"quantity,omitempty" json:"quantity,omitempty"`
-	ManagingEntity    *Reference            `bson:"managingEntity,omitempty" json:"managingEntity,omitempty"`
-	Characteristic    []GroupCharacteristic `bson:"characteristic,omitempty" json:"characteristic,omitempty"`
-	Member            []GroupMember         `bson:"member,omitempty" json:"member,omitempty"`
+	Id                            *string               `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement     `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta                 `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement     `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string               `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement     `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                          *Narrative            `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                     json.RawMessage       `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                     []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                    []Identifier          `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Active                        *bool                 `bson:"active,omitempty" json:"active,omitempty"`
+	ActivePrimitiveElement        *PrimitiveElement     `bson:"_active,omitempty" json:"_active,omitempty"`
+	Type                          GroupType             `bson:"type" json:"type"`
+	TypePrimitiveElement          *PrimitiveElement     `bson:"_type,omitempty" json:"_type,omitempty"`
+	Actual                        bool                  `bson:"actual" json:"actual"`
+	ActualPrimitiveElement        *PrimitiveElement     `bson:"_actual,omitempty" json:"_actual,omitempty"`
+	Code                          *CodeableConcept      `bson:"code,omitempty" json:"code,omitempty"`
+	Name                          *string               `bson:"name,omitempty" json:"name,omitempty"`
+	NamePrimitiveElement          *PrimitiveElement     `bson:"_name,omitempty" json:"_name,omitempty"`
+	Quantity                      *int                  `bson:"quantity,omitempty" json:"quantity,omitempty"`
+	QuantityPrimitiveElement      *PrimitiveElement     `bson:"_quantity,omitempty" json:"_quantity,omitempty"`
+	ManagingEntity                *Reference            `bson:"managingEntity,omitempty" json:"managingEntity,omitempty"`
+	Characteristic                []GroupCharacteristic `bson:"characteristic,omitempty" json:"characteristic,omitempty"`
+	Member                        []GroupMember         `bson:"member,omitempty" json:"member,omitempty"`
 }
 type GroupCharacteristic struct {
-	Id                   *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension            []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension    []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Code                 CodeableConcept  `bson:"code" json:"code"`
-	ValueCodeableConcept *CodeableConcept `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
-	ValueBoolean         *bool            `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
-	ValueQuantity        *Quantity        `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
-	ValueRange           *Range           `bson:"valueRange,omitempty" json:"valueRange,omitempty"`
-	ValueReference       *Reference       `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
-	Exclude              bool             `bson:"exclude" json:"exclude"`
-	Period               *Period          `bson:"period,omitempty" json:"period,omitempty"`
+	Id                           *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement           *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                    []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension            []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Code                         CodeableConcept   `bson:"code" json:"code"`
+	ValueCodeableConcept         *CodeableConcept  `bson:"valueCodeableConcept,omitempty" json:"valueCodeableConcept,omitempty"`
+	ValueBoolean                 *bool             `bson:"valueBoolean,omitempty" json:"valueBoolean,omitempty"`
+	ValueBooleanPrimitiveElement *PrimitiveElement `bson:"_valueBoolean,omitempty" json:"_valueBoolean,omitempty"`
+	ValueQuantity                *Quantity         `bson:"valueQuantity,omitempty" json:"valueQuantity,omitempty"`
+	ValueRange                   *Range            `bson:"valueRange,omitempty" json:"valueRange,omitempty"`
+	ValueReference               *Reference        `bson:"valueReference,omitempty" json:"valueReference,omitempty"`
+	Exclude                      bool              `bson:"exclude" json:"exclude"`
+	ExcludePrimitiveElement      *PrimitiveElement `bson:"_exclude,omitempty" json:"_exclude,omitempty"`
+	Period                       *Period           `bson:"period,omitempty" json:"period,omitempty"`
 }
 type GroupMember struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Entity            Reference   `bson:"entity" json:"entity"`
-	Period            *Period     `bson:"period,omitempty" json:"period,omitempty"`
-	Inactive          *bool       `bson:"inactive,omitempty" json:"inactive,omitempty"`
+	Id                       *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement       *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension        []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Entity                   Reference         `bson:"entity" json:"entity"`
+	Period                   *Period           `bson:"period,omitempty" json:"period,omitempty"`
+	Inactive                 *bool             `bson:"inactive,omitempty" json:"inactive,omitempty"`
+	InactivePrimitiveElement *PrimitiveElement `bson:"_inactive,omitempty" json:"_inactive,omitempty"`
 }
 type OtherGroup Group
 

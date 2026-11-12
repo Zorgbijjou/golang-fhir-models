@@ -24,46 +24,58 @@ import (
 
 // Goal is documented here http://hl7.org/fhir/StructureDefinition/Goal
 type Goal struct {
-	Id                   *string             `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                 *Meta               `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules        *string             `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language             *string             `bson:"language,omitempty" json:"language,omitempty"`
-	Text                 *Narrative          `bson:"text,omitempty" json:"text,omitempty"`
-	Contained            json.RawMessage     `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension            []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension    []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier           []Identifier        `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	LifecycleStatus      GoalLifecycleStatus `bson:"lifecycleStatus" json:"lifecycleStatus"`
-	AchievementStatus    *CodeableConcept    `bson:"achievementStatus,omitempty" json:"achievementStatus,omitempty"`
-	Category             []CodeableConcept   `bson:"category,omitempty" json:"category,omitempty"`
-	Priority             *CodeableConcept    `bson:"priority,omitempty" json:"priority,omitempty"`
-	Description          CodeableConcept     `bson:"description" json:"description"`
-	Subject              Reference           `bson:"subject" json:"subject"`
-	StartDate            *string             `bson:"startDate,omitempty" json:"startDate,omitempty"`
-	StartCodeableConcept *CodeableConcept    `bson:"startCodeableConcept,omitempty" json:"startCodeableConcept,omitempty"`
-	Target               []GoalTarget        `bson:"target,omitempty" json:"target,omitempty"`
-	StatusDate           *string             `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
-	StatusReason         *string             `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
-	ExpressedBy          *Reference          `bson:"expressedBy,omitempty" json:"expressedBy,omitempty"`
-	Addresses            []Reference         `bson:"addresses,omitempty" json:"addresses,omitempty"`
-	Note                 []Annotation        `bson:"note,omitempty" json:"note,omitempty"`
-	OutcomeCode          []CodeableConcept   `bson:"outcomeCode,omitempty" json:"outcomeCode,omitempty"`
-	OutcomeReference     []Reference         `bson:"outcomeReference,omitempty" json:"outcomeReference,omitempty"`
+	Id                              *string             `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement              *PrimitiveElement   `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                            *Meta               `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                   *string             `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement   *PrimitiveElement   `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                        *string             `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement        *PrimitiveElement   `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                            *Narrative          `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                       json.RawMessage     `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                       []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension               []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                      []Identifier        `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	LifecycleStatus                 GoalLifecycleStatus `bson:"lifecycleStatus" json:"lifecycleStatus"`
+	LifecycleStatusPrimitiveElement *PrimitiveElement   `bson:"_lifecycleStatus,omitempty" json:"_lifecycleStatus,omitempty"`
+	AchievementStatus               *CodeableConcept    `bson:"achievementStatus,omitempty" json:"achievementStatus,omitempty"`
+	Category                        []CodeableConcept   `bson:"category,omitempty" json:"category,omitempty"`
+	Priority                        *CodeableConcept    `bson:"priority,omitempty" json:"priority,omitempty"`
+	Description                     CodeableConcept     `bson:"description" json:"description"`
+	Subject                         Reference           `bson:"subject" json:"subject"`
+	StartDate                       *string             `bson:"startDate,omitempty" json:"startDate,omitempty"`
+	StartDatePrimitiveElement       *PrimitiveElement   `bson:"_startDate,omitempty" json:"_startDate,omitempty"`
+	StartCodeableConcept            *CodeableConcept    `bson:"startCodeableConcept,omitempty" json:"startCodeableConcept,omitempty"`
+	Target                          []GoalTarget        `bson:"target,omitempty" json:"target,omitempty"`
+	StatusDate                      *string             `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
+	StatusDatePrimitiveElement      *PrimitiveElement   `bson:"_statusDate,omitempty" json:"_statusDate,omitempty"`
+	StatusReason                    *string             `bson:"statusReason,omitempty" json:"statusReason,omitempty"`
+	StatusReasonPrimitiveElement    *PrimitiveElement   `bson:"_statusReason,omitempty" json:"_statusReason,omitempty"`
+	ExpressedBy                     *Reference          `bson:"expressedBy,omitempty" json:"expressedBy,omitempty"`
+	Addresses                       []Reference         `bson:"addresses,omitempty" json:"addresses,omitempty"`
+	Note                            []Annotation        `bson:"note,omitempty" json:"note,omitempty"`
+	OutcomeCode                     []CodeableConcept   `bson:"outcomeCode,omitempty" json:"outcomeCode,omitempty"`
+	OutcomeReference                []Reference         `bson:"outcomeReference,omitempty" json:"outcomeReference,omitempty"`
 }
 type GoalTarget struct {
-	Id                    *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension             []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension     []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Measure               *CodeableConcept `bson:"measure,omitempty" json:"measure,omitempty"`
-	DetailQuantity        *Quantity        `bson:"detailQuantity,omitempty" json:"detailQuantity,omitempty"`
-	DetailRange           *Range           `bson:"detailRange,omitempty" json:"detailRange,omitempty"`
-	DetailCodeableConcept *CodeableConcept `bson:"detailCodeableConcept,omitempty" json:"detailCodeableConcept,omitempty"`
-	DetailString          *string          `bson:"detailString,omitempty" json:"detailString,omitempty"`
-	DetailBoolean         *bool            `bson:"detailBoolean,omitempty" json:"detailBoolean,omitempty"`
-	DetailInteger         *int             `bson:"detailInteger,omitempty" json:"detailInteger,omitempty"`
-	DetailRatio           *Ratio           `bson:"detailRatio,omitempty" json:"detailRatio,omitempty"`
-	DueDate               *string          `bson:"dueDate,omitempty" json:"dueDate,omitempty"`
-	DueDuration           *Duration        `bson:"dueDuration,omitempty" json:"dueDuration,omitempty"`
+	Id                            *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                     []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Measure                       *CodeableConcept  `bson:"measure,omitempty" json:"measure,omitempty"`
+	DetailQuantity                *Quantity         `bson:"detailQuantity,omitempty" json:"detailQuantity,omitempty"`
+	DetailRange                   *Range            `bson:"detailRange,omitempty" json:"detailRange,omitempty"`
+	DetailCodeableConcept         *CodeableConcept  `bson:"detailCodeableConcept,omitempty" json:"detailCodeableConcept,omitempty"`
+	DetailString                  *string           `bson:"detailString,omitempty" json:"detailString,omitempty"`
+	DetailStringPrimitiveElement  *PrimitiveElement `bson:"_detailString,omitempty" json:"_detailString,omitempty"`
+	DetailBoolean                 *bool             `bson:"detailBoolean,omitempty" json:"detailBoolean,omitempty"`
+	DetailBooleanPrimitiveElement *PrimitiveElement `bson:"_detailBoolean,omitempty" json:"_detailBoolean,omitempty"`
+	DetailInteger                 *int              `bson:"detailInteger,omitempty" json:"detailInteger,omitempty"`
+	DetailIntegerPrimitiveElement *PrimitiveElement `bson:"_detailInteger,omitempty" json:"_detailInteger,omitempty"`
+	DetailRatio                   *Ratio            `bson:"detailRatio,omitempty" json:"detailRatio,omitempty"`
+	DueDate                       *string           `bson:"dueDate,omitempty" json:"dueDate,omitempty"`
+	DueDatePrimitiveElement       *PrimitiveElement `bson:"_dueDate,omitempty" json:"_dueDate,omitempty"`
+	DueDuration                   *Duration         `bson:"dueDuration,omitempty" json:"dueDuration,omitempty"`
 }
 type OtherGoal Goal
 

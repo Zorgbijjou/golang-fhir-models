@@ -24,33 +24,41 @@ import (
 
 // MedicinalProductAuthorization is documented here http://hl7.org/fhir/StructureDefinition/MedicinalProductAuthorization
 type MedicinalProductAuthorization struct {
-	Id                          *string                                                    `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                        *Meta                                                      `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules               *string                                                    `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language                    *string                                                    `bson:"language,omitempty" json:"language,omitempty"`
-	Text                        *Narrative                                                 `bson:"text,omitempty" json:"text,omitempty"`
-	Contained                   json.RawMessage                                            `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension                   []Extension                                                `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension           []Extension                                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier                  []Identifier                                               `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Subject                     *Reference                                                 `bson:"subject,omitempty" json:"subject,omitempty"`
-	Country                     []CodeableConcept                                          `bson:"country,omitempty" json:"country,omitempty"`
-	Jurisdiction                []CodeableConcept                                          `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
-	Status                      *CodeableConcept                                           `bson:"status,omitempty" json:"status,omitempty"`
-	StatusDate                  *string                                                    `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
-	RestoreDate                 *string                                                    `bson:"restoreDate,omitempty" json:"restoreDate,omitempty"`
-	ValidityPeriod              *Period                                                    `bson:"validityPeriod,omitempty" json:"validityPeriod,omitempty"`
-	DataExclusivityPeriod       *Period                                                    `bson:"dataExclusivityPeriod,omitempty" json:"dataExclusivityPeriod,omitempty"`
-	DateOfFirstAuthorization    *string                                                    `bson:"dateOfFirstAuthorization,omitempty" json:"dateOfFirstAuthorization,omitempty"`
-	InternationalBirthDate      *string                                                    `bson:"internationalBirthDate,omitempty" json:"internationalBirthDate,omitempty"`
-	LegalBasis                  *CodeableConcept                                           `bson:"legalBasis,omitempty" json:"legalBasis,omitempty"`
-	JurisdictionalAuthorization []MedicinalProductAuthorizationJurisdictionalAuthorization `bson:"jurisdictionalAuthorization,omitempty" json:"jurisdictionalAuthorization,omitempty"`
-	Holder                      *Reference                                                 `bson:"holder,omitempty" json:"holder,omitempty"`
-	Regulator                   *Reference                                                 `bson:"regulator,omitempty" json:"regulator,omitempty"`
-	Procedure                   *MedicinalProductAuthorizationProcedure                    `bson:"procedure,omitempty" json:"procedure,omitempty"`
+	Id                                       *string                                                    `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                       *PrimitiveElement                                          `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                                     *Meta                                                      `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                            *string                                                    `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement            *PrimitiveElement                                          `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                                 *string                                                    `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement                 *PrimitiveElement                                          `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                                     *Narrative                                                 `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                                json.RawMessage                                            `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                                []Extension                                                `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                        []Extension                                                `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                               []Identifier                                               `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Subject                                  *Reference                                                 `bson:"subject,omitempty" json:"subject,omitempty"`
+	Country                                  []CodeableConcept                                          `bson:"country,omitempty" json:"country,omitempty"`
+	Jurisdiction                             []CodeableConcept                                          `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
+	Status                                   *CodeableConcept                                           `bson:"status,omitempty" json:"status,omitempty"`
+	StatusDate                               *string                                                    `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
+	StatusDatePrimitiveElement               *PrimitiveElement                                          `bson:"_statusDate,omitempty" json:"_statusDate,omitempty"`
+	RestoreDate                              *string                                                    `bson:"restoreDate,omitempty" json:"restoreDate,omitempty"`
+	RestoreDatePrimitiveElement              *PrimitiveElement                                          `bson:"_restoreDate,omitempty" json:"_restoreDate,omitempty"`
+	ValidityPeriod                           *Period                                                    `bson:"validityPeriod,omitempty" json:"validityPeriod,omitempty"`
+	DataExclusivityPeriod                    *Period                                                    `bson:"dataExclusivityPeriod,omitempty" json:"dataExclusivityPeriod,omitempty"`
+	DateOfFirstAuthorization                 *string                                                    `bson:"dateOfFirstAuthorization,omitempty" json:"dateOfFirstAuthorization,omitempty"`
+	DateOfFirstAuthorizationPrimitiveElement *PrimitiveElement                                          `bson:"_dateOfFirstAuthorization,omitempty" json:"_dateOfFirstAuthorization,omitempty"`
+	InternationalBirthDate                   *string                                                    `bson:"internationalBirthDate,omitempty" json:"internationalBirthDate,omitempty"`
+	InternationalBirthDatePrimitiveElement   *PrimitiveElement                                          `bson:"_internationalBirthDate,omitempty" json:"_internationalBirthDate,omitempty"`
+	LegalBasis                               *CodeableConcept                                           `bson:"legalBasis,omitempty" json:"legalBasis,omitempty"`
+	JurisdictionalAuthorization              []MedicinalProductAuthorizationJurisdictionalAuthorization `bson:"jurisdictionalAuthorization,omitempty" json:"jurisdictionalAuthorization,omitempty"`
+	Holder                                   *Reference                                                 `bson:"holder,omitempty" json:"holder,omitempty"`
+	Regulator                                *Reference                                                 `bson:"regulator,omitempty" json:"regulator,omitempty"`
+	Procedure                                *MedicinalProductAuthorizationProcedure                    `bson:"procedure,omitempty" json:"procedure,omitempty"`
 }
 type MedicinalProductAuthorizationJurisdictionalAuthorization struct {
 	Id                  *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement  *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
 	Extension           []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension   []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier          []Identifier      `bson:"identifier,omitempty" json:"identifier,omitempty"`
@@ -60,14 +68,16 @@ type MedicinalProductAuthorizationJurisdictionalAuthorization struct {
 	ValidityPeriod      *Period           `bson:"validityPeriod,omitempty" json:"validityPeriod,omitempty"`
 }
 type MedicinalProductAuthorizationProcedure struct {
-	Id                *string                                  `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension                              `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension                              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier        *Identifier                              `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Type              CodeableConcept                          `bson:"type" json:"type"`
-	DatePeriod        *Period                                  `bson:"datePeriod,omitempty" json:"datePeriod,omitempty"`
-	DateDateTime      *string                                  `bson:"dateDateTime,omitempty" json:"dateDateTime,omitempty"`
-	Application       []MedicinalProductAuthorizationProcedure `bson:"application,omitempty" json:"application,omitempty"`
+	Id                           *string                                  `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement           *PrimitiveElement                        `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                    []Extension                              `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension            []Extension                              `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                   *Identifier                              `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Type                         CodeableConcept                          `bson:"type" json:"type"`
+	DatePeriod                   *Period                                  `bson:"datePeriod,omitempty" json:"datePeriod,omitempty"`
+	DateDateTime                 *string                                  `bson:"dateDateTime,omitempty" json:"dateDateTime,omitempty"`
+	DateDateTimePrimitiveElement *PrimitiveElement                        `bson:"_dateDateTime,omitempty" json:"_dateDateTime,omitempty"`
+	Application                  []MedicinalProductAuthorizationProcedure `bson:"application,omitempty" json:"application,omitempty"`
 }
 type OtherMedicinalProductAuthorization MedicinalProductAuthorization
 

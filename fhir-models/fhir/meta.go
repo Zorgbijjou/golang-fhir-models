@@ -19,14 +19,19 @@ package fhir
 
 // Meta is documented here http://hl7.org/fhir/StructureDefinition/Meta
 type Meta struct {
-	Id          *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension   []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	VersionId   *string     `bson:"versionId,omitempty" json:"versionId,omitempty"`
-	LastUpdated *string     `bson:"lastUpdated,omitempty" json:"lastUpdated,omitempty"`
-	Source      *string     `bson:"source,omitempty" json:"source,omitempty"`
-	Profile     []string    `bson:"profile,omitempty" json:"profile,omitempty"`
-	Security    []Coding    `bson:"security,omitempty" json:"security,omitempty"`
-	Tag         []Coding    `bson:"tag,omitempty" json:"tag,omitempty"`
+	Id                          *string             `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement          *PrimitiveElement   `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                   []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
+	VersionId                   *string             `bson:"versionId,omitempty" json:"versionId,omitempty"`
+	VersionIdPrimitiveElement   *PrimitiveElement   `bson:"_versionId,omitempty" json:"_versionId,omitempty"`
+	LastUpdated                 *string             `bson:"lastUpdated,omitempty" json:"lastUpdated,omitempty"`
+	LastUpdatedPrimitiveElement *PrimitiveElement   `bson:"_lastUpdated,omitempty" json:"_lastUpdated,omitempty"`
+	Source                      *string             `bson:"source,omitempty" json:"source,omitempty"`
+	SourcePrimitiveElement      *PrimitiveElement   `bson:"_source,omitempty" json:"_source,omitempty"`
+	Profile                     []string            `bson:"profile,omitempty" json:"profile,omitempty"`
+	ProfilePrimitiveElement     []*PrimitiveElement `bson:"_profile,omitempty" json:"_profile,omitempty"`
+	Security                    []Coding            `bson:"security,omitempty" json:"security,omitempty"`
+	Tag                         []Coding            `bson:"tag,omitempty" json:"tag,omitempty"`
 }
 
 func (r *Meta) GetExtension() []Extension {

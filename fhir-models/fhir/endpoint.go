@@ -24,25 +24,33 @@ import (
 
 // Endpoint is documented here http://hl7.org/fhir/StructureDefinition/Endpoint
 type Endpoint struct {
-	Id                   *string           `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                 *Meta             `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules        *string           `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language             *string           `bson:"language,omitempty" json:"language,omitempty"`
-	Text                 *Narrative        `bson:"text,omitempty" json:"text,omitempty"`
-	Contained            json.RawMessage   `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension            []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension    []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier           []Identifier      `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status               EndpointStatus    `bson:"status" json:"status"`
-	ConnectionType       Coding            `bson:"connectionType" json:"connectionType"`
-	Name                 *string           `bson:"name,omitempty" json:"name,omitempty"`
-	ManagingOrganization *Reference        `bson:"managingOrganization,omitempty" json:"managingOrganization,omitempty"`
-	Contact              []ContactPoint    `bson:"contact,omitempty" json:"contact,omitempty"`
-	Period               *Period           `bson:"period,omitempty" json:"period,omitempty"`
-	PayloadType          []CodeableConcept `bson:"payloadType" json:"payloadType"`
-	PayloadMimeType      []string          `bson:"payloadMimeType,omitempty" json:"payloadMimeType,omitempty"`
-	Address              string            `bson:"address" json:"address"`
-	Header               []string          `bson:"header,omitempty" json:"header,omitempty"`
+	Id                              *string             `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement              *PrimitiveElement   `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                            *Meta               `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                   *string             `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement   *PrimitiveElement   `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                        *string             `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement        *PrimitiveElement   `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                            *Narrative          `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                       json.RawMessage     `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                       []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension               []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                      []Identifier        `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Status                          EndpointStatus      `bson:"status" json:"status"`
+	StatusPrimitiveElement          *PrimitiveElement   `bson:"_status,omitempty" json:"_status,omitempty"`
+	ConnectionType                  Coding              `bson:"connectionType" json:"connectionType"`
+	Name                            *string             `bson:"name,omitempty" json:"name,omitempty"`
+	NamePrimitiveElement            *PrimitiveElement   `bson:"_name,omitempty" json:"_name,omitempty"`
+	ManagingOrganization            *Reference          `bson:"managingOrganization,omitempty" json:"managingOrganization,omitempty"`
+	Contact                         []ContactPoint      `bson:"contact,omitempty" json:"contact,omitempty"`
+	Period                          *Period             `bson:"period,omitempty" json:"period,omitempty"`
+	PayloadType                     []CodeableConcept   `bson:"payloadType" json:"payloadType"`
+	PayloadMimeType                 []string            `bson:"payloadMimeType,omitempty" json:"payloadMimeType,omitempty"`
+	PayloadMimeTypePrimitiveElement []*PrimitiveElement `bson:"_payloadMimeType,omitempty" json:"_payloadMimeType,omitempty"`
+	Address                         string              `bson:"address" json:"address"`
+	AddressPrimitiveElement         *PrimitiveElement   `bson:"_address,omitempty" json:"_address,omitempty"`
+	Header                          []string            `bson:"header,omitempty" json:"header,omitempty"`
+	HeaderPrimitiveElement          []*PrimitiveElement `bson:"_header,omitempty" json:"_header,omitempty"`
 }
 type OtherEndpoint Endpoint
 

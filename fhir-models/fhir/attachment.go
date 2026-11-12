@@ -19,16 +19,25 @@ package fhir
 
 // Attachment is documented here http://hl7.org/fhir/StructureDefinition/Attachment
 type Attachment struct {
-	Id          *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension   []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ContentType *string     `bson:"contentType,omitempty" json:"contentType,omitempty"`
-	Language    *string     `bson:"language,omitempty" json:"language,omitempty"`
-	Data        *string     `bson:"data,omitempty" json:"data,omitempty"`
-	Url         *string     `bson:"url,omitempty" json:"url,omitempty"`
-	Size        *int        `bson:"size,omitempty" json:"size,omitempty"`
-	Hash        *string     `bson:"hash,omitempty" json:"hash,omitempty"`
-	Title       *string     `bson:"title,omitempty" json:"title,omitempty"`
-	Creation    *string     `bson:"creation,omitempty" json:"creation,omitempty"`
+	Id                          *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement          *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                   []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ContentType                 *string           `bson:"contentType,omitempty" json:"contentType,omitempty"`
+	ContentTypePrimitiveElement *PrimitiveElement `bson:"_contentType,omitempty" json:"_contentType,omitempty"`
+	Language                    *string           `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement    *PrimitiveElement `bson:"_language,omitempty" json:"_language,omitempty"`
+	Data                        *string           `bson:"data,omitempty" json:"data,omitempty"`
+	DataPrimitiveElement        *PrimitiveElement `bson:"_data,omitempty" json:"_data,omitempty"`
+	Url                         *string           `bson:"url,omitempty" json:"url,omitempty"`
+	UrlPrimitiveElement         *PrimitiveElement `bson:"_url,omitempty" json:"_url,omitempty"`
+	Size                        *int              `bson:"size,omitempty" json:"size,omitempty"`
+	SizePrimitiveElement        *PrimitiveElement `bson:"_size,omitempty" json:"_size,omitempty"`
+	Hash                        *string           `bson:"hash,omitempty" json:"hash,omitempty"`
+	HashPrimitiveElement        *PrimitiveElement `bson:"_hash,omitempty" json:"_hash,omitempty"`
+	Title                       *string           `bson:"title,omitempty" json:"title,omitempty"`
+	TitlePrimitiveElement       *PrimitiveElement `bson:"_title,omitempty" json:"_title,omitempty"`
+	Creation                    *string           `bson:"creation,omitempty" json:"creation,omitempty"`
+	CreationPrimitiveElement    *PrimitiveElement `bson:"_creation,omitempty" json:"_creation,omitempty"`
 }
 
 func (r *Attachment) GetExtension() []Extension {

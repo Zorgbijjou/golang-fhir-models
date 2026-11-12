@@ -24,89 +24,110 @@ import (
 
 // NutritionOrder is documented here http://hl7.org/fhir/StructureDefinition/NutritionOrder
 type NutritionOrder struct {
-	Id                     *string                       `bson:"id,omitempty" json:"id,omitempty"`
-	Meta                   *Meta                         `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules          *string                       `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language               *string                       `bson:"language,omitempty" json:"language,omitempty"`
-	Text                   *Narrative                    `bson:"text,omitempty" json:"text,omitempty"`
-	Contained              json.RawMessage               `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension              []Extension                   `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension      []Extension                   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier             []Identifier                  `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	InstantiatesCanonical  []string                      `bson:"instantiatesCanonical,omitempty" json:"instantiatesCanonical,omitempty"`
-	InstantiatesUri        []string                      `bson:"instantiatesUri,omitempty" json:"instantiatesUri,omitempty"`
-	Instantiates           []string                      `bson:"instantiates,omitempty" json:"instantiates,omitempty"`
-	Status                 RequestStatus                 `bson:"status" json:"status"`
-	Intent                 RequestIntent                 `bson:"intent" json:"intent"`
-	Patient                Reference                     `bson:"patient" json:"patient"`
-	Encounter              *Reference                    `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	DateTime               string                        `bson:"dateTime" json:"dateTime"`
-	Orderer                *Reference                    `bson:"orderer,omitempty" json:"orderer,omitempty"`
-	AllergyIntolerance     []Reference                   `bson:"allergyIntolerance,omitempty" json:"allergyIntolerance,omitempty"`
-	FoodPreferenceModifier []CodeableConcept             `bson:"foodPreferenceModifier,omitempty" json:"foodPreferenceModifier,omitempty"`
-	ExcludeFoodModifier    []CodeableConcept             `bson:"excludeFoodModifier,omitempty" json:"excludeFoodModifier,omitempty"`
-	OralDiet               *NutritionOrderOralDiet       `bson:"oralDiet,omitempty" json:"oralDiet,omitempty"`
-	Supplement             []NutritionOrderSupplement    `bson:"supplement,omitempty" json:"supplement,omitempty"`
-	EnteralFormula         *NutritionOrderEnteralFormula `bson:"enteralFormula,omitempty" json:"enteralFormula,omitempty"`
-	Note                   []Annotation                  `bson:"note,omitempty" json:"note,omitempty"`
+	Id                                    *string                       `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                    *PrimitiveElement             `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                                  *Meta                         `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                         *string                       `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement         *PrimitiveElement             `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                              *string                       `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement              *PrimitiveElement             `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                                  *Narrative                    `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                             json.RawMessage               `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                             []Extension                   `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                     []Extension                   `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                            []Identifier                  `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	InstantiatesCanonical                 []string                      `bson:"instantiatesCanonical,omitempty" json:"instantiatesCanonical,omitempty"`
+	InstantiatesCanonicalPrimitiveElement []*PrimitiveElement           `bson:"_instantiatesCanonical,omitempty" json:"_instantiatesCanonical,omitempty"`
+	InstantiatesUri                       []string                      `bson:"instantiatesUri,omitempty" json:"instantiatesUri,omitempty"`
+	InstantiatesUriPrimitiveElement       []*PrimitiveElement           `bson:"_instantiatesUri,omitempty" json:"_instantiatesUri,omitempty"`
+	Instantiates                          []string                      `bson:"instantiates,omitempty" json:"instantiates,omitempty"`
+	InstantiatesPrimitiveElement          []*PrimitiveElement           `bson:"_instantiates,omitempty" json:"_instantiates,omitempty"`
+	Status                                RequestStatus                 `bson:"status" json:"status"`
+	StatusPrimitiveElement                *PrimitiveElement             `bson:"_status,omitempty" json:"_status,omitempty"`
+	Intent                                RequestIntent                 `bson:"intent" json:"intent"`
+	IntentPrimitiveElement                *PrimitiveElement             `bson:"_intent,omitempty" json:"_intent,omitempty"`
+	Patient                               Reference                     `bson:"patient" json:"patient"`
+	Encounter                             *Reference                    `bson:"encounter,omitempty" json:"encounter,omitempty"`
+	DateTime                              string                        `bson:"dateTime" json:"dateTime"`
+	DateTimePrimitiveElement              *PrimitiveElement             `bson:"_dateTime,omitempty" json:"_dateTime,omitempty"`
+	Orderer                               *Reference                    `bson:"orderer,omitempty" json:"orderer,omitempty"`
+	AllergyIntolerance                    []Reference                   `bson:"allergyIntolerance,omitempty" json:"allergyIntolerance,omitempty"`
+	FoodPreferenceModifier                []CodeableConcept             `bson:"foodPreferenceModifier,omitempty" json:"foodPreferenceModifier,omitempty"`
+	ExcludeFoodModifier                   []CodeableConcept             `bson:"excludeFoodModifier,omitempty" json:"excludeFoodModifier,omitempty"`
+	OralDiet                              *NutritionOrderOralDiet       `bson:"oralDiet,omitempty" json:"oralDiet,omitempty"`
+	Supplement                            []NutritionOrderSupplement    `bson:"supplement,omitempty" json:"supplement,omitempty"`
+	EnteralFormula                        *NutritionOrderEnteralFormula `bson:"enteralFormula,omitempty" json:"enteralFormula,omitempty"`
+	Note                                  []Annotation                  `bson:"note,omitempty" json:"note,omitempty"`
 }
 type NutritionOrderOralDiet struct {
-	Id                   *string                          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension            []Extension                      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension    []Extension                      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type                 []CodeableConcept                `bson:"type,omitempty" json:"type,omitempty"`
-	Schedule             []Timing                         `bson:"schedule,omitempty" json:"schedule,omitempty"`
-	Nutrient             []NutritionOrderOralDietNutrient `bson:"nutrient,omitempty" json:"nutrient,omitempty"`
-	Texture              []NutritionOrderOralDietTexture  `bson:"texture,omitempty" json:"texture,omitempty"`
-	FluidConsistencyType []CodeableConcept                `bson:"fluidConsistencyType,omitempty" json:"fluidConsistencyType,omitempty"`
-	Instruction          *string                          `bson:"instruction,omitempty" json:"instruction,omitempty"`
+	Id                          *string                          `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement          *PrimitiveElement                `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                   []Extension                      `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension           []Extension                      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Type                        []CodeableConcept                `bson:"type,omitempty" json:"type,omitempty"`
+	Schedule                    []Timing                         `bson:"schedule,omitempty" json:"schedule,omitempty"`
+	Nutrient                    []NutritionOrderOralDietNutrient `bson:"nutrient,omitempty" json:"nutrient,omitempty"`
+	Texture                     []NutritionOrderOralDietTexture  `bson:"texture,omitempty" json:"texture,omitempty"`
+	FluidConsistencyType        []CodeableConcept                `bson:"fluidConsistencyType,omitempty" json:"fluidConsistencyType,omitempty"`
+	Instruction                 *string                          `bson:"instruction,omitempty" json:"instruction,omitempty"`
+	InstructionPrimitiveElement *PrimitiveElement                `bson:"_instruction,omitempty" json:"_instruction,omitempty"`
 }
 type NutritionOrderOralDietNutrient struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Modifier          *CodeableConcept `bson:"modifier,omitempty" json:"modifier,omitempty"`
-	Amount            *Quantity        `bson:"amount,omitempty" json:"amount,omitempty"`
+	Id                 *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension          []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension  []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Modifier           *CodeableConcept  `bson:"modifier,omitempty" json:"modifier,omitempty"`
+	Amount             *Quantity         `bson:"amount,omitempty" json:"amount,omitempty"`
 }
 type NutritionOrderOralDietTexture struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Modifier          *CodeableConcept `bson:"modifier,omitempty" json:"modifier,omitempty"`
-	FoodType          *CodeableConcept `bson:"foodType,omitempty" json:"foodType,omitempty"`
+	Id                 *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension          []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension  []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Modifier           *CodeableConcept  `bson:"modifier,omitempty" json:"modifier,omitempty"`
+	FoodType           *CodeableConcept  `bson:"foodType,omitempty" json:"foodType,omitempty"`
 }
 type NutritionOrderSupplement struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Type              *CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
-	ProductName       *string          `bson:"productName,omitempty" json:"productName,omitempty"`
-	Schedule          []Timing         `bson:"schedule,omitempty" json:"schedule,omitempty"`
-	Quantity          *Quantity        `bson:"quantity,omitempty" json:"quantity,omitempty"`
-	Instruction       *string          `bson:"instruction,omitempty" json:"instruction,omitempty"`
+	Id                          *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement          *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                   []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension           []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Type                        *CodeableConcept  `bson:"type,omitempty" json:"type,omitempty"`
+	ProductName                 *string           `bson:"productName,omitempty" json:"productName,omitempty"`
+	ProductNamePrimitiveElement *PrimitiveElement `bson:"_productName,omitempty" json:"_productName,omitempty"`
+	Schedule                    []Timing          `bson:"schedule,omitempty" json:"schedule,omitempty"`
+	Quantity                    *Quantity         `bson:"quantity,omitempty" json:"quantity,omitempty"`
+	Instruction                 *string           `bson:"instruction,omitempty" json:"instruction,omitempty"`
+	InstructionPrimitiveElement *PrimitiveElement `bson:"_instruction,omitempty" json:"_instruction,omitempty"`
 }
 type NutritionOrderEnteralFormula struct {
-	Id                        *string                                      `bson:"id,omitempty" json:"id,omitempty"`
-	Extension                 []Extension                                  `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension         []Extension                                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	BaseFormulaType           *CodeableConcept                             `bson:"baseFormulaType,omitempty" json:"baseFormulaType,omitempty"`
-	BaseFormulaProductName    *string                                      `bson:"baseFormulaProductName,omitempty" json:"baseFormulaProductName,omitempty"`
-	AdditiveType              *CodeableConcept                             `bson:"additiveType,omitempty" json:"additiveType,omitempty"`
-	AdditiveProductName       *string                                      `bson:"additiveProductName,omitempty" json:"additiveProductName,omitempty"`
-	CaloricDensity            *Quantity                                    `bson:"caloricDensity,omitempty" json:"caloricDensity,omitempty"`
-	RouteofAdministration     *CodeableConcept                             `bson:"routeofAdministration,omitempty" json:"routeofAdministration,omitempty"`
-	Administration            []NutritionOrderEnteralFormulaAdministration `bson:"administration,omitempty" json:"administration,omitempty"`
-	MaxVolumeToDeliver        *Quantity                                    `bson:"maxVolumeToDeliver,omitempty" json:"maxVolumeToDeliver,omitempty"`
-	AdministrationInstruction *string                                      `bson:"administrationInstruction,omitempty" json:"administrationInstruction,omitempty"`
+	Id                                        *string                                      `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                        *PrimitiveElement                            `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                                 []Extension                                  `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                         []Extension                                  `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	BaseFormulaType                           *CodeableConcept                             `bson:"baseFormulaType,omitempty" json:"baseFormulaType,omitempty"`
+	BaseFormulaProductName                    *string                                      `bson:"baseFormulaProductName,omitempty" json:"baseFormulaProductName,omitempty"`
+	BaseFormulaProductNamePrimitiveElement    *PrimitiveElement                            `bson:"_baseFormulaProductName,omitempty" json:"_baseFormulaProductName,omitempty"`
+	AdditiveType                              *CodeableConcept                             `bson:"additiveType,omitempty" json:"additiveType,omitempty"`
+	AdditiveProductName                       *string                                      `bson:"additiveProductName,omitempty" json:"additiveProductName,omitempty"`
+	AdditiveProductNamePrimitiveElement       *PrimitiveElement                            `bson:"_additiveProductName,omitempty" json:"_additiveProductName,omitempty"`
+	CaloricDensity                            *Quantity                                    `bson:"caloricDensity,omitempty" json:"caloricDensity,omitempty"`
+	RouteofAdministration                     *CodeableConcept                             `bson:"routeofAdministration,omitempty" json:"routeofAdministration,omitempty"`
+	Administration                            []NutritionOrderEnteralFormulaAdministration `bson:"administration,omitempty" json:"administration,omitempty"`
+	MaxVolumeToDeliver                        *Quantity                                    `bson:"maxVolumeToDeliver,omitempty" json:"maxVolumeToDeliver,omitempty"`
+	AdministrationInstruction                 *string                                      `bson:"administrationInstruction,omitempty" json:"administrationInstruction,omitempty"`
+	AdministrationInstructionPrimitiveElement *PrimitiveElement                            `bson:"_administrationInstruction,omitempty" json:"_administrationInstruction,omitempty"`
 }
 type NutritionOrderEnteralFormulaAdministration struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Schedule          *Timing     `bson:"schedule,omitempty" json:"schedule,omitempty"`
-	Quantity          *Quantity   `bson:"quantity,omitempty" json:"quantity,omitempty"`
-	RateQuantity      *Quantity   `bson:"rateQuantity,omitempty" json:"rateQuantity,omitempty"`
-	RateRatio         *Ratio      `bson:"rateRatio,omitempty" json:"rateRatio,omitempty"`
+	Id                 *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension          []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension  []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Schedule           *Timing           `bson:"schedule,omitempty" json:"schedule,omitempty"`
+	Quantity           *Quantity         `bson:"quantity,omitempty" json:"quantity,omitempty"`
+	RateQuantity       *Quantity         `bson:"rateQuantity,omitempty" json:"rateQuantity,omitempty"`
+	RateRatio          *Ratio            `bson:"rateRatio,omitempty" json:"rateRatio,omitempty"`
 }
 type OtherNutritionOrder NutritionOrder
 

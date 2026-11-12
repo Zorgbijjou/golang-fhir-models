@@ -24,61 +24,77 @@ import (
 
 // VerificationResult is documented here http://hl7.org/fhir/StructureDefinition/VerificationResult
 type VerificationResult struct {
-	Id                *string                           `bson:"id,omitempty" json:"id,omitempty"`
-	Meta              *Meta                             `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules     *string                           `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language          *string                           `bson:"language,omitempty" json:"language,omitempty"`
-	Text              *Narrative                        `bson:"text,omitempty" json:"text,omitempty"`
-	Contained         json.RawMessage                   `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension         []Extension                       `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension                       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Target            []Reference                       `bson:"target,omitempty" json:"target,omitempty"`
-	TargetLocation    []string                          `bson:"targetLocation,omitempty" json:"targetLocation,omitempty"`
-	Need              *CodeableConcept                  `bson:"need,omitempty" json:"need,omitempty"`
-	Status            string                            `bson:"status" json:"status"`
-	StatusDate        *string                           `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
-	ValidationType    *CodeableConcept                  `bson:"validationType,omitempty" json:"validationType,omitempty"`
-	ValidationProcess []CodeableConcept                 `bson:"validationProcess,omitempty" json:"validationProcess,omitempty"`
-	Frequency         *Timing                           `bson:"frequency,omitempty" json:"frequency,omitempty"`
-	LastPerformed     *string                           `bson:"lastPerformed,omitempty" json:"lastPerformed,omitempty"`
-	NextScheduled     *string                           `bson:"nextScheduled,omitempty" json:"nextScheduled,omitempty"`
-	FailureAction     *CodeableConcept                  `bson:"failureAction,omitempty" json:"failureAction,omitempty"`
-	PrimarySource     []VerificationResultPrimarySource `bson:"primarySource,omitempty" json:"primarySource,omitempty"`
-	Attestation       *VerificationResultAttestation    `bson:"attestation,omitempty" json:"attestation,omitempty"`
-	Validator         []VerificationResultValidator     `bson:"validator,omitempty" json:"validator,omitempty"`
+	Id                             *string                           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement             *PrimitiveElement                 `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                           *Meta                             `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                  *string                           `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement  *PrimitiveElement                 `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                       *string                           `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement       *PrimitiveElement                 `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                           *Narrative                        `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                      json.RawMessage                   `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                      []Extension                       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension              []Extension                       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Target                         []Reference                       `bson:"target,omitempty" json:"target,omitempty"`
+	TargetLocation                 []string                          `bson:"targetLocation,omitempty" json:"targetLocation,omitempty"`
+	TargetLocationPrimitiveElement []*PrimitiveElement               `bson:"_targetLocation,omitempty" json:"_targetLocation,omitempty"`
+	Need                           *CodeableConcept                  `bson:"need,omitempty" json:"need,omitempty"`
+	Status                         string                            `bson:"status" json:"status"`
+	StatusPrimitiveElement         *PrimitiveElement                 `bson:"_status,omitempty" json:"_status,omitempty"`
+	StatusDate                     *string                           `bson:"statusDate,omitempty" json:"statusDate,omitempty"`
+	StatusDatePrimitiveElement     *PrimitiveElement                 `bson:"_statusDate,omitempty" json:"_statusDate,omitempty"`
+	ValidationType                 *CodeableConcept                  `bson:"validationType,omitempty" json:"validationType,omitempty"`
+	ValidationProcess              []CodeableConcept                 `bson:"validationProcess,omitempty" json:"validationProcess,omitempty"`
+	Frequency                      *Timing                           `bson:"frequency,omitempty" json:"frequency,omitempty"`
+	LastPerformed                  *string                           `bson:"lastPerformed,omitempty" json:"lastPerformed,omitempty"`
+	LastPerformedPrimitiveElement  *PrimitiveElement                 `bson:"_lastPerformed,omitempty" json:"_lastPerformed,omitempty"`
+	NextScheduled                  *string                           `bson:"nextScheduled,omitempty" json:"nextScheduled,omitempty"`
+	NextScheduledPrimitiveElement  *PrimitiveElement                 `bson:"_nextScheduled,omitempty" json:"_nextScheduled,omitempty"`
+	FailureAction                  *CodeableConcept                  `bson:"failureAction,omitempty" json:"failureAction,omitempty"`
+	PrimarySource                  []VerificationResultPrimarySource `bson:"primarySource,omitempty" json:"primarySource,omitempty"`
+	Attestation                    *VerificationResultAttestation    `bson:"attestation,omitempty" json:"attestation,omitempty"`
+	Validator                      []VerificationResultValidator     `bson:"validator,omitempty" json:"validator,omitempty"`
 }
 type VerificationResultPrimarySource struct {
-	Id                  *string           `bson:"id,omitempty" json:"id,omitempty"`
-	Extension           []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension   []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Who                 *Reference        `bson:"who,omitempty" json:"who,omitempty"`
-	Type                []CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
-	CommunicationMethod []CodeableConcept `bson:"communicationMethod,omitempty" json:"communicationMethod,omitempty"`
-	ValidationStatus    *CodeableConcept  `bson:"validationStatus,omitempty" json:"validationStatus,omitempty"`
-	ValidationDate      *string           `bson:"validationDate,omitempty" json:"validationDate,omitempty"`
-	CanPushUpdates      *CodeableConcept  `bson:"canPushUpdates,omitempty" json:"canPushUpdates,omitempty"`
-	PushTypeAvailable   []CodeableConcept `bson:"pushTypeAvailable,omitempty" json:"pushTypeAvailable,omitempty"`
+	Id                             *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement             *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                      []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension              []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Who                            *Reference        `bson:"who,omitempty" json:"who,omitempty"`
+	Type                           []CodeableConcept `bson:"type,omitempty" json:"type,omitempty"`
+	CommunicationMethod            []CodeableConcept `bson:"communicationMethod,omitempty" json:"communicationMethod,omitempty"`
+	ValidationStatus               *CodeableConcept  `bson:"validationStatus,omitempty" json:"validationStatus,omitempty"`
+	ValidationDate                 *string           `bson:"validationDate,omitempty" json:"validationDate,omitempty"`
+	ValidationDatePrimitiveElement *PrimitiveElement `bson:"_validationDate,omitempty" json:"_validationDate,omitempty"`
+	CanPushUpdates                 *CodeableConcept  `bson:"canPushUpdates,omitempty" json:"canPushUpdates,omitempty"`
+	PushTypeAvailable              []CodeableConcept `bson:"pushTypeAvailable,omitempty" json:"pushTypeAvailable,omitempty"`
 }
 type VerificationResultAttestation struct {
-	Id                        *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension                 []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension         []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Who                       *Reference       `bson:"who,omitempty" json:"who,omitempty"`
-	OnBehalfOf                *Reference       `bson:"onBehalfOf,omitempty" json:"onBehalfOf,omitempty"`
-	CommunicationMethod       *CodeableConcept `bson:"communicationMethod,omitempty" json:"communicationMethod,omitempty"`
-	Date                      *string          `bson:"date,omitempty" json:"date,omitempty"`
-	SourceIdentityCertificate *string          `bson:"sourceIdentityCertificate,omitempty" json:"sourceIdentityCertificate,omitempty"`
-	ProxyIdentityCertificate  *string          `bson:"proxyIdentityCertificate,omitempty" json:"proxyIdentityCertificate,omitempty"`
-	ProxySignature            *Signature       `bson:"proxySignature,omitempty" json:"proxySignature,omitempty"`
-	SourceSignature           *Signature       `bson:"sourceSignature,omitempty" json:"sourceSignature,omitempty"`
+	Id                                        *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                        *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                                 []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                         []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Who                                       *Reference        `bson:"who,omitempty" json:"who,omitempty"`
+	OnBehalfOf                                *Reference        `bson:"onBehalfOf,omitempty" json:"onBehalfOf,omitempty"`
+	CommunicationMethod                       *CodeableConcept  `bson:"communicationMethod,omitempty" json:"communicationMethod,omitempty"`
+	Date                                      *string           `bson:"date,omitempty" json:"date,omitempty"`
+	DatePrimitiveElement                      *PrimitiveElement `bson:"_date,omitempty" json:"_date,omitempty"`
+	SourceIdentityCertificate                 *string           `bson:"sourceIdentityCertificate,omitempty" json:"sourceIdentityCertificate,omitempty"`
+	SourceIdentityCertificatePrimitiveElement *PrimitiveElement `bson:"_sourceIdentityCertificate,omitempty" json:"_sourceIdentityCertificate,omitempty"`
+	ProxyIdentityCertificate                  *string           `bson:"proxyIdentityCertificate,omitempty" json:"proxyIdentityCertificate,omitempty"`
+	ProxyIdentityCertificatePrimitiveElement  *PrimitiveElement `bson:"_proxyIdentityCertificate,omitempty" json:"_proxyIdentityCertificate,omitempty"`
+	ProxySignature                            *Signature        `bson:"proxySignature,omitempty" json:"proxySignature,omitempty"`
+	SourceSignature                           *Signature        `bson:"sourceSignature,omitempty" json:"sourceSignature,omitempty"`
 }
 type VerificationResultValidator struct {
-	Id                   *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension            []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension    []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Organization         Reference   `bson:"organization" json:"organization"`
-	IdentityCertificate  *string     `bson:"identityCertificate,omitempty" json:"identityCertificate,omitempty"`
-	AttestationSignature *Signature  `bson:"attestationSignature,omitempty" json:"attestationSignature,omitempty"`
+	Id                                  *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                  *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                           []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                   []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Organization                        Reference         `bson:"organization" json:"organization"`
+	IdentityCertificate                 *string           `bson:"identityCertificate,omitempty" json:"identityCertificate,omitempty"`
+	IdentityCertificatePrimitiveElement *PrimitiveElement `bson:"_identityCertificate,omitempty" json:"_identityCertificate,omitempty"`
+	AttestationSignature                *Signature        `bson:"attestationSignature,omitempty" json:"attestationSignature,omitempty"`
 }
 type OtherVerificationResult VerificationResult
 

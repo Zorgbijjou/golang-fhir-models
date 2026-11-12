@@ -19,10 +19,13 @@ package fhir
 
 // Money is documented here http://hl7.org/fhir/StructureDefinition/Money
 type Money struct {
-	Id        *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	Value     *float64    `bson:"value,omitempty" json:"value,omitempty"`
-	Currency  *string     `bson:"currency,omitempty" json:"currency,omitempty"`
+	Id                       *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement       *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	Value                    *float64          `bson:"value,omitempty" json:"value,omitempty"`
+	ValuePrimitiveElement    *PrimitiveElement `bson:"_value,omitempty" json:"_value,omitempty"`
+	Currency                 *string           `bson:"currency,omitempty" json:"currency,omitempty"`
+	CurrencyPrimitiveElement *PrimitiveElement `bson:"_currency,omitempty" json:"_currency,omitempty"`
 }
 
 func (r *Money) GetExtension() []Extension {

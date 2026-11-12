@@ -24,37 +24,45 @@ import (
 
 // Substance is documented here http://hl7.org/fhir/StructureDefinition/Substance
 type Substance struct {
-	Id                *string               `bson:"id,omitempty" json:"id,omitempty"`
-	Meta              *Meta                 `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules     *string               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language          *string               `bson:"language,omitempty" json:"language,omitempty"`
-	Text              *Narrative            `bson:"text,omitempty" json:"text,omitempty"`
-	Contained         json.RawMessage       `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension         []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier        []Identifier          `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Status            *FHIRSubstanceStatus  `bson:"status,omitempty" json:"status,omitempty"`
-	Category          []CodeableConcept     `bson:"category,omitempty" json:"category,omitempty"`
-	Code              CodeableConcept       `bson:"code" json:"code"`
-	Description       *string               `bson:"description,omitempty" json:"description,omitempty"`
-	Instance          []SubstanceInstance   `bson:"instance,omitempty" json:"instance,omitempty"`
-	Ingredient        []SubstanceIngredient `bson:"ingredient,omitempty" json:"ingredient,omitempty"`
+	Id                            *string               `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement     `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta                 `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string               `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement     `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string               `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement     `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                          *Narrative            `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                     json.RawMessage       `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                     []Extension           `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension           `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                    []Identifier          `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Status                        *FHIRSubstanceStatus  `bson:"status,omitempty" json:"status,omitempty"`
+	StatusPrimitiveElement        *PrimitiveElement     `bson:"_status,omitempty" json:"_status,omitempty"`
+	Category                      []CodeableConcept     `bson:"category,omitempty" json:"category,omitempty"`
+	Code                          CodeableConcept       `bson:"code" json:"code"`
+	Description                   *string               `bson:"description,omitempty" json:"description,omitempty"`
+	DescriptionPrimitiveElement   *PrimitiveElement     `bson:"_description,omitempty" json:"_description,omitempty"`
+	Instance                      []SubstanceInstance   `bson:"instance,omitempty" json:"instance,omitempty"`
+	Ingredient                    []SubstanceIngredient `bson:"ingredient,omitempty" json:"ingredient,omitempty"`
 }
 type SubstanceInstance struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier        *Identifier `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	Expiry            *string     `bson:"expiry,omitempty" json:"expiry,omitempty"`
-	Quantity          *Quantity   `bson:"quantity,omitempty" json:"quantity,omitempty"`
+	Id                     *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement     *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension              []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension      []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier             *Identifier       `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	Expiry                 *string           `bson:"expiry,omitempty" json:"expiry,omitempty"`
+	ExpiryPrimitiveElement *PrimitiveElement `bson:"_expiry,omitempty" json:"_expiry,omitempty"`
+	Quantity               *Quantity         `bson:"quantity,omitempty" json:"quantity,omitempty"`
 }
 type SubstanceIngredient struct {
-	Id                       *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension                []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension        []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Quantity                 *Ratio           `bson:"quantity,omitempty" json:"quantity,omitempty"`
-	SubstanceCodeableConcept *CodeableConcept `bson:"substanceCodeableConcept,omitempty" json:"substanceCodeableConcept,omitempty"`
-	SubstanceReference       *Reference       `bson:"substanceReference,omitempty" json:"substanceReference,omitempty"`
+	Id                       *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement       *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension        []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Quantity                 *Ratio            `bson:"quantity,omitempty" json:"quantity,omitempty"`
+	SubstanceCodeableConcept *CodeableConcept  `bson:"substanceCodeableConcept,omitempty" json:"substanceCodeableConcept,omitempty"`
+	SubstanceReference       *Reference        `bson:"substanceReference,omitempty" json:"substanceReference,omitempty"`
 }
 type OtherSubstance Substance
 

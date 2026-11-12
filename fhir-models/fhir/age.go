@@ -19,13 +19,19 @@ package fhir
 
 // Age is documented here http://hl7.org/fhir/StructureDefinition/Age
 type Age struct {
-	Id         *string             `bson:"id,omitempty" json:"id,omitempty"`
-	Extension  []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
-	Value      *float64            `bson:"value,omitempty" json:"value,omitempty"`
-	Comparator *QuantityComparator `bson:"comparator,omitempty" json:"comparator,omitempty"`
-	Unit       *string             `bson:"unit,omitempty" json:"unit,omitempty"`
-	System     *string             `bson:"system,omitempty" json:"system,omitempty"`
-	Code       *string             `bson:"code,omitempty" json:"code,omitempty"`
+	Id                         *string             `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement         *PrimitiveElement   `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                  []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
+	Value                      *float64            `bson:"value,omitempty" json:"value,omitempty"`
+	ValuePrimitiveElement      *PrimitiveElement   `bson:"_value,omitempty" json:"_value,omitempty"`
+	Comparator                 *QuantityComparator `bson:"comparator,omitempty" json:"comparator,omitempty"`
+	ComparatorPrimitiveElement *PrimitiveElement   `bson:"_comparator,omitempty" json:"_comparator,omitempty"`
+	Unit                       *string             `bson:"unit,omitempty" json:"unit,omitempty"`
+	UnitPrimitiveElement       *PrimitiveElement   `bson:"_unit,omitempty" json:"_unit,omitempty"`
+	System                     *string             `bson:"system,omitempty" json:"system,omitempty"`
+	SystemPrimitiveElement     *PrimitiveElement   `bson:"_system,omitempty" json:"_system,omitempty"`
+	Code                       *string             `bson:"code,omitempty" json:"code,omitempty"`
+	CodePrimitiveElement       *PrimitiveElement   `bson:"_code,omitempty" json:"_code,omitempty"`
 }
 
 func (r *Age) GetExtension() []Extension {

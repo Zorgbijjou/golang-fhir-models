@@ -24,40 +24,49 @@ import (
 
 // DiagnosticReport is documented here http://hl7.org/fhir/StructureDefinition/DiagnosticReport
 type DiagnosticReport struct {
-	Id                 *string                 `bson:"id,omitempty" json:"id,omitempty"`
-	Meta               *Meta                   `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules      *string                 `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language           *string                 `bson:"language,omitempty" json:"language,omitempty"`
-	Text               *Narrative              `bson:"text,omitempty" json:"text,omitempty"`
-	Contained          json.RawMessage         `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension          []Extension             `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension  []Extension             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Identifier         []Identifier            `bson:"identifier,omitempty" json:"identifier,omitempty"`
-	BasedOn            []Reference             `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
-	Status             DiagnosticReportStatus  `bson:"status" json:"status"`
-	Category           []CodeableConcept       `bson:"category,omitempty" json:"category,omitempty"`
-	Code               CodeableConcept         `bson:"code" json:"code"`
-	Subject            *Reference              `bson:"subject,omitempty" json:"subject,omitempty"`
-	Encounter          *Reference              `bson:"encounter,omitempty" json:"encounter,omitempty"`
-	EffectiveDateTime  *string                 `bson:"effectiveDateTime,omitempty" json:"effectiveDateTime,omitempty"`
-	EffectivePeriod    *Period                 `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
-	Issued             *string                 `bson:"issued,omitempty" json:"issued,omitempty"`
-	Performer          []Reference             `bson:"performer,omitempty" json:"performer,omitempty"`
-	ResultsInterpreter []Reference             `bson:"resultsInterpreter,omitempty" json:"resultsInterpreter,omitempty"`
-	Specimen           []Reference             `bson:"specimen,omitempty" json:"specimen,omitempty"`
-	Result             []Reference             `bson:"result,omitempty" json:"result,omitempty"`
-	ImagingStudy       []Reference             `bson:"imagingStudy,omitempty" json:"imagingStudy,omitempty"`
-	Media              []DiagnosticReportMedia `bson:"media,omitempty" json:"media,omitempty"`
-	Conclusion         *string                 `bson:"conclusion,omitempty" json:"conclusion,omitempty"`
-	ConclusionCode     []CodeableConcept       `bson:"conclusionCode,omitempty" json:"conclusionCode,omitempty"`
-	PresentedForm      []Attachment            `bson:"presentedForm,omitempty" json:"presentedForm,omitempty"`
+	Id                                *string                 `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                *PrimitiveElement       `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                              *Meta                   `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                     *string                 `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement     *PrimitiveElement       `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                          *string                 `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement          *PrimitiveElement       `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                              *Narrative              `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                         json.RawMessage         `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                         []Extension             `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                 []Extension             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Identifier                        []Identifier            `bson:"identifier,omitempty" json:"identifier,omitempty"`
+	BasedOn                           []Reference             `bson:"basedOn,omitempty" json:"basedOn,omitempty"`
+	Status                            DiagnosticReportStatus  `bson:"status" json:"status"`
+	StatusPrimitiveElement            *PrimitiveElement       `bson:"_status,omitempty" json:"_status,omitempty"`
+	Category                          []CodeableConcept       `bson:"category,omitempty" json:"category,omitempty"`
+	Code                              CodeableConcept         `bson:"code" json:"code"`
+	Subject                           *Reference              `bson:"subject,omitempty" json:"subject,omitempty"`
+	Encounter                         *Reference              `bson:"encounter,omitempty" json:"encounter,omitempty"`
+	EffectiveDateTime                 *string                 `bson:"effectiveDateTime,omitempty" json:"effectiveDateTime,omitempty"`
+	EffectiveDateTimePrimitiveElement *PrimitiveElement       `bson:"_effectiveDateTime,omitempty" json:"_effectiveDateTime,omitempty"`
+	EffectivePeriod                   *Period                 `bson:"effectivePeriod,omitempty" json:"effectivePeriod,omitempty"`
+	Issued                            *string                 `bson:"issued,omitempty" json:"issued,omitempty"`
+	IssuedPrimitiveElement            *PrimitiveElement       `bson:"_issued,omitempty" json:"_issued,omitempty"`
+	Performer                         []Reference             `bson:"performer,omitempty" json:"performer,omitempty"`
+	ResultsInterpreter                []Reference             `bson:"resultsInterpreter,omitempty" json:"resultsInterpreter,omitempty"`
+	Specimen                          []Reference             `bson:"specimen,omitempty" json:"specimen,omitempty"`
+	Result                            []Reference             `bson:"result,omitempty" json:"result,omitempty"`
+	ImagingStudy                      []Reference             `bson:"imagingStudy,omitempty" json:"imagingStudy,omitempty"`
+	Media                             []DiagnosticReportMedia `bson:"media,omitempty" json:"media,omitempty"`
+	Conclusion                        *string                 `bson:"conclusion,omitempty" json:"conclusion,omitempty"`
+	ConclusionPrimitiveElement        *PrimitiveElement       `bson:"_conclusion,omitempty" json:"_conclusion,omitempty"`
+	ConclusionCode                    []CodeableConcept       `bson:"conclusionCode,omitempty" json:"conclusionCode,omitempty"`
+	PresentedForm                     []Attachment            `bson:"presentedForm,omitempty" json:"presentedForm,omitempty"`
 }
 type DiagnosticReportMedia struct {
-	Id                *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Comment           *string     `bson:"comment,omitempty" json:"comment,omitempty"`
-	Link              Reference   `bson:"link" json:"link"`
+	Id                      *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement      *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension               []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension       []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Comment                 *string           `bson:"comment,omitempty" json:"comment,omitempty"`
+	CommentPrimitiveElement *PrimitiveElement `bson:"_comment,omitempty" json:"_comment,omitempty"`
+	Link                    Reference         `bson:"link" json:"link"`
 }
 type OtherDiagnosticReport DiagnosticReport
 

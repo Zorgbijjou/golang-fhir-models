@@ -19,14 +19,16 @@ package fhir
 
 // MarketingStatus is documented here http://hl7.org/fhir/StructureDefinition/MarketingStatus
 type MarketingStatus struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Country           CodeableConcept  `bson:"country" json:"country"`
-	Jurisdiction      *CodeableConcept `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
-	Status            CodeableConcept  `bson:"status" json:"status"`
-	DateRange         Period           `bson:"dateRange" json:"dateRange"`
-	RestoreDate       *string          `bson:"restoreDate,omitempty" json:"restoreDate,omitempty"`
+	Id                          *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement          *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                   []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension           []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Country                     CodeableConcept   `bson:"country" json:"country"`
+	Jurisdiction                *CodeableConcept  `bson:"jurisdiction,omitempty" json:"jurisdiction,omitempty"`
+	Status                      CodeableConcept   `bson:"status" json:"status"`
+	DateRange                   Period            `bson:"dateRange" json:"dateRange"`
+	RestoreDate                 *string           `bson:"restoreDate,omitempty" json:"restoreDate,omitempty"`
+	RestoreDatePrimitiveElement *PrimitiveElement `bson:"_restoreDate,omitempty" json:"_restoreDate,omitempty"`
 }
 
 func (r *MarketingStatus) GetExtension() []Extension {

@@ -24,31 +24,42 @@ import (
 
 // SubstanceProtein is documented here http://hl7.org/fhir/StructureDefinition/SubstanceProtein
 type SubstanceProtein struct {
-	Id                *string                   `bson:"id,omitempty" json:"id,omitempty"`
-	Meta              *Meta                     `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules     *string                   `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language          *string                   `bson:"language,omitempty" json:"language,omitempty"`
-	Text              *Narrative                `bson:"text,omitempty" json:"text,omitempty"`
-	Contained         json.RawMessage           `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension         []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	SequenceType      *CodeableConcept          `bson:"sequenceType,omitempty" json:"sequenceType,omitempty"`
-	NumberOfSubunits  *int                      `bson:"numberOfSubunits,omitempty" json:"numberOfSubunits,omitempty"`
-	DisulfideLinkage  []string                  `bson:"disulfideLinkage,omitempty" json:"disulfideLinkage,omitempty"`
-	Subunit           []SubstanceProteinSubunit `bson:"subunit,omitempty" json:"subunit,omitempty"`
+	Id                               *string                   `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement               *PrimitiveElement         `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                             *Meta                     `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                    *string                   `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement    *PrimitiveElement         `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                         *string                   `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement         *PrimitiveElement         `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                             *Narrative                `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                        json.RawMessage           `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                        []Extension               `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                []Extension               `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	SequenceType                     *CodeableConcept          `bson:"sequenceType,omitempty" json:"sequenceType,omitempty"`
+	NumberOfSubunits                 *int                      `bson:"numberOfSubunits,omitempty" json:"numberOfSubunits,omitempty"`
+	NumberOfSubunitsPrimitiveElement *PrimitiveElement         `bson:"_numberOfSubunits,omitempty" json:"_numberOfSubunits,omitempty"`
+	DisulfideLinkage                 []string                  `bson:"disulfideLinkage,omitempty" json:"disulfideLinkage,omitempty"`
+	DisulfideLinkagePrimitiveElement []*PrimitiveElement       `bson:"_disulfideLinkage,omitempty" json:"_disulfideLinkage,omitempty"`
+	Subunit                          []SubstanceProteinSubunit `bson:"subunit,omitempty" json:"subunit,omitempty"`
 }
 type SubstanceProteinSubunit struct {
-	Id                      *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension               []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension       []Extension `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Subunit                 *int        `bson:"subunit,omitempty" json:"subunit,omitempty"`
-	Sequence                *string     `bson:"sequence,omitempty" json:"sequence,omitempty"`
-	Length                  *int        `bson:"length,omitempty" json:"length,omitempty"`
-	SequenceAttachment      *Attachment `bson:"sequenceAttachment,omitempty" json:"sequenceAttachment,omitempty"`
-	NTerminalModificationId *Identifier `bson:"nTerminalModificationId,omitempty" json:"nTerminalModificationId,omitempty"`
-	NTerminalModification   *string     `bson:"nTerminalModification,omitempty" json:"nTerminalModification,omitempty"`
-	CTerminalModificationId *Identifier `bson:"cTerminalModificationId,omitempty" json:"cTerminalModificationId,omitempty"`
-	CTerminalModification   *string     `bson:"cTerminalModification,omitempty" json:"cTerminalModification,omitempty"`
+	Id                                    *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement                    *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                             []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension                     []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Subunit                               *int              `bson:"subunit,omitempty" json:"subunit,omitempty"`
+	SubunitPrimitiveElement               *PrimitiveElement `bson:"_subunit,omitempty" json:"_subunit,omitempty"`
+	Sequence                              *string           `bson:"sequence,omitempty" json:"sequence,omitempty"`
+	SequencePrimitiveElement              *PrimitiveElement `bson:"_sequence,omitempty" json:"_sequence,omitempty"`
+	Length                                *int              `bson:"length,omitempty" json:"length,omitempty"`
+	LengthPrimitiveElement                *PrimitiveElement `bson:"_length,omitempty" json:"_length,omitempty"`
+	SequenceAttachment                    *Attachment       `bson:"sequenceAttachment,omitempty" json:"sequenceAttachment,omitempty"`
+	NTerminalModificationId               *Identifier       `bson:"nTerminalModificationId,omitempty" json:"nTerminalModificationId,omitempty"`
+	NTerminalModification                 *string           `bson:"nTerminalModification,omitempty" json:"nTerminalModification,omitempty"`
+	NTerminalModificationPrimitiveElement *PrimitiveElement `bson:"_nTerminalModification,omitempty" json:"_nTerminalModification,omitempty"`
+	CTerminalModificationId               *Identifier       `bson:"cTerminalModificationId,omitempty" json:"cTerminalModificationId,omitempty"`
+	CTerminalModification                 *string           `bson:"cTerminalModification,omitempty" json:"cTerminalModification,omitempty"`
+	CTerminalModificationPrimitiveElement *PrimitiveElement `bson:"_cTerminalModification,omitempty" json:"_cTerminalModification,omitempty"`
 }
 type OtherSubstanceProtein SubstanceProtein
 

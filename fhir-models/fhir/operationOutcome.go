@@ -24,26 +24,35 @@ import (
 
 // OperationOutcome is documented here http://hl7.org/fhir/StructureDefinition/OperationOutcome
 type OperationOutcome struct {
-	Id                *string                 `bson:"id,omitempty" json:"id,omitempty"`
-	Meta              *Meta                   `bson:"meta,omitempty" json:"meta,omitempty"`
-	ImplicitRules     *string                 `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
-	Language          *string                 `bson:"language,omitempty" json:"language,omitempty"`
-	Text              *Narrative              `bson:"text,omitempty" json:"text,omitempty"`
-	Contained         json.RawMessage         `bson:"contained,omitempty" json:"contained,omitempty"`
-	Extension         []Extension             `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Issue             []OperationOutcomeIssue `bson:"issue" json:"issue"`
+	Id                            *string                 `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement            *PrimitiveElement       `bson:"_id,omitempty" json:"_id,omitempty"`
+	Meta                          *Meta                   `bson:"meta,omitempty" json:"meta,omitempty"`
+	ImplicitRules                 *string                 `bson:"implicitRules,omitempty" json:"implicitRules,omitempty"`
+	ImplicitRulesPrimitiveElement *PrimitiveElement       `bson:"_implicitRules,omitempty" json:"_implicitRules,omitempty"`
+	Language                      *string                 `bson:"language,omitempty" json:"language,omitempty"`
+	LanguagePrimitiveElement      *PrimitiveElement       `bson:"_language,omitempty" json:"_language,omitempty"`
+	Text                          *Narrative              `bson:"text,omitempty" json:"text,omitempty"`
+	Contained                     json.RawMessage         `bson:"contained,omitempty" json:"contained,omitempty"`
+	Extension                     []Extension             `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension             []Extension             `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Issue                         []OperationOutcomeIssue `bson:"issue" json:"issue"`
 }
 type OperationOutcomeIssue struct {
-	Id                *string          `bson:"id,omitempty" json:"id,omitempty"`
-	Extension         []Extension      `bson:"extension,omitempty" json:"extension,omitempty"`
-	ModifierExtension []Extension      `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
-	Severity          IssueSeverity    `bson:"severity" json:"severity"`
-	Code              IssueType        `bson:"code" json:"code"`
-	Details           *CodeableConcept `bson:"details,omitempty" json:"details,omitempty"`
-	Diagnostics       *string          `bson:"diagnostics,omitempty" json:"diagnostics,omitempty"`
-	Location          []string         `bson:"location,omitempty" json:"location,omitempty"`
-	Expression        []string         `bson:"expression,omitempty" json:"expression,omitempty"`
+	Id                          *string             `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement          *PrimitiveElement   `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                   []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
+	ModifierExtension           []Extension         `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
+	Severity                    IssueSeverity       `bson:"severity" json:"severity"`
+	SeverityPrimitiveElement    *PrimitiveElement   `bson:"_severity,omitempty" json:"_severity,omitempty"`
+	Code                        IssueType           `bson:"code" json:"code"`
+	CodePrimitiveElement        *PrimitiveElement   `bson:"_code,omitempty" json:"_code,omitempty"`
+	Details                     *CodeableConcept    `bson:"details,omitempty" json:"details,omitempty"`
+	Diagnostics                 *string             `bson:"diagnostics,omitempty" json:"diagnostics,omitempty"`
+	DiagnosticsPrimitiveElement *PrimitiveElement   `bson:"_diagnostics,omitempty" json:"_diagnostics,omitempty"`
+	Location                    []string            `bson:"location,omitempty" json:"location,omitempty"`
+	LocationPrimitiveElement    []*PrimitiveElement `bson:"_location,omitempty" json:"_location,omitempty"`
+	Expression                  []string            `bson:"expression,omitempty" json:"expression,omitempty"`
+	ExpressionPrimitiveElement  []*PrimitiveElement `bson:"_expression,omitempty" json:"_expression,omitempty"`
 }
 type OtherOperationOutcome OperationOutcome
 

@@ -19,13 +19,19 @@ package fhir
 
 // Coding is documented here http://hl7.org/fhir/StructureDefinition/Coding
 type Coding struct {
-	Id           *string     `bson:"id,omitempty" json:"id,omitempty"`
-	Extension    []Extension `bson:"extension,omitempty" json:"extension,omitempty"`
-	System       *string     `bson:"system,omitempty" json:"system,omitempty"`
-	Version      *string     `bson:"version,omitempty" json:"version,omitempty"`
-	Code         *string     `bson:"code,omitempty" json:"code,omitempty"`
-	Display      *string     `bson:"display,omitempty" json:"display,omitempty"`
-	UserSelected *bool       `bson:"userSelected,omitempty" json:"userSelected,omitempty"`
+	Id                           *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement           *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                    []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
+	System                       *string           `bson:"system,omitempty" json:"system,omitempty"`
+	SystemPrimitiveElement       *PrimitiveElement `bson:"_system,omitempty" json:"_system,omitempty"`
+	Version                      *string           `bson:"version,omitempty" json:"version,omitempty"`
+	VersionPrimitiveElement      *PrimitiveElement `bson:"_version,omitempty" json:"_version,omitempty"`
+	Code                         *string           `bson:"code,omitempty" json:"code,omitempty"`
+	CodePrimitiveElement         *PrimitiveElement `bson:"_code,omitempty" json:"_code,omitempty"`
+	Display                      *string           `bson:"display,omitempty" json:"display,omitempty"`
+	DisplayPrimitiveElement      *PrimitiveElement `bson:"_display,omitempty" json:"_display,omitempty"`
+	UserSelected                 *bool             `bson:"userSelected,omitempty" json:"userSelected,omitempty"`
+	UserSelectedPrimitiveElement *PrimitiveElement `bson:"_userSelected,omitempty" json:"_userSelected,omitempty"`
 }
 
 func (r *Coding) GetExtension() []Extension {

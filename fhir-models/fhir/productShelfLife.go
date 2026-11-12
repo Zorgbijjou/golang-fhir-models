@@ -20,6 +20,7 @@ package fhir
 // ProductShelfLife is documented here http://hl7.org/fhir/StructureDefinition/ProductShelfLife
 type ProductShelfLife struct {
 	Id                           *string           `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement           *PrimitiveElement `bson:"_id,omitempty" json:"_id,omitempty"`
 	Extension                    []Extension       `bson:"extension,omitempty" json:"extension,omitempty"`
 	ModifierExtension            []Extension       `bson:"modifierExtension,omitempty" json:"modifierExtension,omitempty"`
 	Identifier                   *Identifier       `bson:"identifier,omitempty" json:"identifier,omitempty"`

@@ -19,18 +19,28 @@ package fhir
 
 // Address is documented here http://hl7.org/fhir/StructureDefinition/Address
 type Address struct {
-	Id         *string      `bson:"id,omitempty" json:"id,omitempty"`
-	Extension  []Extension  `bson:"extension,omitempty" json:"extension,omitempty"`
-	Use        *AddressUse  `bson:"use,omitempty" json:"use,omitempty"`
-	Type       *AddressType `bson:"type,omitempty" json:"type,omitempty"`
-	Text       *string      `bson:"text,omitempty" json:"text,omitempty"`
-	Line       []string     `bson:"line,omitempty" json:"line,omitempty"`
-	City       *string      `bson:"city,omitempty" json:"city,omitempty"`
-	District   *string      `bson:"district,omitempty" json:"district,omitempty"`
-	State      *string      `bson:"state,omitempty" json:"state,omitempty"`
-	PostalCode *string      `bson:"postalCode,omitempty" json:"postalCode,omitempty"`
-	Country    *string      `bson:"country,omitempty" json:"country,omitempty"`
-	Period     *Period      `bson:"period,omitempty" json:"period,omitempty"`
+	Id                         *string             `bson:"id,omitempty" json:"id,omitempty"`
+	IdPrimitiveElement         *PrimitiveElement   `bson:"_id,omitempty" json:"_id,omitempty"`
+	Extension                  []Extension         `bson:"extension,omitempty" json:"extension,omitempty"`
+	Use                        *AddressUse         `bson:"use,omitempty" json:"use,omitempty"`
+	UsePrimitiveElement        *PrimitiveElement   `bson:"_use,omitempty" json:"_use,omitempty"`
+	Type                       *AddressType        `bson:"type,omitempty" json:"type,omitempty"`
+	TypePrimitiveElement       *PrimitiveElement   `bson:"_type,omitempty" json:"_type,omitempty"`
+	Text                       *string             `bson:"text,omitempty" json:"text,omitempty"`
+	TextPrimitiveElement       *PrimitiveElement   `bson:"_text,omitempty" json:"_text,omitempty"`
+	Line                       []string            `bson:"line,omitempty" json:"line,omitempty"`
+	LinePrimitiveElement       []*PrimitiveElement `bson:"_line,omitempty" json:"_line,omitempty"`
+	City                       *string             `bson:"city,omitempty" json:"city,omitempty"`
+	CityPrimitiveElement       *PrimitiveElement   `bson:"_city,omitempty" json:"_city,omitempty"`
+	District                   *string             `bson:"district,omitempty" json:"district,omitempty"`
+	DistrictPrimitiveElement   *PrimitiveElement   `bson:"_district,omitempty" json:"_district,omitempty"`
+	State                      *string             `bson:"state,omitempty" json:"state,omitempty"`
+	StatePrimitiveElement      *PrimitiveElement   `bson:"_state,omitempty" json:"_state,omitempty"`
+	PostalCode                 *string             `bson:"postalCode,omitempty" json:"postalCode,omitempty"`
+	PostalCodePrimitiveElement *PrimitiveElement   `bson:"_postalCode,omitempty" json:"_postalCode,omitempty"`
+	Country                    *string             `bson:"country,omitempty" json:"country,omitempty"`
+	CountryPrimitiveElement    *PrimitiveElement   `bson:"_country,omitempty" json:"_country,omitempty"`
+	Period                     *Period             `bson:"period,omitempty" json:"period,omitempty"`
 }
 
 func (r *Address) GetExtension() []Extension {
